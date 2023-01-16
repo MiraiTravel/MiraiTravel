@@ -58,7 +58,7 @@ class MiraiTravel
         CliStyles::println("。", "Yellow");
         CliStyles::println("使用命令 help 以获取使用帮助。", "Yellow");
         $logSystem = new LogSystem("MiraiTravel", "System");
-        $logSystem->write_log("miraiTravel","mirai_home_page","I'm Start!");
+        $logSystem->write_log("miraiTravel", "mirai_home_page", "I'm Start!");
         self::memory();
         while (true) {
             $miraiTravelInter = fgets(STDIN);
@@ -121,7 +121,8 @@ class MiraiTravel
 
     static function mirai_travel_inter_resolver($inter, $num = false)
     {
-        $inter = preg_split("/[\s,]+/", $inter);
+        $split = preg_split("/[\s]+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/", $inter);
+        $outSplit = $split;
         if ($num === false || $inter < 0) {
             return $inter;
         } else {
