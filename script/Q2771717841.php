@@ -23,7 +23,7 @@ class Q2771717841 extends QQObj
      */
     function init()
     {
-        $this->open_component("exampleComponent");
+        $this->open_component("exampleComponent","V0.1.1");
     }
 
     /**
