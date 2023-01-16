@@ -4,6 +4,8 @@ namespace MiraiTravel\QQObj;
 
 use Error;
 use MiraiTravel\DataSystem\DataSystem;
+use MiraiTravel\LogSystem\LogSystem;
+use MiraiTravel\MessageChain\MessageChain;
 use MiraiTravel\MiraiTravel;
 
 use function MiraiTravel\MiraiApi\bind;
@@ -22,6 +24,8 @@ class QQObj
 
     static $sessionKey = true;
     static $focus = false;
+
+    static $componentList = array();
     /**
      * __constuct 构造函数
      * 
@@ -50,8 +54,9 @@ class QQObj
     /**
      * 启动组件
      */
-    function open_component($componentName)
+    function open_component($componentName, $componentVersion)
     {
+        version_compare("$componentVersion", "VersionManager", ">");
     }
 
     function webhook_components()
@@ -62,24 +67,25 @@ class QQObj
      * webhook 入口函数
      * 当启动时入口为 webhook 时 会自动调用这个函数
      */
-    function webhook()
+    function webhook($webhookMessage)
     {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("Script", "webhook", json_encode($webhookMessage) . " receive.");
+        $this->set_focus($webhookMessage);
+        $messageChain = new MessageChain();
+        $messageChain->push_plain("Hello MiraiTravel!");
+        $this->reply_message($messageChain->get_message_chain());
     }
 
     /**
      * 设置专注的会话
      */
-    function set_focus($type, $sender)
+    function set_focus($message)
     {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("Script", "set_focus", json_encode($message));
         $focusTypeList = array("FriendMessage", "GroupMessage", "TempMessage", "StrangerMessage", "OtherClientMessage");
-        if (in_array($type, $focusTypeList)) {
-            switch ($type) {
-                case "FriendMessage":
-                    break;
-                default:
-                    break;
-            }
-        }
+        self::$focus = $message;
     }
 
     /**
@@ -88,7 +94,10 @@ class QQObj
      */
     function reply_message($message)
     {
-        if ($message) {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        if (self::$focus['type'] === "FriendMessage") {
+            $logSystem->write_log("Script", "reply_message", self::$focus['sender']['id'] . " For FriendMessage " . json_encode($message));
+            $this->send_friend_massage(self::$focus['sender']['id'], $message);
         }
     }
 
@@ -100,7 +109,8 @@ class QQObj
      */
     function send_friend_massage($qq, $messageChain)
     {
-        echo "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n";
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
         return send_friend_message(
             $this->get_session_key(),
             $qq,
@@ -119,7 +129,8 @@ class QQObj
      */
     function send_group_massage($group, $messageChain)
     {
-        echo "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n";
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
         return send_group_message(
             $this->get_session_key(),
             $group,

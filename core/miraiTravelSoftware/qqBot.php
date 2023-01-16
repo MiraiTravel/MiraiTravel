@@ -19,7 +19,7 @@ class qqBot extends MiraiTravelSoftware
         "sendGroupMessage" => "发送群消息。",
         "help" => "帮助。"
     );
-    
+
     private $logSystem;
     /**
      * 构造函数 , 会传入启动参数
@@ -63,10 +63,14 @@ class qqBot extends MiraiTravelSoftware
             }
             $messageChain = new MessageChain();
             $messageChain->push_plain($argv[2]);
-            $qqbot->send_friend_massage($argv[1], $messageChain->get_message_chain());
-            echo $qqbot->get_session_key() . "\r\n";
+            $miraiRecive = $qqbot->send_friend_massage($argv[1], $messageChain->get_message_chain());
+            if ($miraiRecive['code'] === 0) {
+                CliStyles::println("发送成功 消息ID : " . $miraiRecive['messageId'], "Green");
+            } else {
+                CliStyles::println("发送失败 错误码 : " . $miraiRecive['code'], "Red");
+            }
         } else {
-            $this->logSystem->write_log("software", "qqBot", "send_friend_message receive a error command : {".json_encode($argv)."}");
+            $this->logSystem->write_log("software", "qqBot", "send_friend_message receive a error command : {" . json_encode($argv) . "}");
         }
     }
 
@@ -83,8 +87,12 @@ class qqBot extends MiraiTravelSoftware
             }
             $messageChain = new MessageChain();
             $messageChain->push_plain($argv[2]);
-            $qqbot->send_group_massage($argv[1], $messageChain->get_message_chain());
-            echo $qqbot->get_session_key() . "\r\n";
+            $miraiRecive = $qqbot->send_group_massage($argv[1], $messageChain->get_message_chain());
+            if ($miraiRecive['code'] === 0) {
+                CliStyles::println("发送成功 消息ID : " . $miraiRecive['messageId'], "Green");
+            } else {
+                CliStyles::println("发送失败 错误码 : " . $miraiRecive['code'], "Red");
+            }
         }
     }
 

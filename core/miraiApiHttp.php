@@ -2,6 +2,8 @@
 
 namespace MiraiTravel\MiraiApi;
 
+use MiraiTravel\LogSystem\LogSystem;
+
 use function MiraiTravel\HttpAdapter\http_adapter;
 use function MiraiTravel\WebhookAdapter\webhook_adapter;
 
@@ -13,14 +15,17 @@ use function MiraiTravel\WebhookAdapter\webhook_adapter;
  */
 function adapter_manager($type, $command, $content, $other = array())
 {
+    $logSystem = new LogSystem("MiraiTravel", "System");
     switch ($type) {
         case "auto":
         case "webhook":
+            $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now webhook]");
             $flag = webhook_adapter($command, $content);
             if ($flag !== false) {
                 return $flag;
             }
         case "http":
+            $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now http]");
             $flag = http_adapter($other['httpApi'] ?? $other['qqbot']->get_http_api(), $command, $content, $other);
             if ($flag !== false) {
                 return $flag;

@@ -9,6 +9,7 @@ namespace MiraiTravel\DataSystem;
 
 use Error;
 use Exception;
+use MiraiTravel\LogSystem\LogSystem;
 
 class DataSystem
 {
@@ -17,6 +18,7 @@ class DataSystem
     private $_userType;
     private $_qq = null;
     const USER_TYPE_POSSIBILITY = array("Component", "QQBot", "System");
+
     /**
      * 构造函数
      * @param string $dataUser 数据创建者 (组件名称,QQBot的QQ号,系统级名称)
@@ -60,7 +62,8 @@ class DataSystem
             fseek($dataFile, 0);
             $newDataFile = "";
         } catch (Error $e) {
-            echo $e;
+            $logSystem = new LogSystem("MiraiTravel", "System");
+            $logSystem->write_log("dataSystem", "Error", $e, "ERROR");
             return null;
         }
         $writed = false;
@@ -95,7 +98,8 @@ class DataSystem
         try {
             $dataFile = fopen($this->get_data_path($dataName, $level), "a+");
         } catch (Error $e) {
-            echo $e;
+            $logSystem = new LogSystem("MiraiTravel", "System");
+            $logSystem->write_log("dataSystem", "Error", $e, "ERROR");
             return null;
         }
         if (empty($dataFile)) {
@@ -130,7 +134,6 @@ class DataSystem
         } else {
         }
         return "$path/" . $fileName;
-
     }
 
     function mkdirs($dir, $mode = 0777)

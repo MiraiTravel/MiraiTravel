@@ -1,49 +1,49 @@
 <?php
 
 /**
- * 组件
+ * 加载脚本
  */
 
-namespace MiraiTravel\Components {
+namespace MiraiTravel\ComponentSystem;
 
-    /**
-     * 组件对象
-     * 所有的组件都应该继承与组件对象
-     */
-    class Component
-    {
-        const _version = "";
-        /**
-         * 构造函数
-         */
-        function __construct()
-        {
-        }
+use Error;
+use MiraiTravel\LogSystem\LogSystem;
 
-        function init()
-        {
-        }
+$componentList = array();
 
-        /**
-         * 组件依赖
-         * @param string $component 组件名称
-         * @param string $version   组件版本
-         */
-        function open_component($component, $version)
-        {
-        }
+$componentDir = scandir("components");
+foreach ($componentDir as $key => $component) {
+    if ($key < 2) {
+        continue;
     }
-
-
-    function component_requir_once()
-    {
-        
+    $componentList[$component] = array();
+    $componentVersionDir = scandir("components/$component");
+    foreach ($componentVersionDir as $key => $componentVersion) {
+        if ($key < 2) {
+            continue;
+        }
+        $componentList[$component][] = $componentVersion;
     }
 }
 
-/**
- * 组件系统
- */
 
-namespace MiraiTravel\ComponentSystem {
+/**
+ * 载入 组件
+ */
+function load_component($componentName, $componentVersion)
+{
+
+    global $componentList;
+    if (in_array($componentName, array_keys($componentList))) {
+        if (in_array($componentVersion, array_values($componentList))) {
+            try {
+                require_once "components/$componentName/$componentVersion/$componentName" .  ".php";
+                return true;
+            } catch (Error $e) {
+                $logSystem = new LogSystem("componentSystem", "System");
+                $logSystem->write_log("componentSystem", "load_component", "Cant Load Component File [$componentName]<$componentVersion>($componentName.php)", "ERROR");
+                return false;
+            }
+        } else return false;
+    } else return false;
 }

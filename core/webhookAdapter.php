@@ -30,8 +30,8 @@ function webhook_adapter($command, $content)
     $webhookMessage->command = func_to_command($command);
     $webhookMessage->content = $content;
     $webhookMessage = json_encode($webhookMessage);
-    echo $webhookMessage;
     $webhookBeUsed = true;
+    echo $webhookMessage;
     return array('code' => 0);
 }
 
@@ -50,6 +50,7 @@ function func_to_command($funcName)
         } elseif ($flag2 === "_") {
             $funcName = str_replace("__", "_", $funcName);
         }
+        $flag = stripos($funcName, "_");
     }
     return $funcName;
 }

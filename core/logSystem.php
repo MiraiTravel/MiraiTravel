@@ -22,6 +22,9 @@ class LogSystem
         $this->_logUser = $logUser;
         if (in_array($userType, self::USER_TYPE_POSSIBILITY)) {
             $this->_userType = $userType;
+            if ($userType === "QQBot") {
+                $this->set_qq_bot($logUser);
+            }
         } else {
             return false;
         }
@@ -55,6 +58,8 @@ class LogSystem
         }
         if ($level === 1 && $this->_userType !== "System") {
             if (empty($this->_qq)) {
+                $logSystem = new LogSystem("MiraiTravel", "System");
+                $logSystem->write_log("logSystem", "$this->_userType|$this->_logUser", "写入账号分离的日志时,应该先传入qq号 <使用 set_qq_bot(\$qq) 函数>。", "ERROR", $logLevel);
                 return false;
             }
         }
@@ -69,9 +74,16 @@ class LogSystem
             }
         }
         try {
+            if (file_exists($this->get_log_path($dataName, $level))) {
+                if (!is_readable($this->get_log_path($dataName, $level))) {
+                    return false;
+                }
+                if (!is_writable($this->get_log_path($dataName, $level))) {
+                    return false;
+                }
+            }
             $dataFile = fopen($this->get_log_path($dataName, $level), "a+");
         } catch (Error $e) {
-            echo $e;
             return null;
         }
         $line = fgets($dataFile);
@@ -103,7 +115,18 @@ class LogSystem
         if ($this->_userType === "System") {
             $fileName = "$dataName.log";
         }
-        if ($level === 1) {
+        if ($this->_userType === "Component") {
+            if ($level == 0) {
+                $path = $path . "/components/$this->_logUser";
+                $fileName = "$dataName.log";
+            }
+        }
+        if ($this->_userType === "QQBot") {
+            $path = $path . "/Script";
+            if ($level == 1) {
+                $path = "$path/" . $this->_qq;
+                $fileName = "$dataName.log";
+            }
         }
         $this->mkdirs($path);
         return "$path/" . $fileName;
