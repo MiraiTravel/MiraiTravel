@@ -19,13 +19,15 @@ class qqBot extends MiraiTravelSoftware
         "sendGroupMessage" => "发送群消息。",
         "help" => "帮助。"
     );
+    
+    private $logSystem;
     /**
      * 构造函数 , 会传入启动参数
      */
     function __construct($argc, $argv)
     {
-        $logSystem = new LogSystem("MiraiTravel", "System");
-        $logSystem->write_log("software", "qqBot", "qqBot be open.");
+        $this->logSystem = new LogSystem("MiraiTravel", "System");
+        $this->logSystem->write_log("software", "qqBot", "qqBot be open.");
         if (!in_array($argv[0], array_keys(self::commandsInformation))) {
             echo CliStyles::ColorRed . "qqBot : 你输入的参数有误 , 使用 qqBot help 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
             return 0;
@@ -37,10 +39,10 @@ class qqBot extends MiraiTravelSoftware
             $argc = count($argv);
             $this->$funcName($argc, $argv);
         } catch (Error $e) {
-            $logSystem->write_log("software", "qqBot", "User want open " . $funcName . "but be error :{ $e }");
+            $this->logSystem->write_log("software", "qqBot", "User want open " . $funcName . "but be error :{ $e }");
             echo CliStyles::ColorGreen . "这个功能还在开发中。。。" . "\r\n" . CliStyles::ColorDefault;
         }
-        $logSystem->write_log("software", "qqBot", "qqBot be closed.");
+        $this->logSystem->write_log("software", "qqBot", "qqBot be closed.");
     }
 
     function uncamelize($camelCaps, $separator = '_')
@@ -63,6 +65,8 @@ class qqBot extends MiraiTravelSoftware
             $messageChain->push_plain($argv[2]);
             $qqbot->send_friend_massage($argv[1], $messageChain->get_message_chain());
             echo $qqbot->get_session_key() . "\r\n";
+        } else {
+            $this->logSystem->write_log("software", "qqBot", "send_friend_message receive a error command : {".json_encode($argv)."}");
         }
     }
 

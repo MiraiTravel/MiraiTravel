@@ -122,11 +122,20 @@ class MiraiTravel
     static function mirai_travel_inter_resolver($inter, $num = false)
     {
         $split = preg_split("/[\s]+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/", $inter);
-        $outSplit = $split;
+        $outSplit = array();
+        foreach ($split as $key => $value) {
+            $outSplit[$key] = $value;
+            if (substr($outSplit[$key], 0, 1) === '"') {
+                $outSplit[$key] = substr($outSplit[$key], 1);
+            }
+            if (substr($outSplit[$key], -1, 1) === '"') {
+                $outSplit[$key] = substr($outSplit[$key], 0, -1);
+            }
+        }
         if ($num === false || $inter < 0) {
-            return $inter;
+            return $outSplit;
         } else {
-            return $inter[$num];
+            return $outSplit[$num];
         }
     }
 
