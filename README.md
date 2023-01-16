@@ -3,10 +3,10 @@ MiraiTravel
 </div>
 
 ### 简介 Information
-MiraiTravel 是基于 mirai-api-http 的 PHP 框架。
-这个框架于 : 2022-01-16 凌晨开始开发。
-现还处于 预发布状态。 
-交流群 : 604568448
+MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
+这个框架于 : 2022-01-16 凌晨开始开发。</br>
+现还处于 预发布状态。 </br>
+交流群 : 604568448 </br>
 
 ### 开始 Start
 运行 php MiraiTravel.php 即可启动 MiraiTravel。
