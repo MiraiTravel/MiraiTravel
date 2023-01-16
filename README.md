@@ -9,17 +9,17 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 交流群 : 604568448 </br>
 
 ### 开始 Start
-运行 php MiraiTravel.php 即可启动 MiraiTravel。
-启动后使用命令 help 可以获取帮助。
+运行 php MiraiTravel.php 即可启动 MiraiTravel。</br>
+启动后使用命令 help 可以获取帮助。</br>
 
 ### 首次使用 
-需要编写一个你的机器人脚本以开始运行。
+需要编写一个你的机器人脚本以开始运行。</br>
 
-在 script 文件夹中创建文件 ``Q【你的QQ】.php`` 。
-参照 Q2771717841.php 文件编写你的机器人脚本。
-你可以把 任何出现 2771717841 的地方 改成你的QQ 号。以快速的运行。
+在 script 文件夹中创建文件 ``Q【你的QQ】.php`` 。 </br>
+参照 Q2771717841.php 文件编写你的机器人脚本。</br>
+你可以把 任何出现 2771717841 的地方 改成你的QQ 号。以快速的运行。</br>
 
-您可以手动修改 ``data/miraiTravel.data`` 文件以使用这个框架。
+您可以手动修改 ``data/miraiTravel.data`` 文件以只在使用这个框架。</br>
 
 
 
