@@ -30,11 +30,11 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 你可以把 任何出现 2771717841 的地方 改成你的QQ 号。以快速的运行。</br>
 
 您可以手动修改 ``data/miraiTravel.data`` 文件以只在使用这个框架。</br>
-基础配置项已在该配置文件中有 改成需要的配置即可。
+基础配置项已在该配置文件中有 改成需要的配置即可。 </br>
 
 [QQBot]:./docs/QQBot.md
 [MiraiTravel]:./docs/MiraiTravel.md
 
-文档均在 文件夹 docs 中 。
-阅读 [MiraiTravel] 
-阅读 [QQBot] 
+文档均在 文件夹 docs 中 。 </br>
+阅读 [MiraiTravel]  </br>
+阅读 [QQBot]  </br>

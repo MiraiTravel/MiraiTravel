@@ -9,7 +9,7 @@ config bot start 【你的QQ】
 ``` 
 
 ## 编写 QQBot 实例
-在 script 中创建文件 ``Q【你的QQ】.php``
+在 script 中创建文件 ``Q【你的QQ】.php`` </br>
 
 基本模板
 ```php
@@ -58,6 +58,6 @@ class Q【你的QQ】 extends QQObj
 
 [QQBot手册]:./QQBot/QQBot手册.md
 
-文档：
+文档： </br>
 [QQBot手册]
 
