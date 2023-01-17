@@ -8,6 +8,15 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 现还处于 预发布状态。 </br>
 交流群 : 604568448 </br>
 
+#### 为何选用 MiraiTravel
+1. 安装配置简单 可以通过控制台使用命令行进行 MiraiTravel 的配置。
+2. 兼容性强 可以在任何装有 PHP 的机器上运行。
+3. 账号分离 可以在一个 MiraiTravel 中实现分离管理多个账号。
+4. 多入口 有 MiraiTravel 控制台入口 和 Webhook 入口。
+5. 易于开发 可以开发组件或者是QQBot脚本来实现自己想实现的功能。
+6. 开发隔离 多命名空间隔离 定义函数或变量不会出现重复导致干扰的问题。
+7. 稳定 发现组件或者脚本出现异常会取消组件或者脚本的实例化。
+
 ### 开始 Start
 运行 php MiraiTravel.php 即可启动 MiraiTravel。</br>
 启动后使用命令 help 可以获取帮助。</br>
@@ -20,15 +29,4 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 你可以把 任何出现 2771717841 的地方 改成你的QQ 号。以快速的运行。</br>
 
 您可以手动修改 ``data/miraiTravel.data`` 文件以只在使用这个框架。</br>
-
-
-
-
- 
-
-
-
-
-
-
 
