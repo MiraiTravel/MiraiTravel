@@ -5,6 +5,10 @@ namespace MiraiTravel\Components\exampleComponent\V1_1;
 use MiraiTravel\Components\Component;
 use MiraiTravel\LogSystem\LogSystem;
 
+use function MiraiTravel\Components\component_requir_once;
+
+component_requir_once("aa");
+
 class exampleComponent extends Component
 {
     /**

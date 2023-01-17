@@ -14,7 +14,9 @@ class config extends MiraiTravelSoftware
     const commandsInformation = array(
         "help" => "获取 congig 的使用帮助。",
         "bot" => "设置在MiraiTravel中开启的机器人脚本。",
-        "debug" => "设置MiraiTravel的调试模式",
+        "debug" => "设置MiraiTravel的调试模式。",
+        "httpApi" => "设置MiraiTravel的默认Http_api地址。",
+        "verifyKey" => "设置MiraiTravel的默认verifyKey。"
     );
     /**
      * 构造函数 , 会传入启动参数
@@ -30,6 +32,7 @@ class config extends MiraiTravelSoftware
             unset($argv[0]);
             $argv = array_values($argv);
             $argc = count($argv);
+            $funcName = $this->uncamelize($funcName);
             $this->$funcName($argc, $argv);
         } catch (Error $e) {
             echo CliStyles::ColorGreen . "这个功能还在开发中。。。" . "\r\n" . CliStyles::ColorDefault;
@@ -50,6 +53,29 @@ class config extends MiraiTravelSoftware
             }
         } else {
             echo CliStyles::ColorRed . "config debug: 你输入的参数有误 , 使用 config debug -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
+            return 0;
+        }
+    }
+
+    function http_api($argc, $argv)
+    {
+        if ($argc === 1) {
+            $dataSystem = new DataSystem("MiraiTravel", "System");
+            $dataSystem->write_data("miraiTravel", "HTTP_API", $argv[0]);
+            echo CliStyles::ColorGreen . "默认HTTP_API已调整为" . $argv[0] . "\r\n" . CliStyles::ColorDefault;
+        } else {
+            echo CliStyles::ColorRed . "config httpApi: 你输入的参数有误 , 使用 config httpApi -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
+            return 0;
+        }
+    }
+
+    function verify_key($argc, $argv){
+        if ($argc === 1) {
+            $dataSystem = new DataSystem("MiraiTravel", "System");
+            $dataSystem->write_data("miraiTravel", "verifyKey", $argv[0]);
+            echo CliStyles::ColorGreen . "默认verifyKey已调整为" . $argv[0] . "\r\n" . CliStyles::ColorDefault;
+        } else {
+            echo CliStyles::ColorRed . "config verifyKey: 你输入的参数有误 , 使用 config verifyKey -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
             return 0;
         }
     }

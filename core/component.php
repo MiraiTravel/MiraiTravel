@@ -13,11 +13,14 @@ namespace MiraiTravel\Components;
 class Component
 {
     const _version = "";
+    static $_qqBot;
     /**
      * 构造函数
+     * @param qqBot $qqBot 传入启用这个插件的qqBot对象
      */
-    function __construct()
+    function __construct($qqBot)
     {
+
     }
 
     function init()
@@ -53,8 +56,9 @@ class Component
 }
 
 
-function component_requir_once()
+function component_requir_once( $file )
 {
+    echo debug_backtrace();
 }
 
 /**

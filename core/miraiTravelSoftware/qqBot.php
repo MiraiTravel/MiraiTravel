@@ -45,11 +45,6 @@ class qqBot extends MiraiTravelSoftware
         $this->logSystem->write_log("software", "qqBot", "qqBot be closed.");
     }
 
-    function uncamelize($camelCaps, $separator = '_')
-    {
-        return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $camelCaps));
-    }
-
     function send_friend_message($argc, $argv)
     {
         if ($argc === 3) {

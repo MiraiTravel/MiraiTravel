@@ -77,6 +77,10 @@ class QQObj
         $this->reply_message($messageChain->get_message_chain());
     }
 
+    function webhook_($webhookMessage){
+
+    }
+
     /**
      * 设置专注的会话
      */
@@ -92,12 +96,16 @@ class QQObj
      * 针对专注的会话回复消息
      * 
      */
-    function reply_message($message)
+    function reply_message($message, $quote = false)
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         if (self::$focus['type'] === "FriendMessage") {
             $logSystem->write_log("Script", "reply_message", self::$focus['sender']['id'] . " For FriendMessage " . json_encode($message));
             $this->send_friend_massage(self::$focus['sender']['id'], $message);
+        } elseif (self::$focus['type'] === "GroupMessage") {
+            $logSystem->write_log("Script", "reply_message", self::$focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
+            $this->send_group_massage(self::$focus['sender']['group']['id'], $message);
+        } else {
         }
     }
 
@@ -107,7 +115,7 @@ class QQObj
      * @param $qq QQ号 
      * @param $messageChin 消息链
      */
-    function send_friend_massage($qq, $messageChain)
+    function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
@@ -115,7 +123,7 @@ class QQObj
             $this->get_session_key(),
             $qq,
             null,
-            null,
+            $quote ?? null,
             $messageChain,
             array("qqbot" => $this)
         );
