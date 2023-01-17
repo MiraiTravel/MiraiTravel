@@ -36,7 +36,7 @@ class Q【你的QQ】 extends QQObj
     const HTTP_API = "http://localhost:60"; //http api
     const VERIFY_KEY = "verifyKey"; //http api verifyKey
     const AUTHORIZATION = ""; //webhook Authorization
-    
+
     /**
      * 该函数是QQBot接到webhook后的处理函数
      * $webhookMessage 中接到的数据具体可以参照 Mirai-api-http 文档
@@ -56,6 +56,8 @@ class Q【你的QQ】 extends QQObj
 
 ```
 
+[QQBot手册]:./QQBot/QQBot手册.md
 
-
+文档：
+[QQBot手册]
 
