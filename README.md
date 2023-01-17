@@ -16,6 +16,7 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 5. 易于开发 可以开发组件或者是QQBot脚本来实现自己想实现的功能。
 6. 开发隔离 多命名空间隔离 定义函数或变量不会出现重复导致干扰的问题。
 7. 稳定 发现组件或者脚本出现异常会取消组件或者脚本的实例化。
+8. 全开源 该项目全由PHP编写，由于PHP的特殊性 所以开发时你可以看到程序的所有源代码 哪怕没有文档也可快速开发。
 
 ### 开始 Start
 运行 php MiraiTravel.php 即可启动 MiraiTravel。</br>
@@ -31,5 +32,9 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 您可以手动修改 ``data/miraiTravel.data`` 文件以只在使用这个框架。</br>
 基础配置项已在该配置文件中有 改成需要的配置即可。
 
+[QQBot]:./docs/QQBot.md
+[MiraiTravel]:./docs/MiraiTravel.md
 
-
+文档均在 文件夹 docs 中 。
+阅读 [MiraiTravel] 
+阅读 [QQBot] 

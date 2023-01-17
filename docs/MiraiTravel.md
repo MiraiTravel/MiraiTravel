@@ -28,5 +28,7 @@ php MiraiTravel.php
 无论从哪个入口进入 MiraiTravel 都会实例化一个 System 。
 然后按需实例 QQBot 与 Component 。
 
+[QQBot]:./QQBot.md
 
-
+文档:
+[QQBot]
