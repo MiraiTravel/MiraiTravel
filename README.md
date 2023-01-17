@@ -43,4 +43,8 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 阅读 [MiraiTravel]  </br>
 阅读 [QQBot]  </br>
 
+教程会在 :
+https://blog.csdn.net/apple_53792700/category_12176569.html
+
+持续更新
 
