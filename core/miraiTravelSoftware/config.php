@@ -69,13 +69,34 @@ class config extends MiraiTravelSoftware
         }
     }
 
-    function verify_key($argc, $argv){
+    function verify_key($argc, $argv)
+    {
         if ($argc === 1) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $dataSystem->write_data("miraiTravel", "verifyKey", $argv[0]);
             echo CliStyles::ColorGreen . "默认verifyKey已调整为" . $argv[0] . "\r\n" . CliStyles::ColorDefault;
         } else {
             echo CliStyles::ColorRed . "config verifyKey: 你输入的参数有误 , 使用 config verifyKey -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
+            return 0;
+        }
+    }
+
+    function bot($argc, $argv)
+    {
+        if ($argc === 2) {
+            if ($argv[0] === "start") {
+                $dataSystem = new DataSystem("MiraiTravel", "System");
+                $botList = $dataSystem->read_data("miraiTravel", "qqBot");
+                if (!in_array($argv[2], $botList)) {
+                    $botList[] = $argv[2];
+                    $dataSystem->write_data("miraiTravel", "qqBot", $botList);
+                    echo CliStyles::ColorGreen . "开启 QQBot" . $argv[2] . "\r\n" . CliStyles::ColorDefault;
+                } else {
+                    echo CliStyles::ColorRed . "config bot start: 该QQBot已开启 !" . "\r\n" . CliStyles::ColorDefault;
+                }
+            }
+        } else {
+            echo CliStyles::ColorRed . "config bot: 你输入的参数有误 , 使用 config bot -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
             return 0;
         }
     }

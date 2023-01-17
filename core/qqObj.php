@@ -46,8 +46,10 @@ class QQObj
     /**
      * 大脑函数
      * 消息对传入的消息进行处理
+     * @param mixed $reciveMessage 需要思考的消息
+     * @param bool $isMessageChain 只是消息链吗
      */
-    function brain($_data)
+    function brain($reciveMessage, $isMessageChain = false)
     {
     }
 
@@ -66,19 +68,71 @@ class QQObj
     /**
      * webhook 入口函数
      * 当启动时入口为 webhook 时 会自动调用这个函数
+     * 默认功能为根据消息类型把消息传入自己的webhook函数
+     * 并且把消息传给所有已挂载组件的 webhook 函数
+     * 如果你想新增一些东西的话可以修改 webhook_all 函数。
      */
     function webhook($webhookMessage)
     {
-        $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("Script", "webhook", json_encode($webhookMessage) . " receive.");
-        $this->set_focus($webhookMessage);
-        $messageChain = new MessageChain();
-        $messageChain->push_plain("Hello MiraiTravel!");
-        $this->reply_message($messageChain->get_message_chain());
     }
 
-    function webhook_($webhookMessage){
+    function webhook_all($webhookMessage)
+    {
+    }
 
+    /**
+     * webhook 当收到好友消息时调用的函数
+     */
+    function webhook_friend_message($webhookMessage)
+    {
+    }
+
+    /**
+     * webhook 当收到群临时消息时调用的函数
+     */
+    function webhook_temp_message($webhookMessage)
+    {
+    }
+    /**
+     * webhook 当收到陌生人消息时调用的函数
+     */
+    function webhook_stranger_message($webhookMessage)
+    {
+    }
+
+    /**
+     * webhook 当收到其他客户端消息时调用的函数
+     */
+    function webhook_other_client_message($webhookMessage)
+    {
+    }
+
+    /**
+     * webhook Bot登陆成功
+     */
+    function webhook_bot_online_event($webhookMessage)
+    {
+    }
+
+    /**
+     * webhook Bot主动离线
+     */
+    function webhook_bot_offline_event_active($webhookMessage)
+    {
+    }
+
+    /**
+     * webhook 添加好友申请
+     */
+    function webhook_new_friend_request_event($webhookMessage)
+    {
+    }
+
+    /**
+     * 用户入群申请（Bot需要有管理员权限）
+     */
+    function webhook_member_join_request_event($webhookMessage)
+    {
     }
 
     /**
@@ -114,6 +168,8 @@ class QQObj
      * 发送消息给某人
      * @param $qq QQ号 
      * @param $messageChin 消息链
+     * @param $quote 引用消息id
+     * @param $other 其他可能会用到的参数
      */
     function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
     {
@@ -134,8 +190,10 @@ class QQObj
      * 发送消息给某群
      * @param $group 群号 
      * @param $messageChin 消息链
+     * @param $quote 引用消息id
+     * @param $other 其他可能会用到的参数
      */
-    function send_group_massage($group, $messageChain)
+    function send_group_massage($group, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
@@ -143,7 +201,7 @@ class QQObj
             $this->get_session_key(),
             $group,
             null,
-            null,
+            $quote ?? null,
             $messageChain,
             array("qqbot" => $this)
         );
