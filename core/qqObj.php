@@ -74,6 +74,7 @@ class QQObj
      */
     function webhook($webhookMessage)
     {
+        $this->webhook_all($webhookMessage);
     }
 
     function webhook_all($webhookMessage)
