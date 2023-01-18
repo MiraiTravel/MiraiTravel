@@ -74,7 +74,21 @@ class QQObj
      */
     function webhook($webhookMessage)
     {
+        $this->set_focus($webhookMessage);
         $this->webhook_all($webhookMessage);
+        try {
+            $webhookFuncName = $webhookMessage['type'];
+            $webhookFuncName = $this->uncamelize($webhookFuncName);
+            $webhookFuncName = "webhook_" . $webhookFuncName;
+
+            $logSystem = new LogSystem($this->get_qq(), "QQBot");
+            $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for  " . json_encode($webhookMessage));
+
+            $this->$webhookFuncName($webhookMessage);
+        } catch (Error $e) {
+            $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
+            return false;
+        }
     }
 
     function webhook_all($webhookMessage)
@@ -83,6 +97,7 @@ class QQObj
 
     /**
      * webhook 当收到好友消息时调用的函数
+     * 保留给用户自由修改
      */
     function webhook_friend_message($webhookMessage)
     {
@@ -90,12 +105,14 @@ class QQObj
 
     /**
      * webhook 当收到群临时消息时调用的函数
+     * 保留给用户自由修改
      */
     function webhook_temp_message($webhookMessage)
     {
     }
     /**
      * webhook 当收到陌生人消息时调用的函数
+     * 保留给用户自由修改
      */
     function webhook_stranger_message($webhookMessage)
     {
@@ -103,6 +120,7 @@ class QQObj
 
     /**
      * webhook 当收到其他客户端消息时调用的函数
+     * 保留给用户自由修改
      */
     function webhook_other_client_message($webhookMessage)
     {
@@ -110,6 +128,7 @@ class QQObj
 
     /**
      * webhook Bot登陆成功
+     * 保留给用户自由修改
      */
     function webhook_bot_online_event($webhookMessage)
     {
@@ -117,6 +136,7 @@ class QQObj
 
     /**
      * webhook Bot主动离线
+     * 保留给用户自由修改
      */
     function webhook_bot_offline_event_active($webhookMessage)
     {
@@ -124,6 +144,7 @@ class QQObj
 
     /**
      * webhook 添加好友申请
+     * 保留给用户自由修改
      */
     function webhook_new_friend_request_event($webhookMessage)
     {
@@ -131,6 +152,7 @@ class QQObj
 
     /**
      * 用户入群申请（Bot需要有管理员权限）
+     * 保留给用户自由修改
      */
     function webhook_member_join_request_event($webhookMessage)
     {
@@ -175,7 +197,7 @@ class QQObj
     function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
+        $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() );
         return send_friend_message(
             $this->get_session_key(),
             $qq,
@@ -288,6 +310,16 @@ class QQObj
             throw new Error($this->get_qq() . "HTTP_API出现严重错误!");
             return false;
         }
+    }
+
+    /**
+     * uncamelize
+     * 拓展方法
+     * 把输入的驼峰命名法变为下划线命名法
+     */
+    function uncamelize($camelCaps, $separator = '_')
+    {
+        return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $camelCaps));
     }
 }
 

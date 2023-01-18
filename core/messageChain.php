@@ -15,8 +15,43 @@ class MessageChain
     /**
      * 
      */
-    function get_message_chain(){
+    function get_message_chain()
+    {
         return $this->messageChain;
+    }
+
+    /**
+     * 
+     */
+    function set_message_chain($messageChain)
+    {
+        $this->messageChain = $messageChain;
+        return $this->messageChain;
+    }
+
+    /**
+     * 获取消息链中所有的 Plain 消息 
+     * @param bool $jointAll 是否把所有的Plain拼接到一个字符串中 
+     */
+    function get_all_plain($jointAll = false)
+    {
+        if ($jointAll) {
+            $nods = "";
+        } else {
+            $nods = array();
+        }
+
+        foreach ($this->messageChain as $node) {
+            if ($node['type'] === "Plain") {
+                if ($jointAll) {
+                    $nods = $nods . $node['text'];
+                } else {
+                    $nods[] = $node;
+                }
+            }
+        }
+
+        return $nods;
     }
 
     /**
@@ -59,7 +94,8 @@ class MessageChain
      * @param int       $target     群员QQ号
      * @param string    $display    At时显示的文字，发送消息时无效，自动使用群名片
      */
-    function push_at( $target , $display = null ){
+    function push_at($target, $display = null)
+    {
         $node = array();
         $node['type'] = "At";
         $node['target'] = $target;
@@ -71,7 +107,8 @@ class MessageChain
      * push_at_all
      * 添加at所有人
      */
-    function push_at_all(){
+    function push_at_all()
+    {
         $node = array();
         $node['type'] = "AtAll";
         $this->messageChain[] = $node;

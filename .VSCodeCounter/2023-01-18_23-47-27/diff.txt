@@ -1,0 +1,66 @@
+Date : 2023-01-18 23:47:27
+Directory : f:\Project\工作文件夹\MiraiTravel
+Total : 22 files,  731 codes, 60 comments, 103 blanks, all 894 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Log      |          7 |        341 |          0 |         25 |        366 |
+| PHP      |          9 |        237 |         60 |         34 |        331 |
+| Markdown |          6 |        153 |          0 |         44 |        197 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         22 |        731 |         60 |        103 |        894 |
+| . (Files)                                                                            |          2 |         25 |          0 |         -5 |         20 |
+| components                                                                           |          2 |          9 |          5 |          4 |         18 |
+| components\exampleComponent                                                          |          1 |          9 |          0 |          4 |         13 |
+| components\exampleComponent\V0.1.1                                                   |          1 |          9 |          0 |          4 |         13 |
+| components\webhook                                                                   |          1 |          0 |          5 |          0 |          5 |
+| components\webhook\V0.1.1                                                            |          1 |          0 |          5 |          0 |          5 |
+| core                                                                                 |          5 |        110 |         54 |         23 |        187 |
+| core (Files)                                                                         |          3 |         70 |         54 |         21 |        145 |
+| core\miraiTravelSoftware                                                             |          2 |         40 |          0 |          2 |         42 |
+| docs                                                                                 |          5 |        132 |          0 |         49 |        181 |
+| docs (Files)                                                                         |          3 |         82 |          0 |         29 |        111 |
+| docs\QQBot                                                                           |          1 |         47 |          0 |         15 |         62 |
+| docs\System                                                                          |          1 |          3 |          0 |          5 |          8 |
+| logs                                                                                 |          7 |        341 |          0 |         25 |        366 |
+| logs (Files)                                                                         |          4 |        174 |          0 |         -1 |        173 |
+| logs\Script                                                                          |          3 |        167 |          0 |         26 |        193 |
+| logs\Script\2771717841                                                               |          3 |        167 |          0 |         26 |        193 |
+| script                                                                               |          1 |        114 |          1 |          7 |        122 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                             | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| f:\Project\工作文件夹\MiraiTravel\MiraiTravel.php                                         | PHP      |          4 |          0 |          0 |          4 |
+| f:\Project\工作文件夹\MiraiTravel\README.md                                               | Markdown |         21 |          0 |         -5 |         16 |
+| f:\Project\工作文件夹\MiraiTravel\components\exampleComponent\V0.1.1\exampleComponent.php | PHP      |          9 |          0 |          4 |         13 |
+| f:\Project\工作文件夹\MiraiTravel\components\webhook\V0.1.1\webhook.php                   | PHP      |          0 |          5 |          0 |          5 |
+| f:\Project\工作文件夹\MiraiTravel\core\component.php                                      | PHP      |          2 |          1 |          6 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\core\messageChain.php                                   | PHP      |         26 |          7 |          4 |         37 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\config.php                     | PHP      |         44 |          0 |          3 |         47 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\qqBot.php                      | PHP      |         -4 |          0 |         -1 |         -5 |
+| f:\Project\工作文件夹\MiraiTravel\core\qqObj.php                                          | PHP      |         42 |         46 |         11 |         99 |
+| f:\Project\工作文件夹\MiraiTravel\docs\MiraiTravel.md                                     | Markdown |         24 |          0 |         11 |         35 |
+| f:\Project\工作文件夹\MiraiTravel\docs\QQBot.md                                           | Markdown |         50 |          0 |         14 |         64 |
+| f:\Project\工作文件夹\MiraiTravel\docs\QQBot\QQBot手册.md                                   | Markdown |         47 |          0 |         15 |         62 |
+| f:\Project\工作文件夹\MiraiTravel\docs\System.md                                          | Markdown |          8 |          0 |          4 |         12 |
+| f:\Project\工作文件夹\MiraiTravel\docs\System\开放对象.md                                     | Markdown |          3 |          0 |          5 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\Script.log                       | Log      |         91 |          0 |          0 |         91 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\sendMessage.log                  | Log      |         27 |          0 |         26 |         53 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\webhook.log                      | Log      |         49 |          0 |          0 |         49 |
+| f:\Project\工作文件夹\MiraiTravel\logs\httpAdapter.log                                    | Log      |         72 |          0 |         -1 |         71 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiApiHttp.log                                   | Log      |         52 |          0 |          0 |         52 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiTravel.log                                    | Log      |          2 |          0 |          0 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\logs\webhook.log                                        | Log      |         48 |          0 |          0 |         48 |
+| f:\Project\工作文件夹\MiraiTravel\script\Q2771717841.php                                  | PHP      |        114 |          1 |          7 |        122 |
+| Total                                                                                |          |        731 |         60 |        103 |        894 |
++--------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
