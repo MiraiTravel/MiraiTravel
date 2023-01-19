@@ -20,7 +20,7 @@ class Component
      */
     function __construct($qqBot)
     {
-
+        $this->_qqBot = $qqBot;
     }
 
     function init()
@@ -63,6 +63,7 @@ function component_requir_once( $file )
 
 /**
  * 组件系统
+ * 暂时没有想好怎么开发
  */
 
 namespace MiraiTravel\ComponentSystem;

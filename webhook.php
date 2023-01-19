@@ -33,4 +33,13 @@ $webhookBeUsed = false;
 
 namespace MiraiTravel\Webhook;
 
-$qqBot->webhook($_DATA);
+use MiraiTravel\LogSystem\LogSystem;
+use Error;
+
+try {
+    $qqBot->webhook($_DATA);
+} catch (Error $e) {
+    $logSystem = new LogSystem($qqBot->get_qq(), "QQBot");
+    $logSystem->set_qq_bot($qqBot->get_qq());
+    $logSystem->write_log("webhook", "webhookError", "QQbot have not open webhook component。");
+}

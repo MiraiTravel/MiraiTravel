@@ -2,12 +2,14 @@
 
 namespace MiraiTravel\QQObj;
 
+use Closure;
 use Error;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MessageChain\MessageChain;
 use MiraiTravel\MiraiTravel;
 
+use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
@@ -23,17 +25,23 @@ class QQObj
     const AUTHORIZATION = ""; //webhook Authorization
 
     static $sessionKey = true;
-    static $focus = false;
 
-    static $componentList = array();
+    static $componentList = [];
+    private $dynamicMethods = [];
+    public $_qqBot = $this;
+
     /**
      * __constuct 构造函数
      * 
      */
     function __construct()
     {
+        // 判断命名空间是否正确
         if (__NAMESPACE__ !== "MiraiTravel\QQObj\Script") {
+            throw new Error("The QQBot's namespace is not 'MiraiTravel\QQObj\Script' Please amend Your Script!");
         }
+        // 初始化
+        $this->init();
     }
 
     /**
@@ -54,137 +62,18 @@ class QQObj
     }
 
     /**
-     * 启动组件
+     * 启动组件 
+     * $componentName 组件名称
+     * $componentVersion 组件版本号
      */
     function open_component($componentName, $componentVersion)
     {
+        load_component($componentName, $componentVersion);
+        $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . $componentName;
+        $componentList[] = new $componentClassName($this);
         version_compare("$componentVersion", "VersionManager", ">");
     }
 
-    function webhook_components()
-    {
-    }
-
-    /**
-     * webhook 入口函数
-     * 当启动时入口为 webhook 时 会自动调用这个函数
-     * 默认功能为根据消息类型把消息传入自己的webhook函数
-     * 并且把消息传给所有已挂载组件的 webhook 函数
-     * 如果你想新增一些东西的话可以修改 webhook_all 函数。
-     */
-    function webhook($webhookMessage)
-    {
-        $this->set_focus($webhookMessage);
-        $this->webhook_all($webhookMessage);
-        try {
-            $webhookFuncName = $webhookMessage['type'];
-            $webhookFuncName = $this->uncamelize($webhookFuncName);
-            $webhookFuncName = "webhook_" . $webhookFuncName;
-
-            $logSystem = new LogSystem($this->get_qq(), "QQBot");
-            $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for  " . json_encode($webhookMessage));
-
-            $this->$webhookFuncName($webhookMessage);
-        } catch (Error $e) {
-            $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
-            return false;
-        }
-    }
-
-    function webhook_all($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook 当收到好友消息时调用的函数
-     * 保留给用户自由修改
-     */
-    function webhook_friend_message($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook 当收到群临时消息时调用的函数
-     * 保留给用户自由修改
-     */
-    function webhook_temp_message($webhookMessage)
-    {
-    }
-    /**
-     * webhook 当收到陌生人消息时调用的函数
-     * 保留给用户自由修改
-     */
-    function webhook_stranger_message($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook 当收到其他客户端消息时调用的函数
-     * 保留给用户自由修改
-     */
-    function webhook_other_client_message($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook Bot登陆成功
-     * 保留给用户自由修改
-     */
-    function webhook_bot_online_event($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook Bot主动离线
-     * 保留给用户自由修改
-     */
-    function webhook_bot_offline_event_active($webhookMessage)
-    {
-    }
-
-    /**
-     * webhook 添加好友申请
-     * 保留给用户自由修改
-     */
-    function webhook_new_friend_request_event($webhookMessage)
-    {
-    }
-
-    /**
-     * 用户入群申请（Bot需要有管理员权限）
-     * 保留给用户自由修改
-     */
-    function webhook_member_join_request_event($webhookMessage)
-    {
-    }
-
-    /**
-     * 设置专注的会话
-     */
-    function set_focus($message)
-    {
-        $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("Script", "set_focus", json_encode($message));
-        $focusTypeList = array("FriendMessage", "GroupMessage", "TempMessage", "StrangerMessage", "OtherClientMessage");
-        self::$focus = $message;
-    }
-
-    /**
-     * 针对专注的会话回复消息
-     * 
-     */
-    function reply_message($message, $quote = false)
-    {
-        $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        if (self::$focus['type'] === "FriendMessage") {
-            $logSystem->write_log("Script", "reply_message", self::$focus['sender']['id'] . " For FriendMessage " . json_encode($message));
-            $this->send_friend_massage(self::$focus['sender']['id'], $message);
-        } elseif (self::$focus['type'] === "GroupMessage") {
-            $logSystem->write_log("Script", "reply_message", self::$focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
-            $this->send_group_massage(self::$focus['sender']['group']['id'], $message);
-        } else {
-        }
-    }
 
     /**
      * send_friend_massage 
@@ -197,7 +86,7 @@ class QQObj
     function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key() );
+        $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key());
         return send_friend_message(
             $this->get_session_key(),
             $qq,
@@ -219,7 +108,7 @@ class QQObj
     function send_group_massage($group, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() );
+        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key());
         return send_group_message(
             $this->get_session_key(),
             $group,
@@ -312,6 +201,43 @@ class QQObj
         }
     }
 
+
+    public function __get($name)
+    {
+
+        return isset($this->dynamicMethods[$name]) ? $this->dynamicMethods[$name] : null;
+    }
+
+    public function __set($name, $value)
+    {
+
+        if ($this->isClosure($value)) {
+            $this->dynamicMethods[$name] = Closure::bind($value, $this, self::class);;
+        }
+    }
+
+    private function isClosure($value)
+    {
+
+        return is_callable($value) && get_class((object)$value) === \Closure::class;
+    }
+
+    public function __isset($name)
+    {
+
+        return isset($this->dynamicMethods[$name]);
+    }
+
+    public function __call($name, $arguments)
+    {
+        if (!isset($this->dynamicMethods[$name])) {
+            $logSystem = new LogSystem($this->get_qq(), "QQBot");
+            $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . self::class . "::{$name}", "WARING");
+        }
+        return call_user_func($this->dynamicMethods[$name], $arguments);
+    }
+
+
     /**
      * uncamelize
      * 拓展方法
@@ -325,7 +251,9 @@ class QQObj
 
 namespace MiraiTravel\QQObj\Script;
 
+use Error;
 use MiraiTravel\DataSystem\DataSystem;
+use MiraiTravel\LogSystem\LogSystem;
 
 use function MiraiTravel\ScriptSystem\load_qqbot;
 
@@ -353,7 +281,12 @@ class QQObjManager
         }
         if (load_qqbot($qq)) {
             $objName = "MiraiTravel\QQObj\Script\Q" . $qq;
-            self::$qqObjArray[] = new $objName();
+            try {
+                self::$qqObjArray[] = new $objName();
+            } catch (Error $e) {
+                $logSystem = new LogSystem("MiraiTravel", "System");
+                $logSystem->write_log("qqObj", "config_qq_obj", $e, "ERROR");
+            }
             return true;
         } else {
             return false;

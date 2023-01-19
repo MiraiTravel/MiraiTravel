@@ -13,7 +13,8 @@ class MessageChain
     }
 
     /**
-     * 
+     * 获取构建好的messageChain
+     * @return array messageChain
      */
     function get_message_chain()
     {
@@ -21,12 +22,21 @@ class MessageChain
     }
 
     /**
-     * 
+     * 设置messageChain
      */
     function set_message_chain($messageChain)
     {
         $this->messageChain = $messageChain;
         return $this->messageChain;
+    }
+
+    /**
+     * 清除messageChain
+     */
+    function clean()
+    {
+        $this->messageChain = [];
+        return [];
     }
 
     /**

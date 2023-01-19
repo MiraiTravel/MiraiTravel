@@ -27,6 +27,11 @@ class Q2771717841 extends QQObj
      */
     function init()
     {
+        if( $this->open_component("webhook","V0.1.1") ){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -36,9 +41,9 @@ class Q2771717841 extends QQObj
      */
     function webhook_friend_message($webhookMessage)
     {
-        $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("Script", "webhook", json_encode($webhookMessage) . " receive.");
-        $this->set_focus($webhookMessage);
+        //$logSystem = new LogSystem($this->get_qq(), "QQBot");
+        //$logSystem->write_log("Script", "webhook", json_encode($webhookMessage) . " receive.");
+        //$this->set_focus($webhookMessage);
         $messageChain = new MessageChain();
         $messageChain->push_plain("Hello MiraiTravel!");
         $this->reply_message($messageChain->get_message_chain());

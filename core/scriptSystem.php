@@ -6,6 +6,8 @@
 
 namespace MiraiTravel\ScriptSystem;
 
+use MiraiTravel\DataSystem\DataSystem;
+
 $scriptFiles = array();
 $qqBotFiles = array();
 
@@ -30,6 +32,11 @@ foreach ($scriptFiles as $key => $scriptFile) {
 function load_qqbot($qq)
 {
     global $qqBotFiles;
+    $dataSystem = new DataSystem("MiraiTravel", "System");
+    $openQq = $dataSystem->read_data("miraiTravel", "qqBot");
+    if (!in_array($qq, $openQq)) {
+        return false;
+    }
     if (in_array("Q" . $qq . ".php", $qqBotFiles)) {
         require_once "script/Q" . $qq . ".php";
         return true;

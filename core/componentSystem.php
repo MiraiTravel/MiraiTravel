@@ -47,3 +47,13 @@ function load_component($componentName, $componentVersion)
         } else return false;
     } else return false;
 }
+
+
+/**
+ * 获取 变量 
+ */
+function get_var($var)
+{
+    global ${$var};
+    return ${$var};
+}
