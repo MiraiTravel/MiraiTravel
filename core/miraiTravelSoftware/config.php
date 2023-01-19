@@ -84,16 +84,31 @@ class config extends MiraiTravelSoftware
     function bot($argc, $argv)
     {
         if ($argc === 2) {
-            if ($argv[0] === "start") {
+            if ($argv[0] === "open") {
                 $dataSystem = new DataSystem("MiraiTravel", "System");
                 $botList = $dataSystem->read_data("miraiTravel", "qqBot");
-                if (!in_array($argv[2], $botList)) {
-                    $botList[] = $argv[2];
+                if (!in_array($argv[1], $botList)) {
+                    $botList[] = $argv[1];
                     $dataSystem->write_data("miraiTravel", "qqBot", $botList);
-                    echo CliStyles::ColorGreen . "开启 QQBot" . $argv[2] . "\r\n" . CliStyles::ColorDefault;
+                    echo CliStyles::ColorGreen . "开启 QQBot" . $argv[1] . "\r\n" . CliStyles::ColorDefault;
                 } else {
-                    echo CliStyles::ColorRed . "config bot start: 该QQBot已开启 !" . "\r\n" . CliStyles::ColorDefault;
+                    echo CliStyles::ColorRed . "config bot open: 该QQBot已开启 !" . "\r\n" . CliStyles::ColorDefault;
                 }
+            } elseif ($argv[0] === "close") {
+                $dataSystem = new DataSystem("MiraiTravel", "System");
+                $botList = $dataSystem->read_data("miraiTravel", "qqBot");
+                if (in_array($argv[1], $botList)) {
+                    $botList = array_flip($botList);
+                    unset($botList[$argv[1]]);
+                    $botList = array_flip($botList);
+                    $dataSystem->write_data("miraiTravel", "qqBot", $botList);
+                    echo CliStyles::ColorGreen . "关闭 QQBot" . $argv[1] . "\r\n" . CliStyles::ColorDefault;
+                } else {
+                    echo CliStyles::ColorRed . "config bot close: 该QQBot已关闭!" . "\r\n" . CliStyles::ColorDefault;
+                }
+            } else {
+                echo CliStyles::ColorRed . "config bot: 你输入的参数有误 , 使用 config bot -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
+                return 0;
             }
         } else {
             echo CliStyles::ColorRed . "config bot: 你输入的参数有误 , 使用 config bot -h 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;

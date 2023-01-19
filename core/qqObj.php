@@ -219,7 +219,7 @@ class QQObj
     function send_group_massage($group, $messageChain, $quote = false, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
-        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() . "\r\n");
+        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key() );
         return send_group_message(
             $this->get_session_key(),
             $group,
