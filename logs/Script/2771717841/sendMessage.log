@@ -50,3 +50,8 @@
 2023-01-18 11:42:59 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n"}] for 6urCRD06
 
 2023-01-18 11:44:36 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 585312byte \u5185\u5b58"}] for 6urCRD06
+
+2023-01-20 06:14:26 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 652240byte \u5185\u5b58"}] for qx4WGaPF
+2023-01-20 06:14:35 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 652232byte \u5185\u5b58"}] for qx4WGaPF
+2023-01-20 06:15:12 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for qx4WGaPF
+2023-01-20 06:15:12 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"You have 377 fans!"}] for qx4WGaPF
