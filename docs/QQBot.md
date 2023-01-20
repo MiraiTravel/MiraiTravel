@@ -43,6 +43,7 @@ class Q2771717841 extends QQObj
         // 打开 easyMirai 组件与 webhook 组件
         $this->open_component("easyMirai", "V0.1.1");
         $this->open_component("webhook", "V0.1.1");
+        return true;
     }
 
     /**

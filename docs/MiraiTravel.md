@@ -33,6 +33,7 @@ php MiraiTravel.php
 > Plugins 是插件系统,插件系统可以理解为是 QQBot 的通用脚本。比如 runoobC 插件,就是让你的QQBot具有 可以让群友发送 >js console.log("a"); 机器人就回复 a 的能力。
 
 [QQBot]:./QQBot.md
-
+[System/Core]:./System.md
 文档: </br>
 [QQBot]
+[System/Core]

@@ -52,6 +52,7 @@ class QQObj
      */
     function init()
     {
+        return false;
     }
 
     /**
