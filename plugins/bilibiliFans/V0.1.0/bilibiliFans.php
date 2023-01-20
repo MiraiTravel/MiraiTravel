@@ -24,6 +24,10 @@ class bilibiliFans extends Plugin
         $this->userVmid = $config['vmid'];
     }
 
+    function webhook_group_message($e){
+        $this->webhook_friend_message($e);
+    }
+
     function webhook_friend_message($webhookMessage)
     {
         $messageChain = new MessageChain;
