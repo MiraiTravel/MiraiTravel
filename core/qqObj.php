@@ -164,19 +164,19 @@ class QQObj
      */
     function get_session_key()
     {
-        if (self::$sessionKey === true) {
+        if ($this::$sessionKey === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $sessionKey = $dataSystem->read_data("config", "sessionKey");
             if (empty($sessionKey)) {
-                self::$sessionKey = false;
+                $this::$sessionKey = false;
             } else {
-                self::$sessionKey = $sessionKey;
+                $this::$sessionKey = $sessionKey;
             }
             return $this->get_session_key();
-        } elseif (self::$sessionKey === false) {
+        } elseif ($this::$sessionKey === false) {
             return $this->get_session_key_in_mirai();
         } else {
-            return self::$sessionKey;
+            return $this::$sessionKey;
         }
     }
 
@@ -194,7 +194,7 @@ class QQObj
         $dataSystem = new DataSystem($this->get_qq(), "QQBot");
         $dataSystem->set_qq_bot($this->get_qq());
         $dataSystem->write_data("config", "sessionKey", $sessionKey);
-        self::$sessionKey = $sessionKey;
+        $this::$sessionKey = $sessionKey;
         return $sessionKey;
     }
 
@@ -203,15 +203,15 @@ class QQObj
      */
     function get_verify_key()
     {
-        if (self::VERIFY_KEY === false) {
+        if ($this::VERIFY_KEY === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $verifyKey = $dataSystem->read_data("miraiTravel", "verifyKey");
             return $verifyKey;
-        } elseif (self::VERIFY_KEY === true) {
+        } elseif ($this::VERIFY_KEY === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $verifyKey = $dataSystem->read_data("config", "verifyKey");
-        } elseif (self::VERIFY_KEY) {
-            return self::VERIFY_KEY;
+        } elseif ($this::VERIFY_KEY) {
+            return $this::VERIFY_KEY;
         } else {
             throw new Error($this->get_qq() . "verifyKey出现严重错误!");
             return false;
@@ -220,15 +220,15 @@ class QQObj
 
     function get_http_api()
     {
-        if (self::HTTP_API === false) {
+        if ($this::HTTP_API === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $verifyKey = $dataSystem->read_data("miraiTravel", "HTTP_API");
             return $verifyKey;
-        } elseif (self::HTTP_API === true) {
+        } elseif ($this::HTTP_API === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $verifyKey = $dataSystem->read_data("config", "HTTP_API");
-        } elseif (self::HTTP_API) {
-            return self::HTTP_API;
+        } elseif ($this::HTTP_API) {
+            return $this::HTTP_API;
         } else {
             throw new Error($this->get_qq() . "HTTP_API出现严重错误!");
             return false;
@@ -246,7 +246,7 @@ class QQObj
     {
 
         if ($this->isClosure($value)) {
-            $this->dynamicMethods[$name] = Closure::bind($value, $this, self::class);;
+            $this->dynamicMethods[$name] = Closure::bind($value, $this, $this::class);;
         } else {
             $this->$name = $value;
         }
@@ -268,7 +268,7 @@ class QQObj
     {
         if (!isset($this->dynamicMethods[$name])) {
             $logSystem = new LogSystem($this->get_qq(), "QQBot");
-            $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . self::class . "::{$name}", "WARING");
+            $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . $this::class . "::{$name}", "WARING");
         }
         return call_user_func_array($this->dynamicMethods[$name], $arguments);
     }
@@ -299,8 +299,8 @@ class QQObjManager
     static private $qqObjManager = false;
     function __construct()
     {
-        if (self::$qqObjManager !== false) {
-            return  self::$qqObjManager;
+        if ($this::$qqObjManager !== false) {
+            return  $this::$qqObjManager;
         }
     }
 
@@ -310,7 +310,7 @@ class QQObjManager
      */
     function config_qq_obj($qq)
     {
-        foreach (self::$qqObjArray as $qqBot) {
+        foreach ($this::$qqObjArray as $qqBot) {
             if ($qqBot->get_qq() === $qq) {
                 return true;
             }
@@ -318,7 +318,7 @@ class QQObjManager
         if (load_qqbot($qq)) {
             $objName = "MiraiTravel\QQObj\Script\Q" . $qq;
             try {
-                self::$qqObjArray[] = new $objName();
+                $this::$qqObjArray[] = new $objName();
             } catch (Error $e) {
                 $logSystem = new LogSystem("MiraiTravel", "System");
                 $logSystem->write_log("qqObj", "config_qq_obj", $e, "ERROR");
@@ -337,7 +337,7 @@ class QQObjManager
      */
     function get_qqobj($qq)
     {
-        foreach (self::$qqObjArray as $qqBot) {
+        foreach ($this::$qqObjArray as $qqBot) {
             if ($qqBot->get_qq() === $qq) {
                 return $qqBot;
             }
