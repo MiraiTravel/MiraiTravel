@@ -51,6 +51,10 @@ class MessageChain
             $nods = array();
         }
 
+        if( empty($this->messageChain) ){
+            return $nods;
+        }
+
         foreach ($this->messageChain as $node) {
             if ($node['type'] === "Plain") {
                 if ($jointAll) {

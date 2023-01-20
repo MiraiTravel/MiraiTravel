@@ -14,6 +14,7 @@ use function MiraiTravel\MiraiApi\bind;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\verify;
+use function MiraiTravel\PluginSystem\load_plugin;
 
 /**
  * QQObj 
@@ -26,8 +27,9 @@ class QQObj
 
     static $sessionKey = true;
 
-    static $componentList = [];
-    private $dynamicMethods = [];
+    private $componentList = array();
+    private $pluginList = array();
+    private $dynamicMethods = array();
     public $_qqBot;
 
     /**
@@ -72,12 +74,40 @@ class QQObj
      */
     function open_component($componentName, $componentVersion)
     {
-        load_component($componentName, $componentVersion);
-        $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . "\\$componentName";
-        $componentList[] = new $componentClassName($this);
+        if (!load_component($componentName, $componentVersion)) {
+            return false;
+        }
+        if (in_array($componentName,  array(array_keys($this->componentList)))) {
+
+            if (in_array($componentVersion, array(array_keys(array($this->componentList[$componentName]))))) {
+                return true;
+            }
+        }
+        try {
+            $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . "\\$componentName";
+            $this->componentList[$componentName] = [$componentVersion => new $componentClassName($this)];
+        } catch (Error $e) {
+            $logSystem = new LogSystem($this->get_qq(), "QQBot");
+            $logSystem->write_log("component", "open_component", "open [$componentName]<$componentVersion> Faild :$e");
+        }
         //version_compare("$componentVersion", "VersionManager", ">");
     }
 
+    function open_plugin($pluginName, $pluginVersion, $configs = array())
+    {
+        if (!load_plugin($pluginName, $pluginVersion)) {
+            return false;
+        }
+        try {
+            $pluginClassName = "MiraiTravel\Plugins\\$pluginName\\" . str_replace(".", "_", $pluginVersion)  . "\\$pluginName";
+            $this->pluginList[$pluginName] = [$pluginVersion => new $pluginClassName($this)];
+            $this->pluginList[$pluginName][$pluginVersion]->config($configs);
+        } catch (Error $e) {
+            $logSystem = new LogSystem($this->get_qq(), "QQBot");
+            $logSystem->write_log("plugin", "open_plugin", "open [$pluginName]<$pluginVersion> Faild :$e");
+        }
+        //version_compare("$pluginVersion", "VersionManager", ">");
+    }
 
     /**
      * send_friend_massage 

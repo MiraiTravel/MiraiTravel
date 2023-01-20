@@ -40,13 +40,29 @@ class webhook extends Component
                 $webhookFuncName = $webhookMessage['type'];
                 $webhookFuncName = $this->_qqBot->uncamelize($webhookFuncName);
                 $webhookFuncName = "webhook_" . $webhookFuncName;
-
                 $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
                 $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for  " . json_encode($webhookMessage));
                 $this->$webhookFuncName($webhookMessage);
             } catch (Error $e) {
                 $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
-                return false;
+            }
+            try {
+                $webhookFuncName = $webhookMessage['type'];
+                $webhookFuncName = $this->_qqBot->uncamelize($webhookFuncName);
+                $webhookFuncName = "webhook_" . $webhookFuncName;
+                $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
+                foreach ($this->_qqBot->pluginList as $pluginName => $pluginType) {
+                    foreach ($pluginType as $version => $plugin) {
+                        try {
+                            $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for [$pluginName]<$version>" . json_encode($webhookMessage));
+                            $plugin->$webhookFuncName($webhookMessage);
+                        } catch (Error $e) {
+                            $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
+                        }
+                    }
+                }
+            } catch (Error $e) {
+                $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
             }
         };
         // 挂钩 webhook_all 

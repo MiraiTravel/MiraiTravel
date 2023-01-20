@@ -31,12 +31,16 @@ class easyMirai extends Component
          */
         $this->_qqBot->reply_message = function ($message, $quote = false) {
             $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
+            if ($quote === true) {
+                $quote = $this->_qqBot->focus['messageChain'][0]['id'];
+            }
             if ($this->_qqBot->focus['type'] === "FriendMessage") {
                 $logSystem->write_log("Script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
-                $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message);
+
+                $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
             } elseif ($this->_qqBot->focus['type'] === "GroupMessage") {
                 $logSystem->write_log("Script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
-                $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message);
+                $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
             } else {
             }
         };
