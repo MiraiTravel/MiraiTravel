@@ -30,6 +30,7 @@ class Q2771717841 extends QQObj
         $this->open_component("easyMirai", "V0.1.1");
         $this->open_component("webhook", "V0.1.1");
         $this->open_plugin("bilibiliFans", "V0.1.0", ["vmid" => "599678496"]);
+        $this->open_plugin("runoobC", "V0.1.0");
     }
 
     /**

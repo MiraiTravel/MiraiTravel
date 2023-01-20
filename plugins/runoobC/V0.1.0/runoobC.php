@@ -118,20 +118,21 @@ class runoobC extends Plugin
         }
     }
 
-    function get_command($message)
+    function get_command($command, $expect)
     {
-        $message = $this->cut_command($message, 0);
-        $message = trim($message);
-        return strtolower($message);
+        if (substr($command, 0, strlen($expect)) == $expect) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    function cut_command($msg, $num = false)
+    function cut_command($command, $expect)
     {
-        $msg = preg_split("/[\s,]+/", $msg);
-        if ($num === false || $num < 0) {
-            return $msg;
+        if ($this->get_command($command, $expect)) {
+            return substr($command, strlen($expect));
         } else {
-            return $msg[$num];
+            return $command;
         }
     }
 }
