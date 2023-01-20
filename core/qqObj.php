@@ -246,7 +246,7 @@ class QQObj
     {
 
         if ($this->isClosure($value)) {
-            $this->dynamicMethods[$name] = Closure::bind($value, $this, $this::class);;
+            $this->dynamicMethods[$name] = Closure::bind($value, $this, self::class);;
         } else {
             $this->$name = $value;
         }
@@ -268,7 +268,7 @@ class QQObj
     {
         if (!isset($this->dynamicMethods[$name])) {
             $logSystem = new LogSystem($this->get_qq(), "QQBot");
-            $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . $this::class . "::{$name}", "WARING");
+            $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . self::class . "::{$name}", "WARING");
         }
         return call_user_func_array($this->dynamicMethods[$name], $arguments);
     }
@@ -299,8 +299,8 @@ class QQObjManager
     static private $qqObjManager = false;
     function __construct()
     {
-        if ($this::$qqObjManager !== false) {
-            return  $this::$qqObjManager;
+        if (self::$qqObjManager !== false) {
+            return  self::$qqObjManager;
         }
     }
 
@@ -310,7 +310,7 @@ class QQObjManager
      */
     function config_qq_obj($qq)
     {
-        foreach ($this::$qqObjArray as $qqBot) {
+        foreach (self::$qqObjArray as $qqBot) {
             if ($qqBot->get_qq() === $qq) {
                 return true;
             }
@@ -318,7 +318,7 @@ class QQObjManager
         if (load_qqbot($qq)) {
             $objName = "MiraiTravel\QQObj\Script\Q" . $qq;
             try {
-                $this::$qqObjArray[] = new $objName();
+                self::$qqObjArray[] = new $objName();
             } catch (Error $e) {
                 $logSystem = new LogSystem("MiraiTravel", "System");
                 $logSystem->write_log("qqObj", "config_qq_obj", $e, "ERROR");
@@ -337,7 +337,7 @@ class QQObjManager
      */
     function get_qqobj($qq)
     {
-        foreach ($this::$qqObjArray as $qqBot) {
+        foreach (self::$qqObjArray as $qqBot) {
             if ($qqBot->get_qq() === $qq) {
                 return $qqBot;
             }
