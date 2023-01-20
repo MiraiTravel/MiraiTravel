@@ -14,7 +14,6 @@ config bot start 【你的QQ】
 基本模板
 ```php
 <?php
-<?php
 
 /**
  * QQObj 
@@ -26,8 +25,6 @@ namespace MiraiTravel\QQObj\Script;
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MessageChain\MessageChain;
 use MiraiTravel\QQObj\QQObj;
-
-use function MiraiTravel\HttpAdapter\curl_post;
 
 /**
  * QQObj 
