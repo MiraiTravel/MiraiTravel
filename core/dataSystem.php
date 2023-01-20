@@ -29,6 +29,9 @@ class DataSystem
         $this->_dataUser = $dataUser;
         if (in_array($userType, self::USER_TYPE_POSSIBILITY)) {
             $this->_userType = $userType;
+            if( $userType === "QQBot" ){
+                $this->set_qq_bot($dataUser);
+            }
         } else {
             return false;
         }

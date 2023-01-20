@@ -27,11 +27,8 @@ class Q2771717841 extends QQObj
      */
     function init()
     {
-        if( $this->open_component("webhook","V0.1.1") ){
-            return true;
-        } else {
-            return false;
-        }
+        $this->open_component("easyMirai", "V0.1.1");
+        $this->open_component("webhook", "V0.1.1");
     }
 
     /**
@@ -41,9 +38,6 @@ class Q2771717841 extends QQObj
      */
     function webhook_friend_message($webhookMessage)
     {
-        //$logSystem = new LogSystem($this->get_qq(), "QQBot");
-        //$logSystem->write_log("Script", "webhook", json_encode($webhookMessage) . " receive.");
-        //$this->set_focus($webhookMessage);
         $messageChain = new MessageChain();
         $messageChain->push_plain("Hello MiraiTravel!");
         $this->reply_message($messageChain->get_message_chain());
@@ -70,17 +64,17 @@ class Q2771717841 extends QQObj
             if (is_null($msg)) {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain("维护中......");
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
                 return 1;
             }
             if ($msg->output != "") {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->output);
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             } else {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->errors);
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             }
             return;
         }
@@ -99,17 +93,17 @@ class Q2771717841 extends QQObj
             if (is_null($msg)) {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain("维护中......");
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
                 return 1;
             }
             if ($msg->output != "") {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->output . "当前MiraiTravel已使用 " . memory_get_usage() . "byte 内存");
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             } else {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->errors);
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             }
             return;
         }
@@ -128,17 +122,17 @@ class Q2771717841 extends QQObj
             if (is_null($msg)) {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain("维护中......");
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
                 return 1;
             }
             if ($msg->output != "") {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->output);
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             } else {
                 $messageChain->set_message_chain(array());
                 $messageChain->push_plain($msg->errors);
-                $this->reply_message($messageChain->get_message_chain() , true);
+                $this->reply_message($messageChain->get_message_chain(), true);
             }
             return;
         }

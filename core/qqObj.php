@@ -28,7 +28,7 @@ class QQObj
 
     static $componentList = [];
     private $dynamicMethods = [];
-    public $_qqBot = $this;
+    public $_qqBot;
 
     /**
      * __constuct 构造函数
@@ -37,9 +37,12 @@ class QQObj
     function __construct()
     {
         // 判断命名空间是否正确
-        if (__NAMESPACE__ !== "MiraiTravel\QQObj\Script") {
-            throw new Error("The QQBot's namespace is not 'MiraiTravel\QQObj\Script' Please amend Your Script!");
+        $qq = str_replace("MiraiTravel\QQObj\Script\Q", "", get_class($this));
+        $namespace = str_replace("\Q$qq", "", get_class($this));
+        if ($namespace !== "MiraiTravel\QQObj\Script") {
+            throw new Error("The QQBot's namespace is " . __NAMESPACE__ . " but not 'MiraiTravel\QQObj\Script' Please amend Your Script!");
         }
+        $this->_qqBot = $this;
         // 初始化
         $this->init();
     }
@@ -69,9 +72,9 @@ class QQObj
     function open_component($componentName, $componentVersion)
     {
         load_component($componentName, $componentVersion);
-        $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . $componentName;
+        $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . "\\$componentName";
         $componentList[] = new $componentClassName($this);
-        version_compare("$componentVersion", "VersionManager", ">");
+        //version_compare("$componentVersion", "VersionManager", ">");
     }
 
 
@@ -213,6 +216,8 @@ class QQObj
 
         if ($this->isClosure($value)) {
             $this->dynamicMethods[$name] = Closure::bind($value, $this, self::class);;
+        } else {
+            $this->$name = $value;
         }
     }
 
@@ -234,7 +239,7 @@ class QQObj
             $logSystem = new LogSystem($this->get_qq(), "QQBot");
             $logSystem->write_log("script", "qqObj", 'Call to undefined method ' . self::class . "::{$name}", "WARING");
         }
-        return call_user_func($this->dynamicMethods[$name], $arguments);
+        return call_user_func_array($this->dynamicMethods[$name], $arguments);
     }
 
 
@@ -286,6 +291,7 @@ class QQObjManager
             } catch (Error $e) {
                 $logSystem = new LogSystem("MiraiTravel", "System");
                 $logSystem->write_log("qqObj", "config_qq_obj", $e, "ERROR");
+                return false;
             }
             return true;
         } else {

@@ -21,6 +21,8 @@ class Component
     function __construct($qqBot)
     {
         $this->_qqBot = $qqBot;
+        $this->init();
+        $this->hook();
     }
 
     function init()
@@ -36,7 +38,7 @@ class Component
     {
     }
 
-    function webhook($webhookMessage)
+    function hook()
     {
     }
 

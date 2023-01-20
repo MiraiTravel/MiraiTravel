@@ -35,7 +35,7 @@ function load_component($componentName, $componentVersion)
 
     global $componentList;
     if (in_array($componentName, array_keys($componentList))) {
-        if (in_array($componentVersion, array_values($componentList))) {
+        if (in_array($componentVersion, array_values($componentList[$componentName]))) {
             try {
                 require_once "components/$componentName/$componentVersion/$componentName" .  ".php";
                 return true;

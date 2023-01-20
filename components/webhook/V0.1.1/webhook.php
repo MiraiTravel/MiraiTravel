@@ -21,7 +21,6 @@ class webhook extends Component
      */
     function init()
     {
-        $this->_qqBot->open_component();
     }
 
     /**
