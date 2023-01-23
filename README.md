@@ -4,15 +4,13 @@ MiraiTravel
 
 ### 简介 Information
 MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
-这个框架于 : 2022-01-16 凌晨开始开发。</br>
-现还处于 预发布状态。 </br>
 交流群 : 604568448 </br>
 
 !! 注意 由于 Mirai-api-http 的 webhook 失效 所以你需要将webhook.php 中
 \$webhookBeUsed = false;
 注释掉这行
 
-#### 为何选用 MiraiTravel
+#### 为何开发 MiraiTravel
 1. 安装配置简单 可以通过控制台使用命令行进行 MiraiTravel 的配置。
 2. 兼容性强 可以在任何装有 PHP 的机器上运行。
 3. 账号分离 可以在一个 MiraiTravel 中实现分离管理多个账号。
@@ -43,8 +41,15 @@ MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
 阅读 [MiraiTravel]  </br>
 阅读 [QQBot]  </br>
 
+### 项目文件结构
+* core  核心文件 
+* data  运行时的数据存储文件
+* logs  运行日志文件
+* components    组件安装路径
+* plugins   插件安装路径
+* script    脚本文件
+* docs  文档
+
 教程会在 :
 https://blog.csdn.net/apple_53792700/category_12176569.html
-
-持续更新
 
