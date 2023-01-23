@@ -366,7 +366,7 @@ function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId
     $content['fromId'] = (int)$fromId;
     $content['groupId'] = (int)$groupId;
     $content['eventId'] = (int)$eventId;
-    $content['eventId'] = (int)$eventId;
+    $content['operate'] = (int)$operate;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
     return adapter_manager("auto", $funcName, $content);
