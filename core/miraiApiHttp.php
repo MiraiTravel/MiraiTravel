@@ -149,8 +149,8 @@ function send_temp_message($sessionKey = "", $qq, $group, $quote = null, $messag
         $content["quote"] = (int)$quote;
     }
     $content["messageChain"] = (array)$messageChain;
-    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
 
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
     return adapter_manager("auto", $funcName, $content);
 }
 
@@ -165,9 +165,21 @@ function send_nudge()
 /**
  * recall
  * 撤回消息
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   string  $messageId  需要撤回消息的messageId
+ * @param   int     $target     好友或群id
  */
-function recall()
+function recall($sessionKey = "", $messageId, $target, $other = array())
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content["sessionKey"] = (string)$sessionKey;
+    }
+    $content["messageId"] = (string)$messageId;
+    $content['target'] = (int)$target;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
@@ -178,9 +190,19 @@ function recall()
 /**
  * delete_friend
  * 删除好友
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     删除好友的QQ号码
  */
-function delete_friend()
+function delete_friend($sessionKey = "", $target)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content["sessionKey"] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
@@ -191,49 +213,123 @@ function delete_friend()
 /**
  * mute
  * 禁言群成员
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
+ * @param   int     $memberId   指定群员QQ号
+ * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
  */
-function mute()
+function mute($sessionKey = "", $target, $memberId, $time = 1800)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+    $content['memberId'] = (int)$memberId;
+    if (!empty($time)) {
+        $content['time'] = (int)$time;
+    }
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
  * unmute
  * 解除群成员禁言
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
+ * @param   int     $memberId   指定群员QQ号
  */
-function unmute()
+function unmute($sessionKey = "", $target, $memberId)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+    $content['memberId'] = (int)$memberId;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
  * kick
  * 移除群成员
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
+ * @param   int     $memberId   指定群员QQ号
+ * @param   string  $msg        信息
  */
-function kick()
+function kick($sessionKey = "", $target, $memberId, $msg = "")
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+    $content['memberId'] = (int)$memberId;
+    if (!empty($time)) {
+        $content['msg'] = (string)$msg;
+    }
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
  * quit
  * 使Bot退出群聊
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
  */
-function quit()
+function quit($sessionKey = "", $target)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
  * mute_all
  * 全体禁言
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
  */
-function mute_all()
+function mute_all($sessionKey = "", $target)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
  * mute_all
  * 解除全体禁言
+ * @param   string  $sessionKey 已经激活的Session
+ * @param   int     $target     指定群的群号
  */
-function unmute_all()
+function unmute_all($sessionKey = "", $target)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
@@ -253,9 +349,27 @@ function set_essence()
 /**
  * resp__new_friend_request_event
  * 添加好友申请
+ * @param string    $sessionKey 	已经激活的Session
+ * @param int	    $eventId	    响应申请事件的标识
+ * @param int	    $fromId	        事件对应申请人QQ号
+ * @param int	    $groupId	    事件对应申请人的群号，可能为0
+ * @param int	    $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
+ * @param string    $message	    回复的信息
  */
-function resp__new_friend_request_event()
+function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message)
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['eventId'] = (int)$eventId;
+    $content['fromId'] = (int)$fromId;
+    $content['groupId'] = (int)$groupId;
+    $content['eventId'] = (int)$eventId;
+    $content['eventId'] = (int)$eventId;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content);
 }
 
 /**
