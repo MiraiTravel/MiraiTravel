@@ -3,7 +3,7 @@ MiraiTravel
 </div>
 
 ### 简介 Information
-MiraiTravel 是基于 mirai-api-http 的 PHP 框架。</br>
+MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 交流群 : 604568448 </br>
 
 !! 注意 由于 Mirai-api-http 的 webhook 失效 所以你需要将webhook.php 中
