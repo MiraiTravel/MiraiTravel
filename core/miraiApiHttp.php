@@ -388,3 +388,4 @@ function resp__member_join_request_event()
 function resp__bot_invited_join_group_request_event()
 {
 }
+

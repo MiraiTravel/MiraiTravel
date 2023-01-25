@@ -13,6 +13,7 @@ use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
+use function MiraiTravel\MiraiApi\send_temp_message;
 use function MiraiTravel\MiraiApi\verify;
 use function MiraiTravel\PluginSystem\load_plugin;
 
@@ -147,6 +148,29 @@ class QQObj
             $this->get_session_key(),
             $group,
             null,
+            $quote ?? null,
+            $messageChain,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * send_group_massage 
+     * 发送消息给某群
+     * @param $qq           qq号 
+     * @param $group        群号 
+     * @param $messageChin  消息链
+     * @param $quote        引用消息id
+     * @param $other        其他可能会用到的参数
+     */
+    function send_temp_massage($qq, $group, $messageChain, $quote = false, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key());
+        return send_temp_message(
+            $this->get_session_key(),
+            $qq,
+            $group,
             $quote ?? null,
             $messageChain,
             array("qqbot" => $this)

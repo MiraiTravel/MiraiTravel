@@ -9,6 +9,17 @@ class easyMirai extends Component
 {
     static $focus = false;
 
+    /**
+     * 用以下方式对函数进行闭包
+     * 闭包以后通过hook函数进行挂钩
+     * 这样做是为了代码日后的可维护性
+     * 如果全部均在 hook 函数内进行闭包并且挂钩到 QQBot 对象内。
+     * 那么必将导致 hook 函数内部混乱 影响日后的维护
+     */
+    /**
+     * @param array     $message    回复的消息链 
+     * @param bool|int  $quote      回复注重的消息或者其他消息 
+     */
     function init()
     {
         return true;
@@ -22,7 +33,6 @@ class easyMirai extends Component
         $this->_qqBot->set_focus = function ($message) {
             $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
             $logSystem->write_log("Script", "set_focus", json_encode($message));
-            $focusTypeList = array("FriendMessage", "GroupMessage", "TempMessage", "StrangerMessage", "OtherClientMessage");
             $this->_qqBot->focus = $message;
         };
 
@@ -34,15 +44,30 @@ class easyMirai extends Component
             if ($quote === true) {
                 $quote = $this->_qqBot->focus['messageChain'][0]['id'];
             }
-            if ($this->_qqBot->focus['type'] === "FriendMessage") {
-                $logSystem->write_log("Script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
-
-                $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
-            } elseif ($this->_qqBot->focus['type'] === "GroupMessage") {
-                $logSystem->write_log("Script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
-                $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
-            } else {
+            switch ($this->_qqBot->focus['type']) {
+                case "FriendMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
+                    $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
+                    break;
+                case "GroupMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
+                    $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                    break;
+                case "TempMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . "||" . $this->_qqBot->focus['sender']['group']['id'] . " For TempMessage " . json_encode($message));
+                    $this->_qqBot->send_temp_massage($this->_qqBot->focus['sender']['group']['id'], $this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                    break;
+                case "StrangerMessage":
+                    $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
+                    break;
+                default:
+                    $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 模式人消息。");
             }
         };
+
+        /**
+         * 同意请求
+         */
+        $this->_qqBot;
     }
 }
