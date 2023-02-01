@@ -6,9 +6,12 @@ MiraiTravel
 MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 交流群 : 604568448 </br>
 
-!! 注意 由于 Mirai-api-http 的 webhook 失效 所以你需要将webhook.php 中
-\$webhookBeUsed = false;
-注释掉这行
+!! 注意 由于 Mirai-api-http 的 webhook 失效 临时解决方案为 ： </br>
+将 webhook.php 中  </br>
+\$webhookBeUsed = false; </br>
+注释掉 </br>
+
+这样子MiraiTravel就不会使用webhook适配器
 
 #### 为何开发 MiraiTravel
 1. 安装配置简单 可以通过控制台使用命令行进行 MiraiTravel 的配置。
