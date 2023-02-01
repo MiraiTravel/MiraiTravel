@@ -5,7 +5,7 @@
 ## 开启QQBot
 打开 MiraiTravel 后输入:
 ```shall
-config bot start 【你的QQ】
+config bot open 【你的QQ】
 ``` 
 
 ## 编写 QQBot 实例
