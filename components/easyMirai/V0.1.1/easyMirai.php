@@ -4,6 +4,7 @@ namespace MiraiTravel\Components\easyMirai\V0_1_1;
 
 use MiraiTravel\Components\Component;
 use MiraiTravel\LogSystem\LogSystem;
+use MiraiTravel\MessageChain\MessageChain;
 
 class easyMirai extends Component
 {
@@ -41,6 +42,14 @@ class easyMirai extends Component
          */
         $this->_qqBot->reply_message = function ($message, $quote = false) {
             $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
+
+            // 如果是字符串的话就转成只有字符串的 messageChain 
+            if (gettype($message) === "string") {
+                $messageChain = new MessageChain;
+                $messageChain->push_plain($message);
+                $message = $messageChain->get_message_chain();
+            }
+
             if ($quote === true) {
                 $quote = $this->_qqBot->focus['messageChain'][0]['id'];
             }
