@@ -32,13 +32,13 @@ class runoobC extends Plugin
 
         if ($this->get_command($message, ">c")) {
             $body = $this->cut_command($message, ">c");
-            $data = array(
+            $data = http_build_query(array(
                 "code" => $body,
                 "token" => "b6365362a90ac2ac7098ba52c13e352b",
                 "language" => "7",
                 "fileext" => "c",
                 "stdin" => ""
-            );
+            ));
             $msg = curl_post($data, "https://tool.runoob.com/compile2.php");
             $msg = json_decode($msg);
             if (is_null($msg)) {
@@ -61,13 +61,13 @@ class runoobC extends Plugin
 
         if ($this->get_command($message, ">python")) {
             $body = $this->cut_command($message, ">python");
-            $data = array(
+            $data = http_build_query(array(
                 "code" => $body,
                 "token" => "b6365362a90ac2ac7098ba52c13e352b",
                 "language" => "15",
                 "fileext" => "py3",
                 "stdin" => ""
-            );
+            ));
             $msg = curl_post($data, "https://tool.runoob.com/compile2.php");
             $msg = json_decode($msg);
             if (is_null($msg)) {
@@ -89,14 +89,14 @@ class runoobC extends Plugin
         }
 
         if ($this->get_command($message, ">js")) {
-            $body = $this->_qqBot->cut_command($message, ">js");
-            $data = array(
+            $body = $this->cut_command($message, ">js");
+            $data = http_build_query(array(
                 "code" => $body,
                 "token" => "b6365362a90ac2ac7098ba52c13e352b",
                 "language" => "4",
                 "fileext" => "node.js",
                 "stdin" => ""
-            );
+            ));
             $msg = curl_post($data, "https://tool.runoob.com/compile2.php");
             $msg = json_decode($msg);
             if (is_null($msg)) {
