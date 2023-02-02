@@ -11,9 +11,11 @@ use MiraiTravel\MiraiTravel;
 
 use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
+use function MiraiTravel\MiraiApi\mute_all;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\send_temp_message;
+use function MiraiTravel\MiraiApi\unmute_all;
 use function MiraiTravel\MiraiApi\verify;
 use function MiraiTravel\PluginSystem\load_plugin;
 
@@ -154,6 +156,37 @@ class QQObj
         );
     }
 
+    /**
+     * mute_all 
+     * 令某群全部禁言
+     * @param $target 群号
+     */
+    function mute_all($target, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("GroupManagement", "mute_all", "$target mute_all" . " for " . $this->get_session_key());
+        return mute_all(
+            $this->get_session_key(),
+            $target,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * mute_all 
+     * 令某群全部禁言
+     * @param $target 群号
+     */
+    function unmute_all($target, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("GroupManagement", "unmute_all", "$target unmute_all" . " for " . $this->get_session_key());
+        return unmute_all(
+            $this->get_session_key(),
+            $target,
+            array("qqbot" => $this)
+        );
+    }
     /**
      * send_group_massage 
      * 发送消息给某群

@@ -75,6 +75,23 @@ class easyMirai extends Component
         };
 
         /**
+         * 群管理
+         */
+        $this->_qqBot->reply_mute = function ($number = true) {
+            // 如果没有参数的话就全体禁言
+            if ($number === true) {
+                $this->_qqBot->mute_all($this->_qqBot->focus['sender']['group']['id']);
+            }
+        };
+
+        $this->_qqBot->reply_unmute = function ($number = true) {
+            // 如果没有参数的话就全体禁言
+            if ($number === true) {
+                $this->_qqBot->unmute_all($this->_qqBot->focus['sender']['group']['id']);
+            }
+        };
+
+        /**
          * 同意请求
          */
         $this->_qqBot;

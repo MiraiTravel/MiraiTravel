@@ -302,7 +302,7 @@ function quit($sessionKey = "", $target)
  * @param   string  $sessionKey 已经激活的Session
  * @param   int     $target     指定群的群号
  */
-function mute_all($sessionKey = "", $target)
+function mute_all($sessionKey = "", $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -311,7 +311,7 @@ function mute_all($sessionKey = "", $target)
     $content['target'] = (int)$target;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
@@ -320,7 +320,7 @@ function mute_all($sessionKey = "", $target)
  * @param   string  $sessionKey 已经激活的Session
  * @param   int     $target     指定群的群号
  */
-function unmute_all($sessionKey = "", $target)
+function unmute_all($sessionKey = "", $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -329,7 +329,7 @@ function unmute_all($sessionKey = "", $target)
     $content['target'] = (int)$target;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
@@ -388,4 +388,3 @@ function resp__member_join_request_event()
 function resp__bot_invited_join_group_request_event()
 {
 }
-
