@@ -218,7 +218,7 @@ function delete_friend($sessionKey = "", $target)
  * @param   int     $memberId   指定群员QQ号
  * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
  */
-function mute($sessionKey = "", $target, $memberId, $time = 1800)
+function mute($sessionKey = "", $target, $memberId, $time = 1800, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -231,7 +231,7 @@ function mute($sessionKey = "", $target, $memberId, $time = 1800)
     }
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**

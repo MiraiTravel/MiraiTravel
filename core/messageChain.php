@@ -51,7 +51,7 @@ class MessageChain
             $nods = array();
         }
 
-        if( empty($this->messageChain) ){
+        if (empty($this->messageChain)) {
             return $nods;
         }
 
@@ -65,6 +65,27 @@ class MessageChain
             }
         }
 
+        return $nods;
+    }
+
+    /**
+     * 获取消息链中所有的 Plain 消息 
+     * 
+     */
+    function get_all_at($getManber = false)
+    {
+        $nods = array();
+
+        if (empty($this->messageChain)) {
+            return $nods;
+        }
+        foreach ($this->messageChain as $node) {
+            if ($getManber) {
+                $nods[] = $node['target'];
+            } else {
+                $nods[] = $node;
+            }
+        }
         return $nods;
     }
 

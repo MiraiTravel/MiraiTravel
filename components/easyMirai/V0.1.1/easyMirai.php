@@ -80,8 +80,9 @@ class easyMirai extends Component
         $this->_qqBot->reply_mute = function ($number = true) {
             // 如果没有参数的话就全体禁言
             if ($number === true) {
-                $this->_qqBot->mute_all($this->_qqBot->focus['sender']['group']['id']);
+                return $this->_qqBot->mute_all($this->_qqBot->focus['sender']['group']['id']);
             }
+            return $this->_qqBot->mute($this->_qqBot->focus['sender']['group']['id'], $number);
         };
 
         $this->_qqBot->reply_unmute = function ($number = true) {

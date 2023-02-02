@@ -11,6 +11,7 @@ use MiraiTravel\MiraiTravel;
 
 use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
+use function MiraiTravel\MiraiApi\mute;
 use function MiraiTravel\MiraiApi\mute_all;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
@@ -187,6 +188,28 @@ class QQObj
             array("qqbot" => $this)
         );
     }
+
+    /**
+     * mute
+     * 禁言群成员
+     * @param   string  $sessionKey 已经激活的Session
+     * @param   int     $target     指定群的群号
+     * @param   int     $memberId   指定群员QQ号
+     * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
+     */
+    function mute($target, $memberId, $time = 1800, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("GroupManagement", "mute", "$target mute $memberId $time s" . " for " . $this->get_session_key());
+        return mute(
+            $this->get_session_key(),
+            $target,
+            $memberId,
+            $time,
+            array("qqbot" => $this)
+        );
+    }
+
     /**
      * send_group_massage 
      * 发送消息给某群

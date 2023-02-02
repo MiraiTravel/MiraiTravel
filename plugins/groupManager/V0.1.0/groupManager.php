@@ -53,6 +53,22 @@ class groupManager extends Plugin
                 $this->_qqBot->reply_message("臣妾做不到啊~", true);
             }
         }
+
+        if ($messageText === "禁言") {
+            if ($this->_qqBot->focus['sender']['group']['permission'] === "OWNER" || $this->_qqBot->focus['sender']['group']['permission'] === "ADMINISTRATOR") {
+                if ($this->_qqBot->focus['sender']['permission'] === "OWNER" || $this->_qqBot->focus['sender']['permission'] === "ADMINISTRATOR") {
+                    $this->_qqBot->reply_message("已禁言", true);
+                    $messageAt = $messageChain->get_all_at(true);
+                    foreach ($messageAt as $mamber) {
+                        $this->_qqBot->reply_mute($mamber);
+                    }
+                } else {
+                    $this->_qqBot->reply_message("你在教我做事？", true);
+                }
+            } else {
+                $this->_qqBot->reply_message("臣妾做不到啊~", true);
+            }
+        }
     }
 
     function get_command($message)
