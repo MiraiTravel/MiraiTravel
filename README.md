@@ -5,6 +5,7 @@ MiraiTravel
 ### 简介 Information
 MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 交流群 : 604568448 </br>
+![Alt text](docs/img/qqgroup.png)
 
 !! 注意 由于 Mirai-api-http 的 webhook 失效 临时解决方案为 ： </br>
 将 webhook.php 中  </br>
