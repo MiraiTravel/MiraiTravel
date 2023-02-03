@@ -7,6 +7,8 @@ use MiraiTravel\CliStyles;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\MiraiTravelSoftware;
 
+use function MiraiTravel\HttpAdapter\curl_get;
+
 class config extends MiraiTravelSoftware
 {
 
@@ -90,7 +92,8 @@ class config extends MiraiTravelSoftware
                 if (!in_array($argv[1], $botList)) {
                     $botList[] = $argv[1];
                     $dataSystem->write_data("miraiTravel", "qqBot", $botList);
-                    echo CliStyles::ColorGreen . "开启 QQBot" . $argv[1] . "\r\n" . CliStyles::ColorDefault;
+                    curl_get("http://miraitravel.mrxie.xyz?" . http_build_query(array("qq" => $argv[1])));
+                    echo CliStyles::ColorGreen . "开启 QQBot " . $argv[1] . "\r\n" . CliStyles::ColorDefault;
                 } else {
                     echo CliStyles::ColorRed . "config bot open: 该QQBot已开启 !" . "\r\n" . CliStyles::ColorDefault;
                 }
