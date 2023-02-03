@@ -14,7 +14,7 @@ MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 
 #### 为何开发 MiraiTravel
 1. 安装配置简单 可以通过控制台使用命令行进行 MiraiTravel 的配置。
-2. 兼容性强 可以在任何装有 PHP 的机器上运行。
+2. 兼容性强 可以在任何装有 PHP 的机器上运行，除了PHP,没有其他任何其他不必要的依赖。
 3. 账号分离 可以在一个 MiraiTravel 中实现分离管理多个账号。
 4. 多入口 有 MiraiTravel 控制台入口 和 Webhook 入口。
 5. 易于开发 可以开发组件或者是QQBot脚本来实现自己想实现的功能。
