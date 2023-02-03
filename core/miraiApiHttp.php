@@ -151,7 +151,7 @@ function send_temp_message($sessionKey = "", $qq, $group, $quote = null, $messag
     $content["messageChain"] = (array)$messageChain;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
@@ -193,7 +193,7 @@ function recall($sessionKey = "", $messageId, $target, $other = array())
  * @param   string  $sessionKey 已经激活的Session
  * @param   int     $target     删除好友的QQ号码
  */
-function delete_friend($sessionKey = "", $target)
+function delete_friend($sessionKey = "", $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -202,7 +202,7 @@ function delete_friend($sessionKey = "", $target)
     $content['target'] = (int)$target;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**

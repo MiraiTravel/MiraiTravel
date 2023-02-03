@@ -11,8 +11,10 @@ use MiraiTravel\MiraiTravel;
 
 use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
+use function MiraiTravel\MiraiApi\delete_friend;
 use function MiraiTravel\MiraiApi\mute;
 use function MiraiTravel\MiraiApi\mute_all;
+use function MiraiTravel\MiraiApi\recall;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\send_temp_message;
@@ -114,6 +116,23 @@ class QQObj
     }
 
     /**
+     * delete_friend
+     * 删除好友
+     * @param   int     $target     删除好友的QQ号码
+     */
+    function delete_friend($target, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "delete_friend", "$target" . " for " . $this->get_session_key());
+        return delete_friend(
+            $this->get_session_key(),
+            $target,
+            array("qqbot" => $this)
+        );
+    }
+
+
+    /**
      * send_friend_massage 
      * 发送消息给某人
      * @param $qq QQ号 
@@ -192,7 +211,6 @@ class QQObj
     /**
      * mute
      * 禁言群成员
-     * @param   string  $sessionKey 已经激活的Session
      * @param   int     $target     指定群的群号
      * @param   int     $memberId   指定群员QQ号
      * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
@@ -229,6 +247,24 @@ class QQObj
             $group,
             $quote ?? null,
             $messageChain,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * recall
+     * 撤回消息
+     * @param   string  $messageId  需要撤回消息的messageId
+     * @param   int     $target     好友或群id
+     */
+    function recall($messageId, $target, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "recall", "$target recall" . $messageId . " for " . $this->get_session_key());
+        return recall(
+            $this->get_session_key(),
+            $messageId,
+            $target,
             array("qqbot" => $this)
         );
     }
