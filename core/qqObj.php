@@ -15,6 +15,8 @@ use function MiraiTravel\MiraiApi\delete_friend;
 use function MiraiTravel\MiraiApi\mute;
 use function MiraiTravel\MiraiApi\mute_all;
 use function MiraiTravel\MiraiApi\recall;
+use function MiraiTravel\MiraiApi\resp__member_join_request_event;
+use function MiraiTravel\MiraiApi\resp__new_friend_request_event;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\send_temp_message;
@@ -265,6 +267,80 @@ class QQObj
             $this->get_session_key(),
             $messageId,
             $target,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * resp__new_friend_request_event
+     * 添加好友申请
+     * @param int	    $eventId	    响应申请事件的标识
+     * @param int	    $fromId	        事件对应申请人QQ号
+     * @param int	    $groupId	    事件对应申请人的群号，可能为0
+     * @param int	    $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
+     * @param string    $message	    回复的信息
+     */
+    function resp__new_friend_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "resp__new_friend_request_event", "$fromId resp__new_friend_request_event" . "$operate | $message" . " for " . $this->get_session_key());
+        return resp__new_friend_request_event(
+            $this->get_session_key(),
+            $eventId,
+            $fromId,
+            $groupId,
+            $operate,
+            $message,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * resp__member_join_request_event
+     * 用户入群申请
+     * @param string    $sessionKey 	已经激活的Session
+     * @param int	    $eventId	    响应申请事件的标识
+     * @param int	    $fromId	        事件对应申请人QQ号
+     * @param int	    $groupId	    事件对应申请人的群号
+     * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 2 忽略请求 3 拒绝入群并添加黑名单，不再接收该用户的入群申请 4 忽略入群并添加黑名单，不再接收该用户的入群申请
+     * @param string    $message	    回复的信息
+     */
+    function resp__member_join_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "resp__member_join_request_event", "$fromId resp__member_join_request_event" . "$operate | $message" . " for " . $this->get_session_key());
+        return resp__member_join_request_event(
+            $this->get_session_key(),
+            $eventId,
+            $fromId,
+            $groupId,
+            $operate,
+            $message,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * resp__bot_invited_join_group_request_event
+     * Bot被邀请入群申请
+     * @param string    $sessionKey 	已经激活的Session
+     * @param int	    $eventId	    响应申请事件的标识
+     * @param int	    $fromId	        事件对应申请人QQ号
+     * @param int	    $groupId	    被邀请进入群的群号
+     * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 
+     * @param string    $message	    回复的信息
+     */
+    function resp__bot_invited_join_group_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "resp__bot_invited_join_group_request_event", "$fromId resp__bot_invited_join_group_request_event" . "$operate | $message" . " for " . $this->get_session_key());
+        return resp__member_join_request_event(
+            $this->get_session_key(),
+            $eventId,
+            $fromId,
+            $groupId,
+            $operate,
+            $message,
             array("qqbot" => $this)
         );
     }

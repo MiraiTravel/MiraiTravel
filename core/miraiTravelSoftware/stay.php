@@ -11,10 +11,8 @@ use MiraiTravel\MiraiTravelSoftware;
 class plugins extends MiraiTravelSoftware
 {
 
-    const information = "插件管理系统";
+    const information = "实现MiraiTravel的常驻功能,会监听缓存区的消息列表并处理消息。";
     const commandsInformation = array(
-        "download" => "下载插件",
-        "unset" => "卸载",
         "help" => "帮助。"
     );
     private $logSystem;
@@ -45,7 +43,7 @@ class plugins extends MiraiTravelSoftware
         $this->logSystem->write_log("software", "qqBot", "qqBot be closed.");
     }
 
-    function download($argc, $argv)
+    function stay($argc, $argv)
     {
         CliStyles::println("该功能正在计划开发阶段。","Red");
     }

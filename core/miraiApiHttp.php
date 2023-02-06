@@ -356,7 +356,7 @@ function set_essence()
  * @param int	    $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
  * @param string    $message	    回复的信息
  */
-function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message)
+function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -370,21 +370,59 @@ function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId
     $content['message'] = (string)$message;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
  * resp__member_join_request_event
  * 用户入群申请
+ * @param string    $sessionKey 	已经激活的Session
+ * @param int	    $eventId	    响应申请事件的标识
+ * @param int	    $fromId	        事件对应申请人QQ号
+ * @param int	    $groupId	    事件对应申请人的群号
+ * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 2 忽略请求 3 拒绝入群并添加黑名单，不再接收该用户的入群申请 4 忽略入群并添加黑名单，不再接收该用户的入群申请
+ * @param string    $message	    回复的信息
  */
-function resp__member_join_request_event()
+function resp__member_join_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['eventId'] = (int)$eventId;
+    $content['fromId'] = (int)$fromId;
+    $content['groupId'] = (int)$groupId;
+    $content['eventId'] = (int)$eventId;
+    $content['operate'] = (int)$operate;
+    $content['message'] = (string)$message;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
  * resp__bot_invited_join_group_request_event
  * Bot被邀请入群申请
+ * @param string    $sessionKey 	已经激活的Session
+ * @param int	    $eventId	    响应申请事件的标识
+ * @param int	    $fromId	        事件对应申请人QQ号
+ * @param int	    $groupId	    被邀请进入群的群号
+ * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 
+ * @param string    $message	    回复的信息
  */
-function resp__bot_invited_join_group_request_event()
+function resp__bot_invited_join_group_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['eventId'] = (int)$eventId;
+    $content['fromId'] = (int)$fromId;
+    $content['groupId'] = (int)$groupId;
+    $content['eventId'] = (int)$eventId;
+    $content['operate'] = (int)$operate;
+    $content['message'] = (string)$message;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content, $other);
 }
