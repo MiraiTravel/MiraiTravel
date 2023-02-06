@@ -38,7 +38,8 @@ class easyMirai extends Component
         };
 
         /**
-         * 回复消息
+         * reply_message
+         * 回复消息 
          */
         $this->_qqBot->reply_message = function ($message, $quote = false) {
             $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
@@ -69,8 +70,11 @@ class easyMirai extends Component
                 case "StrangerMessage":
                     $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
                     break;
+                case "MemberJoinEvent":
+                    $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
+                    break;
                 default:
-                    $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 模式人消息。");
+                    $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
             }
         };
 
