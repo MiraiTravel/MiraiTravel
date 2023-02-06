@@ -71,6 +71,7 @@ class easyMirai extends Component
                     $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
                     break;
                 case "MemberJoinEvent":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['member']['group']['id'] . " For GroupMessage " . json_encode($message));
                     $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
                     break;
                 default:
