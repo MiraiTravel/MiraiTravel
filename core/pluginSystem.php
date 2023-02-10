@@ -39,7 +39,7 @@ function CheckSyntax($fileName, $checkIncludes = true)
 
     // Get the shell output from the syntax check command
     $output = shell_exec('php -l "' . $fileName . '"');
-    
+
     // 从语法检查命令中获取shell输出
     $syntaxError = preg_replace("/Errors parsing.*$/", "", $output, -1, $count);
 
@@ -92,8 +92,8 @@ function GetIncludes($fileName)
         if ($include = $quoteSplit[1]) {
             //如果路径不是绝对的，添加目录和分隔符
             //然后调用realpath去掉多余的分隔符
-            if (strpos($include, ':') === FALSE)
-                $include = realpath($dir . DIRECTORY_SEPARATOR . $include);
+            //if (strpos($include, ':') === FALSE)
+            //$include = realpath($dir . DIRECTORY_SEPARATOR . $include);
             array_push($includes, $include);
         }
     }
