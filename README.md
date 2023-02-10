@@ -62,3 +62,11 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 
 交流群 : 604568448 </br>
 ![Alt text](docs/img/qqgroup.png)
+
+---
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MR-XieXuan/MiraiTravel/main?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/Mr-XieXuan/MiraiTravel?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Mr-XieXuan/MiraiTravel?color=red&style=for-the-badge)</br>
+![Github License](https://img.shields.io/github/license/Mr-XieXuan/MiraiTravel)
+![GitHub all releases](https://img.shields.io/github/downloads/Mr-XieXuan/MiraiTravel/total?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/Mr-XieXuan/MiraiTravel?style=social)
