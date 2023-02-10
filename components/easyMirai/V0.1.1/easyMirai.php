@@ -54,29 +54,46 @@ class easyMirai extends Component
             if ($quote === true) {
                 $quote = $this->_qqBot->focus['messageChain'][0]['id'];
             }
-            switch ($this->_qqBot->focus['type']) {
-                case "FriendMessage":
-                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
-                    $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
-                    break;
-                case "GroupMessage":
-                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
-                    $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
-                    break;
-                case "TempMessage":
-                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . "||" . $this->_qqBot->focus['sender']['group']['id'] . " For TempMessage " . json_encode($message));
-                    $this->_qqBot->send_temp_massage($this->_qqBot->focus['sender']['group']['id'], $this->_qqBot->focus['sender']['group']['id'], $message, $quote);
-                    break;
-                case "StrangerMessage":
-                    $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
-                    break;
-                case "MemberJoinEvent":
-                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['member']['group']['id'] . " For GroupMessage " . json_encode($message));
-                    $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
-                    break;
-                default:
-                    $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
-            }
+            do {
+                $flag = 0;
+                $msg = "";
+                switch ($this->_qqBot->focus['type']) {
+                    case "FriendMessage":
+                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
+                        $msg = $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
+                        $flag++;
+                        break;
+                    case "GroupMessage":
+                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
+                        $msg = $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                        $flag++;
+                        break;
+                    case "TempMessage":
+                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . "||" . $this->_qqBot->focus['sender']['group']['id'] . " For TempMessage " . json_encode($message));
+                        $msg = $this->_qqBot->send_temp_massage($this->_qqBot->focus['sender']['group']['id'], $this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                        $flag++;
+                        break;
+                    case "StrangerMessage":
+                        $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
+                        $flag = 3;
+                        break;
+                    case "MemberJoinEvent":
+                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['member']['group']['id'] . " For GroupMessage " . json_encode($message));
+                        $msg = $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
+                        $flag++;
+                        break;
+                    default:
+                        $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
+                        $flag = 3;
+                }
+                if ($flag < 3) {
+                    if ($msg['code'] === 0) {
+                        break;
+                    } else if ($msg['code'] === 3 || $msg['code'] === 4) {
+                        $this->_qqBot->get_session_key_in_mirai();
+                    }
+                }
+            } while ($flag < 3);
         };
 
         /**
