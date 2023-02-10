@@ -71,6 +71,9 @@ class groupManager extends Plugin
         }
     }
 
+    /**
+     * 接收到了有人入群的事件发送 “举小花花欢迎你@入群人”
+     */
     function webhook_member_join_event($webhookMessage)
     {
         $messageChain = new MessageChain();
