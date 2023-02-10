@@ -8,7 +8,7 @@ use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MiraiTravel;
 use MiraiTravel\MiraiTravelSoftware;
 
-class plugins extends MiraiTravelSoftware
+class stay extends MiraiTravelSoftware
 {
 
     const information = "实现MiraiTravel的常驻功能,会监听缓存区的消息列表并处理消息。";
