@@ -23,13 +23,13 @@ require_once "loadMiraiTravel.php";
 
 // 载入QQ
 $logSystem = new LogSystem("MiraiTravel", "System");
-$logSystem->write_log("webhook", "webhookConfigManager", getallheaders()['Qq'] . " Recive [" . json_encode($_DATA) . "] .");
+$logSystem->write_log("webhook", "webhookConfigManager", $_SERVER['HTTP_QQ'] . " Recive [" . json_encode($_DATA) . "] .");
 $qqObjManager = new QQObjManager();
-if (!$qqObjManager->config_qq_obj(getallheaders()['Qq'])) {
-    $logSystem->write_log("webhook", "webhookConfigManager", "Config [" .  getallheaders()['Qq'] . "] Bot Faild.");
+if (!$qqObjManager->config_qq_obj($_SERVER['HTTP_QQ'])) {
+    $logSystem->write_log("webhook", "webhookConfigManager", "Config [" .  $_SERVER['HTTP_QQ'] . "] Bot Faild.");
     die();
 }
-$qqBot = $qqObjManager->get_qqobj(getallheaders()['Qq']);
+$qqBot = $qqObjManager->get_qqobj($_SERVER['HTTP_QQ']);
 
 namespace MiraiTravel\WebhookAdapter;
 
