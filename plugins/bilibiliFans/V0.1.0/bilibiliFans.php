@@ -33,7 +33,7 @@ class bilibiliFans extends Plugin
         $messageChain = new MessageChain;
         $messageChain->set_message_chain($webhookMessage['messageChain']);
         $messageText = $messageChain->get_all_plain(true);
-        if ($this->get_command($messageText, "/bilibiliFans")) {
+        if ($this->get_command($messageText) == "/bilibilifans") {
             if (empty($this->cut_command($messageText, 1))) {
                 $url = "https://api.bilibili.com/x/relation/stat?vmid=$this->userVmid&jsonp=jsonp";
             } else {
