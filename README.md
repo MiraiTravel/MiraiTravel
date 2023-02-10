@@ -29,6 +29,9 @@ MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 ### 首次使用 
 需要编写一个你的机器人脚本以开始运行。</br>
 
+MiraiTravel 需要获取使用 shell_exec 函数的权限。</br>
+所以请你在配置文件中取消禁用 shell_exec 函数。</br>
+
 在 script 文件夹中创建文件 ``Q【你的QQ】.php`` 。 </br>
 参照 Q2771717841.php 文件编写你的机器人脚本。</br>
 你可以把 任何出现 2771717841 的地方 改成你的QQ 号。以快速的运行。</br>

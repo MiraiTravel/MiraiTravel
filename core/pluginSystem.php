@@ -69,7 +69,7 @@ function GetIncludes($fileName)
     //我们可以假设行终止
     $includes = array();
     //获取文件的目录名，这样我们就可以把它放在相对路径的前面
-    $dir = dirname($fileName);
+    //$dir = dirname($fileName);
     //分割$fileName about requires和includes的内容
     //我们需要切掉第一个元素，因为它是到第一个include/require为止的文本
     $requireSplit = array_slice(preg_split('/require|include/i', file_get_contents($fileName)), 1);
