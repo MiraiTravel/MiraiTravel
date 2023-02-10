@@ -44,7 +44,7 @@ class webhook extends Component
                 $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for  " . json_encode($webhookMessage));
                 $this->$webhookFuncName($webhookMessage);
             } catch (Error $e) {
-                $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
+                $logSystem->write_log("webhook", "webhook", "Used failed! function <$webhookFuncName> ");
             }
             try {
                 $webhookFuncName = $webhookMessage['type'];
@@ -57,12 +57,12 @@ class webhook extends Component
                             $logSystem->write_log("webhook", "webhook", "Try use function <$webhookFuncName> for [$pluginName]<$version>" . json_encode($webhookMessage));
                             $plugin->$webhookFuncName($webhookMessage);
                         } catch (Error $e) {
-                            $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
+                            $logSystem->write_log("webhook", "webhook", "Used failed! function <$webhookFuncName> for [$pluginName]<$version>");
                         }
                     }
                 }
             } catch (Error $e) {
-                $logSystem->write_log("webhook", "webhook", "Used failed! <$e>");
+                $logSystem->write_log("webhook", "webhook", "Used failed! function <$webhookFuncName> for [$pluginName]<$version>");
             }
         };
         // 挂钩 webhook_all 
