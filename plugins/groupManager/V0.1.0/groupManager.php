@@ -71,6 +71,14 @@ class groupManager extends Plugin
         }
     }
 
+    function webhook_member_join_event($webhookMessage)
+    {
+        $messageChain = new MessageChain();
+        $messageChain->push_plain("举小花花欢迎你");
+        $messageChain->push_at($webhookMessage['member']['id']);
+        $this->_qqBot->reply_message($messageChain->get_message_chain());
+    }
+
     function get_command($message)
     {
         $message = $this->cut_command($message, 0);
