@@ -64,8 +64,9 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 ![](https://komarev.com/ghpvc/?username=Mr-XieXuan)  
 
 交流群 : 604568448 </br>
-![Alt text](docs/img/qqgroup.png)
-
+<div align="center">
+<img src="docs/img/qqgroup.png" ></img>
+</div>
 
 ---
 
