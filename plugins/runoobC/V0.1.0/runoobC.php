@@ -11,7 +11,7 @@ use function MiraiTravel\HttpAdapter\curl_post;
 class runoobC extends Plugin
 {
     const INFORMATION = [
-        "information" => "一个获取 Bilibili 粉丝的"
+        "information" => "一个在群里可以运行代码插件"
     ];
 
     public $userVmid;
