@@ -44,5 +44,4 @@ class Q2771717841 extends QQObj
         $messageChain->push_plain("Hello MiraiTravel!");
         $this->reply_message($messageChain->get_message_chain());
     }
-
 }
