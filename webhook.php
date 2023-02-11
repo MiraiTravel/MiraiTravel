@@ -23,21 +23,34 @@ try {
 
     // 载入QQ
     $logSystem = new LogSystem("MiraiTravel", "System");
-    $logSystem->write_log("webhook", "webhookConfigManager", $_SERVER['HTTP_QQ'] . " Recive [" . json_encode($_DATA) . "] .");
+    $logSystem->write_log(
+        "webhook",
+        "webhookConfigManager",
+        $_SERVER['HTTP_QQ'] . " Recive [" . json_encode($_DATA) . "] ."
+    );
     $qqObjManager = new QQObjManager();
     if (!$qqObjManager->config_qq_obj($_SERVER['HTTP_QQ'])) {
-        $logSystem->write_log("webhook", "webhookConfigManager", "Config [" .  $_SERVER['HTTP_QQ'] . "] Bot Faild.Because have not the bot script.");
+        $logSystem->write_log(
+            "webhook",
+            "webhookConfigManager",
+            "Config [" .  $_SERVER['HTTP_QQ'] . "] Bot Faild.Because have not the bot script."
+        );
         die();
     }
     $qqBot = $qqObjManager->get_qqobj($_SERVER['HTTP_QQ']);
-    if ("[" . $qqBot->get_http_authorization() . "]" !==  $_SERVER['HTTP_AUTHORIZATION']) {
-        $logSystem->write_log("webhook", "webhookConfigManager", "Config ["
-            .  $_SERVER['HTTP_QQ']
-            . "] Bot Faild.Because the bot authorization is ["
-            . $qqBot->get_http_authorization()
-            . "] , but the webhook given ["
-            . $_SERVER['HTTP_AUTHORIZATION']
-            . "]");
+    if (
+        "[" . $qqBot->get_http_authorization() . "]"
+        !==  $_SERVER['HTTP_AUTHORIZATION']
+    ) {
+        $logSystem->write_log(
+            "webhook",
+            "webhookConfigManager",
+            "Config [" .  $_SERVER['HTTP_QQ'] . "] "
+                . "Bot Faild.Because the bot authorization is"
+                . " [" . $qqBot->get_http_authorization() . "]"
+                . ", but the webhook given "
+                . " [" . $_SERVER['HTTP_AUTHORIZATION'] . "]"
+        );
         die();
     }
 } catch (Error $e) {
