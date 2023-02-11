@@ -30,7 +30,7 @@ MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
 启动后使用命令 help 可以获取帮助。</br>
 
 #### 开启伪静态
-伪静态配置文件为 .htaccess 请按需获取你HttpServer的配置。
+伪静态配置文件为 .htaccess 请按需获取你HttpServer的配置。</br>
 如果你MiraiTravel暴露在公网中,不开启伪静态可能会导致你的QQ被恶意利用等。所以我强烈建议你开启伪静态。
 
 ### 首次使用 
