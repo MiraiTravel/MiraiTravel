@@ -41,9 +41,10 @@ try {
         die();
     }
 } catch (Error $e) {
-    $logSystem = new LogSystem($qqBot->get_qq(), "QQBot");
-    $logSystem->set_qq_bot($qqBot->get_qq());
+    $logSystem = new LogSystem($_SERVER['HTTP_QQ'], "QQBot");
+    $logSystem->set_qq_bot($_SERVER['HTTP_QQ']);
     $logSystem->write_log("webhook", "webhookError", "$e");
+    die();
 }
 
 namespace MiraiTravel\WebhookAdapter;
