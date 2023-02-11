@@ -427,6 +427,23 @@ class QQObj
         }
     }
 
+    function get_http_authorization()
+    {
+        if ($this::AUTHORIZATION === false) {
+            $dataSystem = new DataSystem("MiraiTravel", "System");
+            $verifyKey = $dataSystem->read_data("miraiTravel", "AUTHORIZATION");
+            return $verifyKey;
+        } elseif ($this::AUTHORIZATION === true) {
+            $dataSystem = new DataSystem($this->get_qq(), "QQBot");
+            $verifyKey = $dataSystem->read_data("config", "AUTHORIZATION");
+        } elseif ($this::AUTHORIZATION) {
+            return $this::AUTHORIZATION;
+        } else {
+            throw new Error($this->get_qq() . "AUTHORIZATION出现严重错误!");
+            return false;
+        }
+    }
+
 
     public function __get($name)
     {
