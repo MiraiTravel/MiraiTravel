@@ -72,6 +72,11 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 <img src="docs/img/qqgroup.png" ></img>
 </div>
 
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/MR-XieXuan/MiraiTravel.svg)](https://starchart.cc/MR-XieXuan/MiraiTravel)
+
+
 ---
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MR-XieXuan/MiraiTravel/main?style=for-the-badge)
