@@ -356,7 +356,7 @@ function member_profile($sessionKey = "", $target, $memberId, $other = array())
 
 /**
  * mute_all
- * 获取群成员资料
+ * 获取群员设置
  * @param   string  $sessionKey     已经激活的Session
  * @param   int     $target         指定群的群号
  * @param   int     $memberId       群成员QQ号码

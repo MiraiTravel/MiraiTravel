@@ -275,7 +275,7 @@ class QQObj
 
     /**
      * mute_all
-     * 获取群成员资料
+     * 获取群员设置
      * @param   int     $target         指定群的群号
      * @param   int     $memberId       群成员QQ号码
      */
