@@ -12,8 +12,8 @@ use MiraiTravel\MiraiTravel;
 use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
 use function MiraiTravel\MiraiApi\delete_friend;
+use function MiraiTravel\MiraiApi\member_info;
 use function MiraiTravel\MiraiApi\member_profile;
-use function MiraiTravel\MiraiApi\memberInfo;
 use function MiraiTravel\MiraiApi\mute;
 use function MiraiTravel\MiraiApi\mute_all;
 use function MiraiTravel\MiraiApi\recall;
@@ -279,11 +279,11 @@ class QQObj
      * @param   int     $target         指定群的群号
      * @param   int     $memberId       群成员QQ号码
      */
-    function memberInfo($target, $memberId, $other = array())
+    function member_info($target, $memberId, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "member_profile", " get $target $memberId" . " for " . $this->get_session_key());
-        return memberInfo(
+        return member_info(
             $this->get_session_key(),
             $target,
             $memberId,

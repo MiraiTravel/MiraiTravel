@@ -361,7 +361,7 @@ function member_profile($sessionKey = "", $target, $memberId, $other = array())
  * @param   int     $target         指定群的群号
  * @param   int     $memberId       群成员QQ号码
  */
-function memberInfo($sessionKey = "", $target, $memberId, $other = array())
+function member_info($sessionKey = "", $target, $memberId, $other = array())
 {
     $other['apiType'] = "GET";
 
