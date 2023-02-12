@@ -6,7 +6,8 @@ MiraiTravel
 </div>
 
 ### 简介 Information
-MiraiTravel 是基于 mirai-api-http 的 php 框架。</br>
+MiraiTravel 是一个运行于 PHP 环境的 功能强大的QQ机器人框架。</br>
+
 <!-- [![Downloads](https://img.shields.io/github/downloads/MR-XieXuan/MiraiTravel/total)](https://github.com/MR-XieXuan/MiraiTravel/releases) -->
 !! 注意 由于 Mirai-api-http 的 webhook 失效 临时解决方案为 ： </br>
 将 webhook.php 中  </br>
