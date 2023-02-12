@@ -12,6 +12,8 @@ use MiraiTravel\MiraiTravel;
 use function MiraiTravel\ComponentSystem\load_component;
 use function MiraiTravel\MiraiApi\bind;
 use function MiraiTravel\MiraiApi\delete_friend;
+use function MiraiTravel\MiraiApi\member_profile;
+use function MiraiTravel\MiraiApi\memberInfo;
 use function MiraiTravel\MiraiApi\mute;
 use function MiraiTravel\MiraiApi\mute_all;
 use function MiraiTravel\MiraiApi\recall;
@@ -252,6 +254,43 @@ class QQObj
             array("qqbot" => $this)
         );
     }
+
+    /**
+     * mute_all
+     * 获取群成员资料
+     * @param   int     $target         指定群的群号
+     * @param   int     $memberId       群成员QQ号码
+     */
+    function member_profile($target, $memberId, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "member_profile", " get $target $memberId" . " for " . $this->get_session_key());
+        return member_profile(
+            $this->get_session_key(),
+            $target,
+            $memberId,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * mute_all
+     * 获取群员设置
+     * @param   int     $target         指定群的群号
+     * @param   int     $memberId       群成员QQ号码
+     */
+    function memberInfo($target, $memberId, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "member_profile", " get $target $memberId" . " for " . $this->get_session_key());
+        return memberInfo(
+            $this->get_session_key(),
+            $target,
+            $memberId,
+            array("qqbot" => $this)
+        );
+    }
+
 
     /**
      * recall

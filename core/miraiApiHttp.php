@@ -333,6 +333,50 @@ function unmute_all($sessionKey = "", $target, $other = array())
 }
 
 /**
+ * mute_all
+ * 获取群成员资料
+ * @param   string  $sessionKey     已经激活的Session
+ * @param   int     $target         指定群的群号
+ * @param   int     $memberId       群成员QQ号码
+ */
+function member_profile($sessionKey = "", $target, $memberId, $other = array())
+{
+    $other['apiType'] = "GET";
+
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+    $content['memberId'] = (int)$memberId;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content, $other);
+}
+
+/**
+ * mute_all
+ * 获取群员设置
+ * @param   string  $sessionKey     已经激活的Session
+ * @param   int     $target         指定群的群号
+ * @param   int     $memberId       群成员QQ号码
+ */
+function memberInfo($sessionKey = "", $target, $memberId, $other = array())
+{
+    $other['apiType'] = "GET";
+
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = (int)$target;
+    $content['memberId'] = (int)$memberId;
+
+    $funcName = basename(str_replace('\\', '/', __FUNCTION__));
+    return adapter_manager("auto", $funcName, $content, $other);
+}
+
+/**
  * set_essence
  * 设置群精华消息
  */
