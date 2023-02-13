@@ -102,7 +102,7 @@ function GetIncludes($fileName)
 
 
 /**
- * 载入 组件
+ * 载入 插件
  */
 function load_plugin($pluginName, $pluginVersion)
 {
@@ -111,8 +111,10 @@ function load_plugin($pluginName, $pluginVersion)
     if (in_array($pluginName, array_keys($pluginList))) {
         if (in_array($pluginVersion, array_values($pluginList[$pluginName]))) {
             try {
-                $file = "plugins/$pluginName/$pluginVersion/$pluginName" .  ".php";
+                $file = get_plugin_path($pluginName, $pluginVersion) . "/$pluginName" .  ".php";
                 CheckSyntax($file, false);
+                $logSystem = new LogSystem("pluginSystem", "System");
+                $logSystem->write_log("pluginSystem", "load_plugin", "Load plugin File [$pluginName]<$pluginVersion>($pluginName.php)", "DEBUG");
                 require_once($file);
                 return true;
             } catch (Error $e) {
@@ -126,6 +128,12 @@ function load_plugin($pluginName, $pluginVersion)
             }
         } else return false;
     } else return false;
+}
+
+function get_plugin_path($pluginName, $pluginVersion)
+{
+    $path = "plugins/$pluginName/$pluginVersion";
+    return $path;
 }
 
 /**

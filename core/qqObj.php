@@ -24,6 +24,7 @@ use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\send_temp_message;
 use function MiraiTravel\MiraiApi\unmute_all;
 use function MiraiTravel\MiraiApi\verify;
+use function MiraiTravel\PluginSystem\get_plugin_path;
 use function MiraiTravel\PluginSystem\load_plugin;
 
 /**
@@ -106,6 +107,30 @@ class QQObj
     function open_plugin($pluginName, $pluginVersion, $configs = array())
     {
         if (!load_plugin($pluginName, $pluginVersion)) {
+            return false;
+        }
+
+        $trickConfig = function ($pluginName, $pluginVersion) {
+            if (is_file(get_plugin_path($pluginName, $pluginVersion) . "/config.json")) {
+                $pluginConfig = file_get_contents(get_plugin_path($pluginName, $pluginVersion) . "/config.json");
+                $pluginConfig = json_decode($pluginConfig, true);
+                if ($pluginConfig['pluginType'] === "messageDispose") {
+                    if ($pluginConfig['config'] === true) {
+                        foreach ($pluginConfig['message'] as $value) {
+                            if (strpos(\MiraiTravel\Webhook\get_var("_DATA")['messageChain'][1]['text'], $value) === 0) {
+                                // 继续
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                    return true;
+                }
+                return true;
+            }
+            return true;
+        };
+        if (!$trickConfig($pluginName, $pluginVersion)) {
             return false;
         }
         try {

@@ -10,7 +10,7 @@ use function MiraiTravel\HttpAdapter\curl_get;
 class bilibiliFans extends Plugin
 {
     const INFORMATION = [
-        "information" => "一个获取 Bilibili 粉丝的"
+        "information" => "一个获取 Bilibili 粉丝的插件"
     ];
 
     public $userVmid;

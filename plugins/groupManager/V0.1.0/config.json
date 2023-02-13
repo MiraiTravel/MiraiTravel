@@ -1,0 +1,10 @@
+{
+    "inofrmation": "一个用于群管理的插件",
+    "pluginType": "messageDispose",
+    "config": true,
+    "message": [
+        "全体禁言",
+        "解除全体禁言",
+        "禁言"
+    ]
+}

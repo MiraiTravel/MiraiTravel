@@ -60,6 +60,12 @@ try {
     die();
 }
 
+function get_var($var)
+{
+    global ${$var};
+    return ${$var};
+}
+
 namespace MiraiTravel\WebhookAdapter;
 
 $webhookBeUsed = false;
