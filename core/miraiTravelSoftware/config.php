@@ -15,7 +15,7 @@ class config extends MiraiTravelSoftware
     const information = "MiraiTravel 管理器";
     const commandsInformation = array(
         "help" => "获取 congig 的使用帮助。",
-        "bot" => "设置在MiraiTravel中开启的机器人脚本。",
+        "bot" => "设置在MiraiTravel中开启的机器人脚本。使用该命令开启或关闭QQ机器人我们会把你的QQ号送至MiraiTravel官方统计使用数量。",
         "debug" => "设置MiraiTravel的调试模式。",
         "httpApi" => "设置MiraiTravel的默认Http_api地址。",
         "verifyKey" => "设置MiraiTravel的默认verifyKey。"
