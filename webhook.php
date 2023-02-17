@@ -6,8 +6,8 @@
 
 namespace MiraiTravel\Webhook;
 
-define("WEBHOOK_ERROR_REPORT_LEAVE", 0);    //webhook 模式下的错误报告级别
-define("IGNORE_UNREPORTED_ERRORS", true);   //是否忽略未报告的错误
+define("WEBHOOK_ERROR_REPORT_LEAVE", 0);        //webhook 模式下的错误报告级别
+define("IGNORE_UNREPORTED_ERRORS", true);       //是否忽略未报告的错误
 error_reporting(0);
 
 use MiraiTravel\LogSystem\LogSystem;
