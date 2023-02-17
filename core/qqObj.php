@@ -22,6 +22,7 @@ use function MiraiTravel\MiraiApi\resp__new_friend_request_event;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
 use function MiraiTravel\MiraiApi\send_temp_message;
+use function MiraiTravel\MiraiApi\unmute;
 use function MiraiTravel\MiraiApi\unmute_all;
 use function MiraiTravel\MiraiApi\verify;
 use function MiraiTravel\PluginSystem\get_plugin_path;
@@ -256,6 +257,26 @@ class QQObj
             array("qqbot" => $this)
         );
     }
+
+    /**
+     * unmute
+     * 解除群成员禁言
+     * @param   string  $sessionKey 已经激活的Session
+     * @param   int     $target     指定群的群号
+     * @param   int     $memberId   指定群员QQ号
+     */
+    function unmute( $target, $memberId, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("GroupManagement", "unmute", "$target unmute $memberId " . " for " . $this->get_session_key());
+        return unmute(
+            $this->get_session_key(),
+            $target,
+            $memberId,
+            array("qqbot" => $this)
+        );
+    }
+
 
     /**
      * send_group_massage 

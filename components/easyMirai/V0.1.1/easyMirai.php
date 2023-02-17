@@ -109,14 +109,13 @@ class easyMirai extends Component
 
         $this->_qqBot->reply_unmute = function ($number = true) {
             // 如果没有参数的话就全体禁言
+            $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
+            $logSystem->write_log("script", "reply_unmute", $this->_qqBot->focus['sender']['group']['id']. "->" . $number);
             if ($number === true) {
                 $this->_qqBot->unmute_all($this->_qqBot->focus['sender']['group']['id']);
             }
+            return $this->_qqBot->unmute($this->_qqBot->focus['sender']['group']['id'], $number);
         };
 
-        /**
-         * 同意请求
-         */
-        $this->_qqBot;
     }
 }

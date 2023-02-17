@@ -175,11 +175,11 @@ function recall($sessionKey = "", $messageId, $target, $other = array())
     if (!empty($sessionKey)) {
         $content["sessionKey"] = (string)$sessionKey;
     }
-    $content["messageId"] = (string)$messageId;
+    $content["messageId"] = (int)$messageId;
     $content['target'] = (int)$target;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
@@ -241,7 +241,7 @@ function mute($sessionKey = "", $target, $memberId, $time = 1800, $other = array
  * @param   int     $target     指定群的群号
  * @param   int     $memberId   指定群员QQ号
  */
-function unmute($sessionKey = "", $target, $memberId)
+function unmute($sessionKey = "", $target, $memberId, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -251,7 +251,7 @@ function unmute($sessionKey = "", $target, $memberId)
     $content['memberId'] = (int)$memberId;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
-    return adapter_manager("auto", $funcName, $content);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
