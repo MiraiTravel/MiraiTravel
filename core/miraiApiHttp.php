@@ -175,7 +175,7 @@ function recall($sessionKey = "", $messageId, $target, $other = array())
     if (!empty($sessionKey)) {
         $content["sessionKey"] = (string)$sessionKey;
     }
-    $content["messageId"] = (string)$messageId;
+    $content["messageId"] = (int)$messageId;
     $content['target'] = (int)$target;
 
     $funcName = basename(str_replace('\\', '/', __FUNCTION__));
