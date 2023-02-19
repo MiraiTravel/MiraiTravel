@@ -1,0 +1,60 @@
+Date : 2023-02-19 13:45:01
+Directory : f:\Project\工作文件夹\MiraiTravel
+Total : 17 files,  358 codes, 37 comments, 76 blanks, all 471 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |          8 |        179 |         37 |         15 |        231 |
+| Markdown |          5 |        151 |          0 |         60 |        211 |
+| JSON     |          3 |         28 |          0 |          0 |         28 |
+| Log      |          1 |          0 |          0 |          1 |          1 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                         |         17 |        358 |         37 |         76 |        471 |
+| . (Files)                                                                 |          3 |        136 |          0 |         41 |        177 |
+| .github                                                                   |          2 |         45 |          0 |         15 |         60 |
+| .github\ISSUE_TEMPLATE                                                    |          2 |         45 |          0 |         15 |         60 |
+| components                                                                |          1 |          4 |         -3 |         -1 |          0 |
+| components\easyMirai                                                      |          1 |          4 |         -3 |         -1 |          0 |
+| components\easyMirai\V0.1.1                                               |          1 |          4 |         -3 |         -1 |          0 |
+| core                                                                      |          4 |        125 |         40 |         16 |        181 |
+| logs                                                                      |          1 |          0 |          0 |          1 |          1 |
+| plugins                                                                   |          5 |         48 |          0 |          5 |         53 |
+| plugins\bilibiliFans                                                      |          1 |          8 |          0 |          0 |          8 |
+| plugins\bilibiliFans\V0.1.0                                               |          1 |          8 |          0 |          0 |          8 |
+| plugins\groupManager                                                      |          2 |         25 |          0 |          1 |         26 |
+| plugins\groupManager\V0.1.0                                               |          2 |         25 |          0 |          1 |         26 |
+| plugins\runoobC                                                           |          2 |         15 |          0 |          4 |         19 |
+| plugins\runoobC\V0.1.0                                                    |          2 |         15 |          0 |          4 |         19 |
+| script                                                                    |          1 |          0 |          0 |         -1 |         -1 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                  | language | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| f:\Project\工作文件夹\MiraiTravel\.github\ISSUE_TEMPLATE\bug_report.md         | Markdown |         30 |          0 |          9 |         39 |
+| f:\Project\工作文件夹\MiraiTravel\.github\ISSUE_TEMPLATE\feature_request.md    | Markdown |         15 |          0 |          6 |         21 |
+| f:\Project\工作文件夹\MiraiTravel\CODE_OF_CONDUCT.md                           | Markdown |         93 |          0 |         36 |        129 |
+| f:\Project\工作文件夹\MiraiTravel\README.md                                    | Markdown |          8 |          0 |          5 |         13 |
+| f:\Project\工作文件夹\MiraiTravel\components\easyMirai\V0.1.1\easyMirai.php    | PHP      |          4 |         -3 |         -1 |          0 |
+| f:\Project\工作文件夹\MiraiTravel\core\messageChain.php                        | PHP      |         19 |          6 |          2 |         27 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiApiHttp.php                        | PHP      |         24 |         14 |          6 |         44 |
+| f:\Project\工作文件夹\MiraiTravel\core\pluginSystem.php                        | PHP      |          7 |          0 |          1 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\core\qqObj.php                               | PHP      |         75 |         20 |          7 |        102 |
+| f:\Project\工作文件夹\MiraiTravel\logs\webhook.log                             | Log      |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\bilibiliFans\V0.1.0\config.json      | JSON     |          8 |          0 |          0 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\config.json      | JSON     |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\groupManager.php | PHP      |         15 |          0 |          1 |         16 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\README.md             | Markdown |          5 |          0 |          4 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\config.json           | JSON     |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\script\Q2771717841.php                       | PHP      |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel\webhook.php                                  | PHP      |         35 |          0 |          0 |         35 |
+| Total                                                                     |          |        358 |         37 |         76 |        471 |
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+
