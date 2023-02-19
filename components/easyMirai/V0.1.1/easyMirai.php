@@ -82,6 +82,8 @@ class easyMirai extends Component
                         $msg = $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
                         $flag++;
                         break;
+                    case "":
+                        break;
                     default:
                         $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
                         $flag = 3;
@@ -110,12 +112,11 @@ class easyMirai extends Component
         $this->_qqBot->reply_unmute = function ($number = true) {
             // 如果没有参数的话就全体禁言
             $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
-            $logSystem->write_log("script", "reply_unmute", $this->_qqBot->focus['sender']['group']['id']. "->" . $number);
+            $logSystem->write_log("script", "reply_unmute", $this->_qqBot->focus['sender']['group']['id'] . "->" . $number);
             if ($number === true) {
                 $this->_qqBot->unmute_all($this->_qqBot->focus['sender']['group']['id']);
             }
             return $this->_qqBot->unmute($this->_qqBot->focus['sender']['group']['id'], $number);
         };
-
     }
 }
