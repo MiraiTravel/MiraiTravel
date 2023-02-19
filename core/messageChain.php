@@ -69,7 +69,8 @@ class MessageChain
     }
 
     /**
-     * 获取消息链中所有的 Plain 消息 
+     * 获取消息链中所有的 At消息 
+     * @param bool $getManber 是否只获取账号 
      * 
      */
     function get_all_at($getManber = false)
@@ -80,10 +81,36 @@ class MessageChain
             return $nods;
         }
         foreach ($this->messageChain as $node) {
-            if ($getManber) {
-                $nods[] = $node['target'];
-            } else {
-                $nods[] = $node;
+            if ($node['type'] === "At") {
+                if ($getManber) {
+                    $nods[] = $node['target'];
+                } else {
+                    $nods[] = $node;
+                }
+            }
+        }
+        return $nods;
+    }
+
+    /**
+     * 获取消息链中所有的 Plain 消息 
+     * @param bool $getPath 是否只获取图片的下载链接
+     * 
+     */
+    function get_all_img($getPath = false)
+    {
+        $nods = array();
+
+        if (empty($this->messageChain)) {
+            return $nods;
+        }
+        foreach ($this->messageChain as $node) {
+            if ($node['type'] === "Image") {
+                if ($getPath) {
+                    $nods[] = $node['url'];
+                } else {
+                    $nods[] = $node;
+                }
             }
         }
         return $nods;
