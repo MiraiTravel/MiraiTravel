@@ -72,7 +72,7 @@ class DataSystem
         $writed = false;
         while (!feof($dataFile)) {
             $line = fgets($dataFile);
-            if (strpos($line, $dataKey) === 0) {
+            if (strpos($line, (string)$dataKey) === 0) {
                 $writed = true;
                 $newDataFile = $newDataFile .  $dataKey . " " . json_encode($dataValue) . "\r\n";
             } else {
@@ -112,7 +112,7 @@ class DataSystem
             $line = fgets($dataFile);
             if (strpos($line, ";") === 0) {
                 continue;
-            } elseif (strpos($line, $dataKey) === 0) {
+            } elseif (strpos($line, (string)$dataKey) === 0) {
                 $dataValue = substr($line, strlen($dataKey));
                 break;
             }
