@@ -10,6 +10,9 @@ define("WEBHOOK_ERROR_REPORT_LEAVE", 0);        //webhook 模式下的错误报�
 define("IGNORE_UNREPORTED_ERRORS", true);       //是否忽略未报告的错误
 error_reporting(0);
 
+// 载入核心
+require_once "loadMiraiTravel.php";
+
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\QQObj\Script\QQObjManager;
 use Error;
@@ -17,9 +20,6 @@ use Error;
 try {
     // 获取消息
     $_DATA = json_decode(file_get_contents("php://input"), true);
-
-    // 载入核心
-    require_once "loadMiraiTravel.php";
 
     // 载入QQ
     $logSystem = new LogSystem("MiraiTravel", "System");

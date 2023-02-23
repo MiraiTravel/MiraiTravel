@@ -163,6 +163,15 @@ function send_nudge()
 }
 
 /**
+ * send_nudge
+ * 发送头像戳一戳消息
+ */
+function upload_voice( $sessionKey , $type , $voice)
+{
+
+}
+
+/**
  * recall
  * 撤回消息
  * @param   string  $sessionKey 已经激活的Session
