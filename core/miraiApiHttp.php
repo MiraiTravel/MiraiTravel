@@ -13,19 +13,19 @@ use function MiraiTravel\WebhookAdapter\webhook_adapter;
  * @param string $type 适配器类型 
  * @property $type "auto" -> webhook > http ;
  */
-function adapter_manager($type, $command, $content, $other = array())
+function adapter_manager(string $type, $command, $content, $other = array())
 {
     $logSystem = new LogSystem("MiraiTravel", "System");
     switch ($type) {
         case "auto":
         case "webhook":
-            $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now webhook]");
+            $logSystem->write_log("miraiApiHttp", "adapter_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now webhook]");
             $flag = webhook_adapter($command, $content);
             if ($flag !== false) {
                 return $flag;
             }
         case "http":
-            $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now http]");
+            $logSystem->write_log("miraiApiHttp", "adapter_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now http]");
             $flag = http_adapter($other['httpApi'] ?? $other['qqbot']->get_http_api(), $command, $content, $other);
             if ($flag !== false) {
                 return $flag;
@@ -70,13 +70,13 @@ function bind($sessionKey, $qq, $other = array())
 /**
  * send_friend_message 
  * 发送好友消息
- * @param string    $sessionKey    已经激活的Session
- * @param int       $target        发送消息目标好友的QQ号
- * @param int       $qq            target与qq中需要有一个参数不为空，当target不为空时qq将被忽略，同target
- * @param int       $quote         引用一条消息的messageId进行回复
- * @param array     $messageChain  消息链，是一个消息对象构成的数组
+ * @param string $sessionKey    已经激活的Session
+ * @param int|null $target        发送消息目标好友的QQ号
+ * @param int|null $qq            target与qq中需要有一个参数不为空，当target不为空时qq将被忽略，同target
+ * @param int|null $quote         引用一条消息的messageId进行回复
+ * @param array $messageChain  消息链，是一个消息对象构成的数组
  */
-function send_friend_message($sessionKey = "", $target = null, $qq = null, $quote = null, $messageChain, $other = array())
+function send_friend_message(string $sessionKey = "", int $target = null, int $qq = null, int $quote = null, array $messageChain = array(), $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -99,13 +99,13 @@ function send_friend_message($sessionKey = "", $target = null, $qq = null, $quot
 /**
  * send_group_message
  * 发送群消息
- * @param string    $sessionKey    已经激活的Session
- * @param int       $target        发送消息目标群的群号
- * @param int       $group         target与group中需要有一个参数不为空，当target不为空时group将被忽略，同target
- * @param int       $quote         引用一条消息的messageId进行回复
- * @param array     $messageChain  消息链，是一个消息对象构成的数组    
+ * @param string $sessionKey    已经激活的Session
+ * @param int|null $target        发送消息目标群的群号
+ * @param int|null $group         target与group中需要有一个参数不为空，当target不为空时group将被忽略，同target
+ * @param int|null $quote         引用一条消息的messageId进行回复
+ * @param array $messageChain  消息链，是一个消息对象构成的数组
  */
-function send_group_message($sessionKey = "", $target = null, $group = null, $quote = null, $messageChain, $other = array())
+function send_group_message(string $sessionKey = "", int $target = null, int $group = null, int $quote = null, array $messageChain = array(), $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -129,15 +129,15 @@ function send_group_message($sessionKey = "", $target = null, $group = null, $qu
 /**
  * send_temp_message
  * 发送临时会话消息
- * @param string    $sessionKey    已经激活的Session
- * @param int       $qq            临时会话对象QQ号
- * @param int       $group         临时会话群号
- * @param int       $quote         引用一条消息的messageId进行回复
- * @param array     $messageChain  消息链，是一个消息对象构成的数组  
- * 
- * @return 
+ * @param string $sessionKey 已经激活的Session
+ * @param int $qq 临时会话对象QQ号
+ * @param int $group 临时会话群号
+ * @param int|null $quote 引用一条消息的messageId进行回复
+ * @param array $messageChain 消息链，是一个消息对象构成的数组
+ * @param array $other
+ * @return false|int[]|mixed
  */
-function send_temp_message($sessionKey = "", $qq, $group, $quote = null, $messageChain, $other = array())
+function send_temp_message(string $sessionKey = "", int $qq, int $group, int $quote = null, array $messageChain, array $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -174,11 +174,11 @@ function upload_voice( $sessionKey , $type , $voice)
 /**
  * recall
  * 撤回消息
- * @param   string  $sessionKey 已经激活的Session
- * @param   string  $messageId  需要撤回消息的messageId
- * @param   int     $target     好友或群id
+ * @param string $sessionKey 已经激活的Session
+ * @param string $messageId  需要撤回消息的messageId
+ * @param int $target     好友或群id
  */
-function recall($sessionKey = "", $messageId, $target, $other = array())
+function recall(string $sessionKey = "", string $messageId, int $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -199,10 +199,10 @@ function recall($sessionKey = "", $messageId, $target, $other = array())
 /**
  * delete_friend
  * 删除好友
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     删除好友的QQ号码
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     删除好友的QQ号码
  */
-function delete_friend($sessionKey = "", $target, $other = array())
+function delete_friend(string $sessionKey = "", int $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -222,12 +222,12 @@ function delete_friend($sessionKey = "", $target, $other = array())
 /**
  * mute
  * 禁言群成员
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
- * @param   int     $memberId   指定群员QQ号
- * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
+ * @param int $memberId   指定群员QQ号
+ * @param int $time       禁言时长，单位为秒，最多30天，默认为0
  */
-function mute($sessionKey = "", $target, $memberId, $time = 1800, $other = array())
+function mute(string $sessionKey = "", int $target, int $memberId, int $time = 1800, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -246,11 +246,11 @@ function mute($sessionKey = "", $target, $memberId, $time = 1800, $other = array
 /**
  * unmute
  * 解除群成员禁言
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
- * @param   int     $memberId   指定群员QQ号
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
+ * @param int $memberId   指定群员QQ号
  */
-function unmute($sessionKey = "", $target, $memberId, $other = array())
+function unmute(string $sessionKey = "", int $target, int $memberId, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -266,12 +266,12 @@ function unmute($sessionKey = "", $target, $memberId, $other = array())
 /**
  * kick
  * 移除群成员
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
- * @param   int     $memberId   指定群员QQ号
- * @param   string  $msg        信息
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
+ * @param int $memberId   指定群员QQ号
+ * @param string $msg        信息
  */
-function kick($sessionKey = "", $target, $memberId, $msg = "")
+function kick(string $sessionKey = "", int $target, int $memberId, string $msg = "")
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -290,10 +290,10 @@ function kick($sessionKey = "", $target, $memberId, $msg = "")
 /**
  * quit
  * 使Bot退出群聊
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
  */
-function quit($sessionKey = "", $target)
+function quit(string $sessionKey = "", int $target)
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -308,10 +308,10 @@ function quit($sessionKey = "", $target)
 /**
  * mute_all
  * 全体禁言
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
  */
-function mute_all($sessionKey = "", $target, $other = array())
+function mute_all(string $sessionKey = "", int $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -326,10 +326,10 @@ function mute_all($sessionKey = "", $target, $other = array())
 /**
  * mute_all
  * 解除全体禁言
- * @param   string  $sessionKey 已经激活的Session
- * @param   int     $target     指定群的群号
+ * @param string $sessionKey 已经激活的Session
+ * @param int $target     指定群的群号
  */
-function unmute_all($sessionKey = "", $target, $other = array())
+function unmute_all(string $sessionKey = "", int $target, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -344,11 +344,11 @@ function unmute_all($sessionKey = "", $target, $other = array())
 /**
  * mute_all
  * 获取群成员资料
- * @param   string  $sessionKey     已经激活的Session
- * @param   int     $target         指定群的群号
- * @param   int     $memberId       群成员QQ号码
+ * @param string $sessionKey     已经激活的Session
+ * @param int $target         指定群的群号
+ * @param int $memberId       群成员QQ号码
  */
-function member_profile($sessionKey = "", $target, $memberId, $other = array())
+function member_profile(string $sessionKey = "", int $target, int $memberId, $other = array())
 {
     $other['apiType'] = "GET";
 
@@ -402,14 +402,14 @@ function set_essence()
 /**
  * resp__new_friend_request_event
  * 添加好友申请
- * @param string    $sessionKey 	已经激活的Session
- * @param int	    $eventId	    响应申请事件的标识
- * @param int	    $fromId	        事件对应申请人QQ号
- * @param int	    $groupId	    事件对应申请人的群号，可能为0
- * @param int	    $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
- * @param string    $message	    回复的信息
+ * @param string $sessionKey 	已经激活的Session
+ * @param int $eventId	    响应申请事件的标识
+ * @param int $fromId	        事件对应申请人QQ号
+ * @param int $groupId	    事件对应申请人的群号，可能为0
+ * @param int $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
+ * @param string $message	    回复的信息
  */
-function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
+function resp__new_friend_request_event(string $sessionKey, int $eventId, int $fromId, int $groupId, int $operate, string $message, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -429,14 +429,14 @@ function resp__new_friend_request_event($sessionKey, $eventId, $fromId, $groupId
 /**
  * resp__member_join_request_event
  * 用户入群申请
- * @param string    $sessionKey 	已经激活的Session
- * @param int	    $eventId	    响应申请事件的标识
- * @param int	    $fromId	        事件对应申请人QQ号
- * @param int	    $groupId	    事件对应申请人的群号
- * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 2 忽略请求 3 拒绝入群并添加黑名单，不再接收该用户的入群申请 4 忽略入群并添加黑名单，不再接收该用户的入群申请
- * @param string    $message	    回复的信息
+ * @param string $sessionKey 	已经激活的Session
+ * @param int $eventId	    响应申请事件的标识
+ * @param int $fromId	        事件对应申请人QQ号
+ * @param int $groupId	    事件对应申请人的群号
+ * @param int $operate	    响应的操作类型 0 同意入群 1 拒绝入群 2 忽略请求 3 拒绝入群并添加黑名单，不再接收该用户的入群申请 4 忽略入群并添加黑名单，不再接收该用户的入群申请
+ * @param string $message	    回复的信息
  */
-function resp__member_join_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
+function resp__member_join_request_event(string $sessionKey, int $eventId, int $fromId, int $groupId, int $operate, string $message, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {
@@ -456,14 +456,14 @@ function resp__member_join_request_event($sessionKey, $eventId, $fromId, $groupI
 /**
  * resp__bot_invited_join_group_request_event
  * Bot被邀请入群申请
- * @param string    $sessionKey 	已经激活的Session
- * @param int	    $eventId	    响应申请事件的标识
- * @param int	    $fromId	        事件对应申请人QQ号
- * @param int	    $groupId	    被邀请进入群的群号
- * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 
- * @param string    $message	    回复的信息
+ * @param string $sessionKey 	已经激活的Session
+ * @param int $eventId	    响应申请事件的标识
+ * @param int $fromId	        事件对应申请人QQ号
+ * @param int $groupId	    被邀请进入群的群号
+ * @param int $operate	    响应的操作类型 0 同意入群 1 拒绝入群
+ * @param string $message	    回复的信息
  */
-function resp__bot_invited_join_group_request_event($sessionKey, $eventId, $fromId, $groupId, $operate, $message, $other = array())
+function resp__bot_invited_join_group_request_event(string $sessionKey, int $eventId, int $fromId, int $groupId, int $operate, string $message, $other = array())
 {
     $content = array();
     if (!empty($sessionKey)) {

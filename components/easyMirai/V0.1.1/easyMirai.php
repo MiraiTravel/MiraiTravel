@@ -18,10 +18,9 @@ class easyMirai extends Component
      * 那么必将导致 hook 函数内部混乱 影响日后的维护
      */
     /**
-     * @param array     $message    回复的消息链 
-     * @param bool|int  $quote      回复注重的消息或者其他消息 
+     * @return true
      */
-    function init()
+    function init(): bool
     {
         return true;
     }

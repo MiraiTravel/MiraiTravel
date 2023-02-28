@@ -16,7 +16,7 @@ class MessageChain
      * 获取构建好的messageChain
      * @return array messageChain
      */
-    function get_message_chain()
+    function get_message_chain(): array
     {
         return $this->messageChain;
     }
@@ -24,7 +24,7 @@ class MessageChain
     /**
      * 设置messageChain
      */
-    function set_message_chain($messageChain)
+    function set_message_chain($messageChain): array
     {
         $this->messageChain = $messageChain;
         return $this->messageChain;
@@ -33,7 +33,7 @@ class MessageChain
     /**
      * 清除messageChain
      */
-    function clean()
+    function clean(): array
     {
         $this->messageChain = [];
         return [];
@@ -43,7 +43,7 @@ class MessageChain
      * 获取消息链中所有的 Plain 消息 
      * @param bool $jointAll 是否把所有的Plain拼接到一个字符串中 
      */
-    function get_all_plain($jointAll = false)
+    function get_all_plain(bool $jointAll = false)
     {
         if ($jointAll) {
             $nods = "";
@@ -70,10 +70,10 @@ class MessageChain
 
     /**
      * 获取消息链中所有的 At消息 
-     * @param bool $getManber 是否只获取账号 
+     * @param bool $getNumber 是否只获取账号
      * 
      */
-    function get_all_at($getManber = false)
+    function get_all_at(bool $getNumber = false): array
     {
         $nods = array();
 
@@ -82,7 +82,7 @@ class MessageChain
         }
         foreach ($this->messageChain as $node) {
             if ($node['type'] === "At") {
-                if ($getManber) {
+                if ($getNumber) {
                     $nods[] = $node['target'];
                 } else {
                     $nods[] = $node;
@@ -97,7 +97,7 @@ class MessageChain
      * @param bool $getPath 是否只获取图片的下载链接
      * 
      */
-    function get_all_img($getPath = false)
+    function get_all_img(bool $getPath = false): array
     {
         $nods = array();
 
@@ -121,7 +121,7 @@ class MessageChain
      * 添加文字
      * @param string $plain 文字消息
      */
-    function push_plain($plain)
+    function push_plain(string $plain): array
     {
         $node = array();
         $node['type'] = "Plain";
@@ -133,10 +133,10 @@ class MessageChain
     /**
      * push_face 
      * 添加QQ表情
-     * @param int       $faceId QQ表情编号，可选，优先高于name
-     * @param string    $name   QQ表情拼音，可选         
+     * @param int $faceId QQ表情编号，可选，优先高于name
+     * @param string|null $name   QQ表情拼音，可选
      */
-    function push_face($faceId, $name = null)
+    function push_face(int $faceId, string $name = null): array
     {
         $node = array();
         $node['type'] = "Face";
@@ -153,10 +153,10 @@ class MessageChain
     /**
      * push_at 
      * 添加群at
-     * @param int       $target     群员QQ号
-     * @param string    $display    At时显示的文字，发送消息时无效，自动使用群名片
+     * @param int $target     群员QQ号
+     * @param string|null $display    At时显示的文字，发送消息时无效，自动使用群名片
      */
-    function push_at($target, $display = null)
+    function push_at(int $target, string $display = null): array
     {
         $node = array();
         $node['type'] = "At";
@@ -169,7 +169,7 @@ class MessageChain
      * push_at_all
      * 添加at所有人
      */
-    function push_at_all()
+    function push_at_all(): array
     {
         $node = array();
         $node['type'] = "AtAll";
@@ -182,7 +182,7 @@ class MessageChain
      * 添加图片
      * @param string $url 图片链接
      */
-    function push_img($url)
+    function push_img(string $url): array
     {
         $node = array();
         $node['type'] = "Image";

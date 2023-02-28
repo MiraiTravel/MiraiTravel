@@ -24,7 +24,7 @@ function http_adapter($url, $command, $content, $others = array())
  * 函数名转命令函数
  * @param string $funcName 函数名 
  */
-function func_to_command($funcName)
+function func_to_command(string $funcName): string
 {
     $flag = stripos($funcName, "_");
     while ($flag !== false) {
@@ -39,7 +39,7 @@ function func_to_command($funcName)
     return "/" . $funcName;
 }
 
-function curl_get($url, $cookie = '', $referer = '', $header = '', $setopt = array(), $UserAgent = 'MiraiTravel')
+function curl_get($url, $cookie = '', $referer = '', $header = '', $set_opt = array(), $UserAgent = 'MiraiTravel')
 {
     $logSystem = new LogSystem("MiraiTravel","System");
     $logSystem->write_log("httpAdapter","curl_get","A CGET URL=[$url] ");
@@ -57,8 +57,8 @@ function curl_get($url, $cookie = '', $referer = '', $header = '', $setopt = arr
     #关闭SSL
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-    if (!empty($setopt) && is_array($setopt)) {
-        foreach ($setopt as $value) {
+    if (!empty($set_opt) && is_array($set_opt)) {
+        foreach ($set_opt as $value) {
             curl_setopt($curl, $value[0], $value[1]);
         }
     }

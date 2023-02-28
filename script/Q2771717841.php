@@ -7,7 +7,6 @@
 
 namespace MiraiTravel\QQObj\Script;
 
-use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MessageChain\MessageChain;
 use MiraiTravel\QQObj\QQObj;
 

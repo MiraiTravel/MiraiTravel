@@ -20,7 +20,7 @@ class MiraiTravel
      */
     function __construct()
     {
-        self::$path = dirname(dirname(__FILE__));
+        self::$path = dirname(__FILE__, 2);
     }
 
     static function mirai_home_page()
@@ -232,7 +232,7 @@ class CliStyles
 
 class MiraiTravelSoftware
 {
-    function uncamelize($camelCaps, $separator = '_')
+    function uncamelize($camelCaps, $separator = '_'): string
     {
         return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $camelCaps));
     }

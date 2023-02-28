@@ -14,10 +14,10 @@ class LogSystem
     const USER_TYPE_POSSIBILITY = array("Component", "QQBot", "System");
     /**
      * 构造函数
-     * @param string $dataUser 数据创建者 (组件名称,QQBot的QQ号,系统级名称)
+     * @param string $logUser 数据创建者 (组件名称,QQBot的QQ号,系统级名称)
      * @param string $userType 创建者的类型 (Component,QQBot,System)
      */
-    function __construct($logUser, $userType)
+    function __construct(string $logUser, string $userType)
     {
         $this->_logUser = $logUser;
         if (in_array($userType, self::USER_TYPE_POSSIBILITY)) {
@@ -41,12 +41,12 @@ class LogSystem
 
     /**
      * 写日志
-     * @param string    $dataName  数据名称
-     * @param string    $dataKey   数据键
-     * @param string    $dataValue 数据值
-     * @param int       $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
+     * @param string $dataName  数据名称
+     * @param string $dataKey   数据键
+     * @param string $dataValue 数据值
+     * @param int $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
      */
-    function write_log($dataName, $dataKey, $dataValue, $myLevel = "DEBUG", $logLevel = false, $level = 1)
+    function write_log(string $dataName, string $dataKey, string $dataValue, $myLevel = "DEBUG", $logLevel = false, int $level = 1)
     {
         if ($logLevel === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");

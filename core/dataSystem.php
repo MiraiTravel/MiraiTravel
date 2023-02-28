@@ -24,7 +24,7 @@ class DataSystem
      * @param string $dataUser 数据创建者 (组件名称,QQBot的QQ号,系统级名称)
      * @param string $userType 创建者的类型 (Component,QQBot,System)
      */
-    function __construct($dataUser, $userType)
+    function __construct(string $dataUser, string $userType)
     {
         $this->_dataUser = $dataUser;
         if (in_array($userType, self::USER_TYPE_POSSIBILITY)) {
@@ -48,12 +48,12 @@ class DataSystem
 
     /**
      * 写数据
-     * @param string    $dataName  数据名称
-     * @param string    $dataKey   数据键
-     * @param string    $dataValue 数据值
-     * @param int       $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
+     * @param string $dataName  数据名称
+     * @param string $dataKey   数据键
+     * @param string $dataValue 数据值
+     * @param int $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
      */
-    function write_data($dataName, $dataKey, $dataValue, $level = 1)
+    function write_data(string $dataName, string $dataKey, string $dataValue, int $level = 1)
     {
         if ($level === 1 && $this->_userType !== "System") {
             if (empty($this->_qq)) {
@@ -91,11 +91,11 @@ class DataSystem
 
     /**
      * 读数据
-     * @param string    $dataName  数据名称
-     * @param string    $dataKey   数据键
-     * @param int       $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
+     * @param string $dataName  数据名称
+     * @param string $dataKey   数据键
+     * @param int $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
      */
-    function read_data($dataName, $dataKey, $level = 1)
+    function read_data(string $dataName, string $dataKey, int $level = 1)
     {
         $dataValue = null;
         try {
@@ -124,7 +124,7 @@ class DataSystem
         return json_decode($dataValue);
     }
 
-    function get_data_path($dataName, $level = 1)
+    function get_data_path($dataName, $level = 1): string
     {
         $path = "./data";
         $fileName = "$dataName.data";
@@ -139,7 +139,7 @@ class DataSystem
         return "$path/" . $fileName;
     }
 
-    function mkdirs($dir, $mode = 0777)
+    function mkdirs($dir, $mode = 0777): bool
     {
         if (is_dir($dir) || @mkdir($dir, $mode)) return TRUE;
         if (!$this->mkdirs(dirname($dir), $mode)) return FALSE;

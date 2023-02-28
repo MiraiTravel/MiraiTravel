@@ -45,7 +45,7 @@ class QQObj
     public $_qqBot;
 
     /**
-     * __constuct 构造函数
+     * __construct 构造函数
      * 
      */
     function __construct()
@@ -72,10 +72,10 @@ class QQObj
     /**
      * 大脑函数
      * 消息对传入的消息进行处理
-     * @param mixed $reciveMessage 需要思考的消息
+     * @param mixed $receiveMessage 需要思考的消息
      * @param bool $isMessageChain 只是消息链吗
      */
-    function brain($reciveMessage, $isMessageChain = false)
+    function brain($receiveMessage, bool $isMessageChain = false)
     {
     }
 
@@ -163,14 +163,13 @@ class QQObj
 
 
     /**
-     * send_friend_massage 
-     * 发送消息给某人
-     * @param $qq QQ号 
-     * @param $messageChin 消息链
-     * @param $quote 引用消息id
-     * @param $other 其他可能会用到的参数
+     * @param $qq
+     * @param $messageChain
+     * @param bool $quote
+     * @param array $other
+     * @return false|int[]|mixed
      */
-    function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
+    function send_friend_massage($qq, $messageChain, bool $quote = false, array $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key());
@@ -184,13 +183,13 @@ class QQObj
         );
     }
 
+
     /**
-     * send_group_massage 
-     * 发送消息给某群
-     * @param $group 群号 
-     * @param $messageChin 消息链
-     * @param $quote 引用消息id
-     * @param $other 其他可能会用到的参数
+     * @param $group
+     * @param $messageChain
+     * @param $quote
+     * @param $other
+     * @return false|int[]|mixed
      */
     function send_group_massage($group, $messageChain, $quote = false, $other = array())
     {
@@ -573,7 +572,7 @@ class QQObj
      * 拓展方法
      * 把输入的驼峰命名法变为下划线命名法
      */
-    function uncamelize($camelCaps, $separator = '_')
+    function uncamelize($camelCaps, $separator = '_'): string
     {
         return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $camelCaps));
     }
@@ -600,9 +599,9 @@ class QQObjManager
 
     /**
      * 启动 QQObj
-     * @param string $qq QQ号码
+     * @param string $qq
      */
-    function config_qq_obj($qq)
+    function config_qq_obj(string $qq): bool
     {
         foreach (self::$qqObjArray as $qqBot) {
             if ($qqBot->get_qq() === $qq) {

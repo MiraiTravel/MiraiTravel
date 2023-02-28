@@ -27,9 +27,9 @@ foreach ($scriptFiles as $key => $scriptFile) {
 
 /**
  * 载入 QQ 机器人脚本
- * @param string QQ号码
+ * @param string $qq QQ号码
  */
-function load_qqbot($qq)
+function load_qqbot(string $qq): bool
 {
     global $qqBotFiles;
     $dataSystem = new DataSystem("MiraiTravel", "System");
@@ -46,7 +46,7 @@ function load_qqbot($qq)
 /**
  * 载入 脚本
  */
-function load_script($scriptName)
+function load_script($scriptName): bool
 {
     global $scriptFiles;
     if (in_array($scriptName . ".php", $scriptFiles)) {

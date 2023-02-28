@@ -58,7 +58,7 @@ class Component
 }
 
 
-function component_requir_once( $file )
+function component_require_once( $file )
 {
     echo debug_backtrace();
 }

@@ -40,7 +40,7 @@ function webhook_adapter($command, $content)
  * 函数名转命令函数
  * @param string $funcName 函数名 
  */
-function func_to_command($funcName)
+function func_to_command(string $funcName)
 {
     $flag = stripos($funcName, "_");
     while ($flag !== false) {

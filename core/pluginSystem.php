@@ -63,7 +63,7 @@ function CheckSyntax($fileName, $checkIncludes = true)
     }
 }
 
-function GetIncludes($fileName)
+function GetIncludes($fileName): array
 {
     //注意，进入这个函数的所有文件都已经通过了语法检查，所以
     //我们可以假设行终止
@@ -94,7 +94,7 @@ function GetIncludes($fileName)
             //然后调用realpath去掉多余的分隔符
             //if (strpos($include, ':') === FALSE)
             //$include = realpath($dir . DIRECTORY_SEPARATOR . $include);
-            array_push($includes, $include);
+            $includes[] = $include;
         }
     }
     return $includes;
@@ -104,7 +104,7 @@ function GetIncludes($fileName)
 /**
  * 载入 插件
  */
-function load_plugin($pluginName, $pluginVersion)
+function load_plugin($pluginName, $pluginVersion): bool
 {
 
     global $pluginList;
@@ -114,7 +114,7 @@ function load_plugin($pluginName, $pluginVersion)
                 $file = get_plugin_path($pluginName, $pluginVersion) . "/$pluginName" .  ".php";
                 CheckSyntax($file, false);
                 $logSystem = new LogSystem("pluginSystem", "System");
-                $logSystem->write_log("pluginSystem", "load_plugin", "Load plugin File [$pluginName]<$pluginVersion>($pluginName.php)", "DEBUG");
+                $logSystem->write_log("pluginSystem", "load_plugin", "Load plugin File [$pluginName]<$pluginVersion>($pluginName.php)");
                 require_once($file);
                 return true;
             } catch (Error $e) {
@@ -130,10 +130,9 @@ function load_plugin($pluginName, $pluginVersion)
     } else return false;
 }
 
-function get_plugin_path($pluginName, $pluginVersion)
+function get_plugin_path($pluginName, $pluginVersion): string
 {
-    $path = "plugins/$pluginName/$pluginVersion";
-    return $path;
+    return "plugins/$pluginName/$pluginVersion";
 }
 
 /**
