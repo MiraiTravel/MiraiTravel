@@ -15,7 +15,7 @@ class Plugin
 
     static $_qqBot;
 
-    function __construct( $qqBot )
+    function __construct($qqBot)
     {
         $this->_qqBot = $qqBot;
     }
@@ -23,15 +23,22 @@ class Plugin
     /**
      * 插件初始化
      */
-    function init(){
-
+    function init()
+    {
     }
 
     /**
      * 配置
      */
-    function config( $config ){
-
+    function config($config)
+    {
     }
 
+    /**
+     * 获取插件路径
+     */
+    function get_path()
+    {
+        return dirname(__FILE__);
+    }
 }

@@ -23,6 +23,11 @@ class MiraiTravel
         self::$path = dirname(dirname(__FILE__));
     }
 
+    function get_path()
+    {
+        return self::$path;
+    }
+
     static function mirai_home_page()
     {
         // 载入 MiraiTravelSoftware
