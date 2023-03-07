@@ -8,6 +8,7 @@
 namespace MiraiTravel;
 
 use Error;
+use IntlChar;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
 
@@ -65,7 +66,7 @@ class MiraiTravel
         self::memory();
         while (true) {
             $miraiTravelInter = fgets(STDIN);
-            $miraiTravelInter = self::mirai_travel_inter_resolver($miraiTravelInter);
+            $miraiTravelInter = self::commands_split($miraiTravelInter);
             if ($miraiTravelInter[0] === "exit") {
                 break;
             } elseif (self::is_software($miraiTravelInter[0])) {
@@ -140,6 +141,60 @@ class MiraiTravel
         } else {
             return $outSplit[$num];
         }
+    }
+
+    static function commands_split(string $inter)
+    {
+        $commands = [];
+        $now = "";
+
+        $isBegin = false;
+        $inMark = false;
+        for ($i = 0; $i < strlen($inter); $i++) {
+            if ($isBegin) {
+                if (IntlChar::isspace($inter[$i])) {
+                    if ($inMark) {
+                        $now = $now . $inter[$i];
+                    } else {
+                        $isBegin = false;
+                        $commands[] = $now;
+                        $now = "";
+                    }
+                } else if ($inter[$i] == '\\') {
+                    $i++;
+                    $now = $now . $inter[$i];
+                } else {
+                    if ($inMark && $inter[$i] == '"') {
+                        $inMark = false;
+                        $isBegin = false;
+                        $commands[] = $now;
+                        $now = "";
+                    } else {
+                        $now = $now . $inter[$i];
+                    }
+                }
+            } else {
+                if (IntlChar::isspace($inter[$i])) {
+                } else {
+                    if ($inter[$i] == '"') {
+                        $inMark = true;
+                        $isBegin = true;
+                    } else if ($inter[$i] == '\\') {
+                        $i++;
+                        $isBegin = true;
+                        $now = $now  . $inter[$i];
+                    } else {
+                        $isBegin = true;
+                        $now = $now . $inter[$i];
+                    }
+                }
+            }
+        }
+        if (!empty($now)) {
+            $commands[] = $now;
+            $now = "";
+        }
+        return $commands;
     }
 
     static function memory()
