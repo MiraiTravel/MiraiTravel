@@ -65,7 +65,7 @@ class MiraiTravel
         self::memory();
         while (true) {
             $miraiTravelInter = fgets(STDIN);
-            $miraiTravelInter = self::mirai_travel_inter_resolver($miraiTravelInter);
+            $miraiTravelInter = self::commands_split($miraiTravelInter);
             if ($miraiTravelInter[0] === "exit") {
                 break;
             } elseif (self::is_software($miraiTravelInter[0])) {
