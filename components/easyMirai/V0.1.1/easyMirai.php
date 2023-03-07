@@ -5,6 +5,7 @@ namespace MiraiTravel\Components\easyMirai\V0_1_1;
 use MiraiTravel\Components\Component;
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MessageChain\MessageChain;
+use MiraiTravel\MiraiTravel;
 
 class easyMirai extends Component
 {
@@ -117,6 +118,12 @@ class easyMirai extends Component
                 $this->_qqBot->unmute_all($this->_qqBot->focus['sender']['group']['id']);
             }
             return $this->_qqBot->unmute($this->_qqBot->focus['sender']['group']['id'], $number);
+        };
+
+        $this->_qqBot->commands_split = function ($inter) {
+            // 命令分割器 ， 可以保证在你想要分割的地方分割。
+            $return = MiraiTravel::commands_split($inter);
+            return $return;
         };
     }
 }
