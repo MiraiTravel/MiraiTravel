@@ -8,6 +8,7 @@
 namespace MiraiTravel;
 
 use Error;
+use IntlChar;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
 
@@ -150,7 +151,7 @@ class MiraiTravel
         $isBegin = false;
         $inMark = false;
 
-        if (class_exists("InrlChar")) {
+        if (class_exists("IntlChar")) {
             $isspace = "IntlChar::isspace";
         } else {
             $isspace = function ($char) {
