@@ -8,7 +8,6 @@
 namespace MiraiTravel;
 
 use Error;
-use IntlChar;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
 
@@ -66,7 +65,7 @@ class MiraiTravel
         self::memory();
         while (true) {
             $miraiTravelInter = fgets(STDIN);
-            $miraiTravelInter = self::commands_split($miraiTravelInter);
+            $miraiTravelInter = self::mirai_travel_inter_resolver($miraiTravelInter);
             if ($miraiTravelInter[0] === "exit") {
                 break;
             } elseif (self::is_software($miraiTravelInter[0])) {
@@ -150,9 +149,19 @@ class MiraiTravel
 
         $isBegin = false;
         $inMark = false;
+
+        if (class_exists("InrlChar")) {
+            $isspace = "IntlChar::isspace";
+        } else {
+            $isspace = function ($char) {
+                preg_match("/[\s]/", $char);
+                return $char ? true : false;
+            };
+        }
+
         for ($i = 0; $i < strlen($inter); $i++) {
             if ($isBegin) {
-                if (IntlChar::isspace($inter[$i])) {
+                if ($isspace($inter[$i])) {
                     if ($inMark) {
                         $now = $now . $inter[$i];
                     } else {
@@ -174,7 +183,7 @@ class MiraiTravel
                     }
                 }
             } else {
-                if (IntlChar::isspace($inter[$i])) {
+                if ($isspace($inter[$i])) {
                 } else {
                     if ($inter[$i] == '"') {
                         $inMark = true;
