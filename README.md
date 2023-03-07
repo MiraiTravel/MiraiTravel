@@ -81,7 +81,7 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 
 ---
 该项目与 [MiraiEz](https://github.com/nkxingxh/MiraiEz) 为兄弟项目。
-该项目与MiraiEz的区别如下。
+本项目与MiraiEz的区别如下。
 | 功能与特性 | MiraiTravel |	MiraiEz |
 | --- | --- | --- |
 | 开发机制 | 开发每个QQ独立的脚本 | 开发通用的插件 |
