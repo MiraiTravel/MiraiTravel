@@ -93,9 +93,7 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 |插件致命错误错误方式 | 取消插件载入 | 程序终止运行 |
 |基本配置方式 | 控制台命令配置 | 修改PHP文件配置 |
 |多QQ的处理 | 通过不同的脚本处理不同的QQ | 由插件判断 |
-
-
-
+---
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MR-XieXuan/MiraiTravel/main?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/Mr-XieXuan/MiraiTravel?style=for-the-badge)
