@@ -21,6 +21,7 @@ use function MiraiTravel\MiraiApi\resp__member_join_request_event;
 use function MiraiTravel\MiraiApi\resp__new_friend_request_event;
 use function MiraiTravel\MiraiApi\send_friend_message;
 use function MiraiTravel\MiraiApi\send_group_message;
+use function MiraiTravel\MiraiApi\send_nudge;
 use function MiraiTravel\MiraiApi\send_temp_message;
 use function MiraiTravel\MiraiApi\unmute;
 use function MiraiTravel\MiraiApi\unmute_all;
@@ -265,7 +266,7 @@ class QQObj
      * @param   int     $target     指定群的群号
      * @param   int     $memberId   指定群员QQ号
      */
-    function unmute( $target, $memberId, $other = array())
+    function unmute($target, $memberId, $other = array())
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("GroupManagement", "unmute", "$target unmute $memberId " . " for " . $this->get_session_key());
@@ -297,6 +298,44 @@ class QQObj
             $group,
             $quote ?? null,
             $messageChain,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * send_nudge
+     * 发送头像戳一戳消息
+     * @param int $target   戳一戳目标
+     * @param int $subject  戳一戳的主体 , 群号或者QQ号
+     * @param string $kind  上下文类型, 可选值 Friend, Group, Stranger
+     */
+    function send_nudge($target, $subject, $kind, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "send_nudge", "$subject send" . $target . " for " . $this->get_session_key());
+        return send_nudge(
+            $this->get_session_key(),
+            $target,
+            $subject,
+            $kind,
+            array("qqbot" => $this)
+        );
+    }
+
+    /**
+     * upload_voice
+     * 语音文件上传
+     * @param string $type 当前仅支持 "group"
+     * @param string $voice 语音文件
+     */
+    function upload_voice($type, $voice, $other = array())
+    {
+        $logSystem = new LogSystem($this->get_qq(), "QQBot");
+        $logSystem->write_log("sendMessage", "upload_voice", " for " . $this->get_session_key());
+        return send_nudge(
+            $this->get_session_key(),
+            $type,
+            $voice,
             array("qqbot" => $this)
         );
     }

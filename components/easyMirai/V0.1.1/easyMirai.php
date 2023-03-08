@@ -39,6 +39,24 @@ class easyMirai extends Component
         };
 
         /**
+         * 简化sessionKey获取流程
+         */
+        $this->_qqBot->easy_session_key = function ($function) {
+            do {
+                $flag = 0;
+                $msg = $function();
+                if ($flag < 3) {
+                    if ($msg['code'] === 0) {
+                        break;
+                    } else if ($msg['code'] === 3 || $msg['code'] === 4) {
+                        $this->_qqBot->get_session_key_in_mirai();
+                    }
+                }
+            } while ($flag < 3);
+            return $msg;
+        };
+
+        /**
          * reply_message
          * 回复消息 
          */
@@ -51,52 +69,52 @@ class easyMirai extends Component
                 $messageChain->push_plain($message);
                 $message = $messageChain->get_message_chain();
             }
-
             if ($quote === true) {
                 $quote = $this->_qqBot->focus['messageChain'][0]['id'];
             }
-            do {
-                $flag = 0;
-                $msg = "";
-                switch ($this->_qqBot->focus['type']) {
-                    case "FriendMessage":
-                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
-                        $msg = $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
-                        $flag++;
-                        break;
-                    case "GroupMessage":
-                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
-                        $msg = $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
-                        $flag++;
-                        break;
-                    case "TempMessage":
-                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . "||" . $this->_qqBot->focus['sender']['group']['id'] . " For TempMessage " . json_encode($message));
-                        $msg = $this->_qqBot->send_temp_massage($this->_qqBot->focus['sender']['group']['id'], $this->_qqBot->focus['sender']['group']['id'], $message, $quote);
-                        $flag++;
-                        break;
-                    case "StrangerMessage":
-                        $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
-                        $flag = 3;
-                        break;
-                    case "MemberJoinEvent":
-                        $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['member']['group']['id'] . " For GroupMessage " . json_encode($message));
-                        $msg = $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
-                        $flag++;
-                        break;
-                    case "":
-                        break;
-                    default:
-                        $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
-                        $flag = 3;
-                }
-                if ($flag < 3) {
-                    if ($msg['code'] === 0) {
-                        break;
-                    } else if ($msg['code'] === 3 || $msg['code'] === 4) {
-                        $this->_qqBot->get_session_key_in_mirai();
-                    }
-                }
-            } while ($flag < 3);
+            switch ($this->_qqBot->focus['type']) {
+                case "FriendMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . " For FriendMessage " . json_encode($message));
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($message, $quote) {
+                            return $this->_qqBot->send_friend_massage($this->_qqBot->focus['sender']['id'], $message, $quote);
+                        }
+                    );
+                    break;
+                case "GroupMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['group']['id'] . " For GroupMessage " . json_encode($message));
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($message, $quote) {
+                            return $this->_qqBot->send_group_massage($this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                        }
+                    );
+                    break;
+                case "TempMessage":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['sender']['id'] . "||" . $this->_qqBot->focus['sender']['group']['id'] . " For TempMessage " . json_encode($message));
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($message, $quote) {
+                            return $this->_qqBot->send_temp_massage($this->_qqBot->focus['sender']['group']['id'], $this->_qqBot->focus['sender']['group']['id'], $message, $quote);
+                        }
+                    );
+                    break;
+                case "StrangerMessage":
+                    $logSystem->write_log("script", "reply_message", "回复陌生人消息方法待开发。");
+                    return false;
+                    break;
+                case "MemberJoinEvent":
+                    $logSystem->write_log("script", "reply_message", $this->_qqBot->focus['member']['group']['id'] . " For GroupMessage " . json_encode($message));
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($message, $quote) {
+                            return $this->_qqBot->send_group_massage($this->_qqBot->focus['member']['group']['id'], $message, $quote);
+                        }
+                    );
+                    break;
+                case "":
+                    break;
+                default:
+                    $logSystem->write_log("script", "reply_message", "你似乎使用了错误的方法,此方法仅用于回复 好友消息 , 群消息 , 临时消息 , 陌生人消息。");
+                    return false;
+            }
         };
 
         /**
@@ -118,6 +136,58 @@ class easyMirai extends Component
                 $this->_qqBot->unmute_all($this->_qqBot->focus['sender']['group']['id']);
             }
             return $this->_qqBot->unmute($this->_qqBot->focus['sender']['group']['id'], $number);
+        };
+
+        /**
+         * 对事件的处理
+         * true 同意
+         * false 不同意
+         */
+        $this->_qqBot->reply_event = function ($opinion) {
+            $logSystem = new LogSystem($this->_qqBot->get_qq(), "QQBot");
+            $logSystem->write_log("script", "reply_event", $this->_qqBot->focus['type'] . "->" . $opinion);
+            switch ($this->_qqBot->focus['type']) {
+                case "NewFriendRequestEvent":
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($opinion) {
+                            return $this->_qqBot->resp__new_friend_request_event(
+                                $this->_qqBot->focus['eventId'],
+                                $this->_qqBot->focus['fromId'],
+                                $this->_qqBot->focus['groupId'],
+                                !$opinion,
+                                $this->_qqBot->focus['message']
+                            );
+                        }
+                    );
+                case "MemberJoinRequestEvent":
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($opinion) {
+                            return $this->_qqBot->resp__member_join_request_event(
+                                $this->_qqBot->focus['eventId'],
+                                $this->_qqBot->focus['fromId'],
+                                $this->_qqBot->focus['groupId'],
+                                !$opinion,
+                                $this->_qqBot->focus['message']
+                            );
+                        }
+                    );
+                case "BotInvitedJoinGroupRequestEvent":
+                    return $this->_qqBot->easy_session_key(
+                        function () use ($opinion) {
+                            return $this->_qqBot->resp__bot_invited_join_group_request_event(
+                                $this->_qqBot->focus['eventId'],
+                                $this->_qqBot->focus['fromId'],
+                                $this->_qqBot->focus['groupId'],
+                                !$opinion,
+                                $this->_qqBot->focus['message']
+                            );
+                        }
+                    );
+                    break;
+                default:
+                    return false;
+                    break;
+            }
         };
 
         $this->_qqBot->commands_split = function ($inter) {

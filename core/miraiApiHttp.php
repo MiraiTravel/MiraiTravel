@@ -157,18 +157,43 @@ function send_temp_message($sessionKey = "", $qq, $group, $quote = null, $messag
 /**
  * send_nudge
  * 发送头像戳一戳消息
+ * @param string $sessionKey 你的SessionKey
+ * @param int $target   戳一戳目标
+ * @param int $subject  戳一戳的主体 , 群号或者QQ号
+ * @param string $kind  上下文类型, 可选值 Friend, Group, Stranger
  */
-function send_nudge()
+function send_nudge($sessionKey = "", $target, $subject, $kind, $other = array())
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['target'] = $target;
+    $content['subject'] = $subject;
+    $content['kind'] = $kind;
+
+    $funcName = basename('\\', '/', __FUNCTION__);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
- * send_nudge
- * 发送头像戳一戳消息
+ * upload_voice
+ * 语音文件上传
+ * @param string $sessionKey 你的SessionKey
+ * @param string $type 当前仅支持 "group"
+ * @param string $voice 语音文件
  */
-function upload_voice( $sessionKey , $type , $voice)
+function upload_voice($sessionKey = "", $type, $voice, $other = array())
 {
+    $content = array();
+    if (!empty($sessionKey)) {
+        $content['sessionKey'] = (string)$sessionKey;
+    }
+    $content['type'] = $type;
+    $content['voice'] = $voice;
 
+    $funcName = basename('\\', '/', __FUNCTION__);
+    return adapter_manager("auto", $funcName, $content, $other);
 }
 
 /**
