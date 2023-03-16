@@ -50,6 +50,7 @@ MiraiTravel 需要获取使用 shell_exec 函数的权限。</br>
 基础配置项已在该配置文件中有 改成需要的配置即可。 </br>
 
 [QQBot]:./docs/QQBot.md
+[Plugin]:./docs/Plugin.md
 [MiraiTravel]:./docs/MiraiTravel.md
 
 文档均在 文件夹 docs 中 。 </br>
