@@ -119,8 +119,12 @@ class QQObj
                 if ($pluginConfig['pluginType'] === "messageDispose") {
                     if ($pluginConfig['config'] === true) {
                         foreach ($pluginConfig['message'] as $value) {
-                            if (strpos(\MiraiTravel\Webhook\get_var("_DATA")['messageChain'][1]['text'], $value) === 0) {
-                                // 继续
+                            try {
+                                if (strpos(\MiraiTravel\Webhook\get_var("_DATA")['messageChain'][1]['text'], $value) === 0) {
+                                    // 继续
+                                    return true;
+                                }
+                            } catch (Error $e) {
                                 return true;
                             }
                         }

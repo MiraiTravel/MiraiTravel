@@ -52,7 +52,7 @@ class qqBot extends MiraiTravelSoftware
             $qqbotManager->config_qq_obj($argv[0]);
             $qqbot = $qqbotManager->get_qqobj($argv[0]);
             if (!$qqbot) {
-                CliStyles::println("未挂载 " . $argc[0] . "的QQBot。", "Red");
+                CliStyles::println("未挂载 " . $argv[0] . "的QQBot。", "Red");
                 CliStyles::println("挂载 " . json_encode($qqbotManager::$qqObjArray) . "的QQBot。", "Red");
                 return 0;
             }
