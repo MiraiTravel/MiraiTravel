@@ -73,8 +73,6 @@ class MiraiTravel
                 $argv = $miraiTravelInter;
                 unset($argv[0]);
                 $argv = array_values($argv);
-                unset($argv[count($argv) - 1]);
-                $argv = array_values($argv);
                 $argc = count($argv);
                 $software = "MiraiTravel\Software\\" . $miraiTravelInter[0];
                 new $software($argc, $argv);
