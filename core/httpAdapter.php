@@ -14,6 +14,8 @@ function http_adapter($url, $command, $content, $others = array())
     $command = func_to_command($command);
     if ($others['apiType'] === 'GET') {
         return json_decode(curl_get($url . $command . "?" . http_build_query($content)), true);
+    } else if ($others['apiType'] === 'POSTFILE') {
+        return json_decode(curl_post($content, $url . $command), true);
     } else {
         return json_decode(curl_post(json_encode($content), $url . $command), true);
     }
@@ -41,8 +43,8 @@ function func_to_command($funcName)
 
 function curl_get($url, $cookie = '', $referer = '', $header = '', $setopt = array(), $UserAgent = 'MiraiTravel')
 {
-    $logSystem = new LogSystem("MiraiTravel","System");
-    $logSystem->write_log("httpAdapter","curl_get","A CGET URL=[$url] ");
+    $logSystem = new LogSystem("MiraiTravel", "System");
+    $logSystem->write_log("httpAdapter", "curl_get", "A CGET URL=[$url] ");
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
@@ -71,14 +73,15 @@ function curl_get($url, $cookie = '', $referer = '', $header = '', $setopt = arr
 
     $response = curl_exec($curl);
     curl_close($curl);
-    $logSystem->write_log("httpAdapter","curl_get","A CGET URL=[$url] , RETURN=[$response] ");
+    $logSystem->write_log("httpAdapter", "curl_get", "A CGET URL=[$url] , RETURN=[$response] ");
     return $response;
 }
 
 function curl_post($payload, $url, $cookie = '', $referer = '', $header = array(), $setopt = array(), $UserAgent = 'MiraiTravel')
 {
-    $logSystem = new LogSystem("MiraiTravel","System");
-    $logSystem->write_log("httpAdapter","curl_post","A CPOST URL=[$url] , BODY=[$payload]");
+    $logSystem = new LogSystem("MiraiTravel", "System");
+    $logSystem->write_log("httpAdapter", "curl_post", "A CPOST URL=[$url] , BODY=[$payload]");
+
     $header = is_array($header) ? $header : array();
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -107,6 +110,6 @@ function curl_post($payload, $url, $cookie = '', $referer = '', $header = array(
 
     $response = curl_exec($curl);
     curl_close($curl);
-    $logSystem->write_log("httpAdapter","curl_post","A CPOSTOK URL=[$url] , BODY=[$payload] , RETURN=[$response]");
+    $logSystem->write_log("httpAdapter", "curl_post", "A CPOSTOK URL=[$url] , BODY=[$payload] , RETURN=[$response]");
     return $response;
 }

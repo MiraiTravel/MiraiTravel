@@ -185,12 +185,15 @@ function send_nudge($sessionKey = "", $target, $subject, $kind, $other = array()
  */
 function upload_voice($sessionKey = "", $type, $voice, $other = array())
 {
+
+    $other['apiType'] = "POSTFILE";
+
     $content = array();
     if (!empty($sessionKey)) {
         $content['sessionKey'] = (string)$sessionKey;
     }
     $content['type'] = $type;
-    $content['voice'] = $voice;
+    $content['voice'] = curl_file_create($voice, null, "voice");
 
     $funcName = basename('\\', '/', __FUNCTION__);
     return adapter_manager("auto", $funcName, $content, $other);

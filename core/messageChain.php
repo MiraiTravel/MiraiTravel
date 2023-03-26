@@ -2,6 +2,7 @@
 
 namespace MiraiTravel\MessageChain;
 
+use MiraiTravel\MiraiTravel;
 
 class MessageChain
 {
@@ -187,6 +188,25 @@ class MessageChain
         $node = array();
         $node['type'] = "Image";
         $node['url'] = $url;
+        $this->messageChain[] = $node;
+        return $this->messageChain;
+    }
+
+    /**
+     * push_voice
+     * 添加图片
+     * @param string $url 音频链接 。 
+     * @param string $type 音频链接类型默认为 path 。 url , path , base64 可选
+     */
+    function push_voice($url, $type = "path")
+    {
+        $node = array();
+        $node['type'] = "Voice";
+        if ($type == "path") {
+            $path = new MiraiTravel;
+            $url = $path->get_path() . "/$url";
+        }
+        $node[$type] = $url;
         $this->messageChain[] = $node;
         return $this->messageChain;
     }
