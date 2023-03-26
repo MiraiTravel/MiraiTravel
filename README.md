@@ -1,10 +1,11 @@
 <a href="https://github.com/MR-XieXuan/MiraiTravel"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 <div align="center">
-<img src="docs/img/MiraiTravelico.jpg"> </img>
+<img width="160" src="docs/img/MiraiTravelico.jpg" alt="logo"> </img>
 <h1 >
 MiraiTravel
 </h1>
 </div>
+----
 
 ### 简介 Information
 MiraiTravel 是一个运行于 PHP 环境的 功能强大的QQ机器人框架。基于 Mirai-api-http .。</br>
