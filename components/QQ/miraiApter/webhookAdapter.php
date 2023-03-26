@@ -5,7 +5,7 @@
  * 所以当使用 webhook 时只能进行一个操作。
  */
 
-namespace MiraiTravel\WebhookAdapter;
+namespace MiraiTravel\Components\QQ\miraiApter\WebhookAdapter;
 
 use stdClass;
 

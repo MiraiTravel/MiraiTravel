@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\MessageChain;
+namespace MiraiTravel\Components\QQ\miraiApter\MessageChain;
 
 use MiraiTravel\MiraiTravel;
 

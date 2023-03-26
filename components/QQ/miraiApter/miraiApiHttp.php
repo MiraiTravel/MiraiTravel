@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\MiraiApi;
+namespace MiraiTravel\Components\QQ\miraiApter\MiraiApi;
 
 use MiraiTravel\LogSystem\LogSystem;
 

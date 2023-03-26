@@ -1,33 +1,33 @@
 <?php
 
-namespace MiraiTravel\QQObj;
+namespace MiraiTravel\Components\QQ\miraiApter\QQObj;
 
 use Closure;
 use Error;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
-use MiraiTravel\MessageChain\MessageChain;
+use MiraiTravel\Components\QQ\miraiApter\MessageChain\MessageChain;
 use MiraiTravel\MiraiTravel;
-
-use function MiraiTravel\ComponentSystem\load_component;
-use function MiraiTravel\MiraiApi\bind;
-use function MiraiTravel\MiraiApi\delete_friend;
-use function MiraiTravel\MiraiApi\member_info;
-use function MiraiTravel\MiraiApi\member_profile;
-use function MiraiTravel\MiraiApi\mute;
-use function MiraiTravel\MiraiApi\mute_all;
-use function MiraiTravel\MiraiApi\recall;
-use function MiraiTravel\MiraiApi\resp__member_join_request_event;
-use function MiraiTravel\MiraiApi\resp__new_friend_request_event;
-use function MiraiTravel\MiraiApi\send_friend_message;
-use function MiraiTravel\MiraiApi\send_group_message;
-use function MiraiTravel\MiraiApi\send_nudge;
-use function MiraiTravel\MiraiApi\send_temp_message;
-use function MiraiTravel\MiraiApi\unmute;
-use function MiraiTravel\MiraiApi\unmute_all;
-use function MiraiTravel\MiraiApi\verify;
 use function MiraiTravel\PluginSystem\get_plugin_path;
 use function MiraiTravel\PluginSystem\load_plugin;
+
+use function MiraiTravel\ComponentSystem\load_component;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\bind;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\delete_friend;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\member_info;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\member_profile;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\mute;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\mute_all;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\recall;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\resp__member_join_request_event;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\resp__new_friend_request_event;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_friend_message;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_group_message;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_nudge;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_temp_message;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\unmute;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\unmute_all;
+use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\verify;
 
 /**
  * QQObj 
