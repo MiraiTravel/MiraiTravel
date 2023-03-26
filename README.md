@@ -80,5 +80,5 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 ![GitHub Repo stars](https://img.shields.io/github/stars/Mr-XieXuan/MiraiTravel?style=social)
 
 # 致谢
-致谢 Vscode 为本项目提供高效的代码编辑器。
-致谢 Aber 为本项目绘制了一个可爱的LOGO。
+致谢 Vscode 为本项目提供高效的代码编辑器。</br>
+致谢 Aber 为本项目绘制了一个可爱的LOGO。 </br>
