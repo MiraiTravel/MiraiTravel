@@ -5,11 +5,11 @@
  * 命名空间一定得是 MiraiEzT\QQObj\Script ,否则将会报错
  */
 
-namespace MiraiTravel\QQObj\Script;
+namespace MiraiTravel\Script\QQ\Q2771717841;
 
 use MiraiTravel\LogSystem\LogSystem;
-use MiraiTravel\MessageChain\MessageChain;
-use MiraiTravel\QQObj\QQObj;
+use MiraiTravel\Components\QQ\miraiApter\MessageChain\MessageChain;
+use MiraiTravel\Components\QQ\miraiApter\QQObj\QQObj;
 
 use function MiraiTravel\HttpAdapter\curl_post;
 

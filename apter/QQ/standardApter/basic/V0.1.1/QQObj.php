@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\Components\QQ\standardComponents\QQObj\V0_1_1;
+namespace MiraiTravel\Components\QQ\standardComponents\Basic\V0_1_1;
 
 use Closure;
 
@@ -15,7 +15,7 @@ class QQObj
     private $componentList = array();
     private $pluginList = array();
     private $dynamicMethods = array();
-    public $_qqBot;
+    public $bot;
 
     /**
      * __constuct 构造函数

@@ -37,7 +37,7 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 * core  MiraiTravel核心文件 
 * data  运行时的数据存储文件
 * logs  运行日志文件
-* components    组件安装路径
+* apter    适配器安装路径
 * plugins   插件安装路径
 * script    用户脚本文件
 * docs  文档
@@ -54,23 +54,6 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/MR-XieXuan/MiraiTravel.svg)](https://starchart.cc/MR-XieXuan/MiraiTravel)
-
----
-该项目与 [MiraiEz](https://github.com/nkxingxh/MiraiEz) 为兄弟项目。
-
-本项目与MiraiEz的区别如下。
-| 功能与特性 | MiraiTravel |	MiraiEz |
-| --- | --- | --- |
-| 开发机制 | 开发每个QQ独立的脚本 | 开发通用的插件 |
-| API函数实现 | 类方法 | 全局函数 |
-| 是否有命名空间 | 是 | 否 
-|命令注册 | 插件可注册,脚本不必要注册 | 可注册 |
-|插件 | 由脚本进行变种 | 原生开发方向 |
-|调试反馈机制 | 日志 | QQ消息反馈与日志 |
-|插件致命错误错误方式 | 取消插件载入 | 程序终止运行 |
-|基本配置方式 | 控制台命令配置 | 修改PHP文件配置 |
-|多QQ的处理 | 通过不同的脚本处理不同的QQ | 由插件判断 |
----
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MR-XieXuan/MiraiTravel/main?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/Mr-XieXuan/MiraiTravel?style=for-the-badge)

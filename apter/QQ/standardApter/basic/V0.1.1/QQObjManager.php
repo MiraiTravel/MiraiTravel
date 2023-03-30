@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\QQObj\Script;
+namespace MiraiTravel\Components\QQ\standardComponents\Basic\V0_1_1;
 
 use Error;
 use MiraiTravel\DataSystem\DataSystem;
