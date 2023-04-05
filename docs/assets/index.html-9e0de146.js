@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-8c363a9a","path":"/manual/adapter/QQ/standard/","title":"QQ适配器标准接口手册","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680693526000,"contributors":[{"name":"XieXuan","email":"Mr_Xie_@outlook.com","commits":1}]},"filePathRelative":"manual/adapter/QQ/standard/index.md"}');export{a as data};

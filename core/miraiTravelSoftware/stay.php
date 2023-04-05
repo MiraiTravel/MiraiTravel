@@ -9,7 +9,7 @@
 
 namespace MiraiTravel\Software;
 
-
+// 载入依赖文件
 require_once "stay/loder.php";
 
 use MiraiTravel\LogSystem\LogSystem;

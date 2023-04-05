@@ -2,8 +2,9 @@
 
 namespace MiraiTravel\adapter\QQ\miraiApter\basic\QQObj;
 
-use MiraiTravel\adapter\QQ\standard\basic\QQObjTrait;
-use MiraiTravel\Components\QQ\standardComponents\Basic\QQObj as BasicQQObj;
+use MiraiTravel\adapter\QQ\miraiApter\basic\QQObjTrait;
+use MiraiTravel\adapter\QQ\standard\basic\QQObj as BasicQQObj;
+
 /**
  * QQObj 
  */

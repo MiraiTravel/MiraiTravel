@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\adapter\QQ\miraiApter\basic;
 
 use Closure;
 use Error;
@@ -93,27 +93,10 @@ trait QQObjTrait
     /**
      * 启动组件 
      * $componentName 组件名称
-     * $componentVersion 组件版本号
      */
-    function open_component(string $componentName, string $componentVersion): bool
+    function open_component(string $componentName): bool
     {
-        if (!load_component($componentName, $componentVersion)) {
-            return false;
-        }
-        if (in_array($componentName,  array(array_keys($this->componentList)))) {
-
-            if (in_array($componentVersion, array(array_keys(array($this->componentList[$componentName]))))) {
-                return true;
-            }
-        }
-        try {
-            $componentClassName = "MiraiTravel\Components\\$componentName\\" . str_replace(".", "_", $componentVersion)  . "\\$componentName";
-            $this->componentList[$componentName] = [$componentVersion => new $componentClassName($this)];
-        } catch (Error $e) {
-            $logSystem = new LogSystem($this->get_qq(), "QQBot");
-            $logSystem->write_log("component", "open_component", "open [$componentName]<$componentVersion> Faild :$e");
-        }
-        //version_compare("$componentVersion", "VersionManager", ">");
+        return false;
     }
 
     function open_plugin(string $pluginName, string $pluginVersion, $configs = array()): bool
@@ -516,7 +499,6 @@ trait QQObjTrait
             return false;
         };
         $dataSystem = new DataSystem($this->get_qq(), "QQBot");
-        $dataSystem->set_qq_bot($this->get_qq());
         $dataSystem->write_data("config", "sessionKey", $sessionKey);
         $this::$sessionKey = $sessionKey;
         return $sessionKey;

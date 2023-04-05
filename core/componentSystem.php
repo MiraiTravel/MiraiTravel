@@ -30,22 +30,9 @@ foreach ($componentDir as $key => $component) {
 /**
  * 载入 组件
  */
-function load_component($componentName, $componentVersion)
+function load_component($componentName)
 {
-
-    global $componentList;
-    if (in_array($componentName, array_keys($componentList))) {
-        if (in_array($componentVersion, array_values($componentList[$componentName]))) {
-            try {
-                require_once "components/$componentName/$componentVersion/$componentName" .  ".php";
-                return true;
-            } catch (Error $e) {
-                $logSystem = new LogSystem("componentSystem", "System");
-                $logSystem->write_log("componentSystem", "load_component", "Cant Load Component File [$componentName]<$componentVersion>($componentName.php)", "ERROR");
-                return false;
-            }
-        } else return false;
-    } else return false;
+    return false;
 }
 
 

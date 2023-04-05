@@ -4,8 +4,8 @@ namespace MiraiTravel\Components\QQ\miraiApter\MiraiApi;
 
 use MiraiTravel\LogSystem\LogSystem;
 
-use function MiraiTravel\HttpAdapter\http_adapter;
-use function MiraiTravel\WebhookAdapter\webhook_adapter;
+use function MiraiTravel\Components\QQ\miraiApter\HttpAdapter\http_adapter;
+use function MiraiTravel\Components\QQ\miraiApter\WebhookAdapter\webhook_adapter;
 
 /**
  * adapter_manager 适配器函数
