@@ -1,12 +1,12 @@
 import { defaultTheme } from 'vuepress'
 
 export default {
-    head: [['link', { rel: 'icon', href: '/image/MiraiTravelico.jpg' }]],
+    head: [['link', { rel: 'icon', href: '/MiraiTravel/image/MiraiTravelico.jpg' }]],
     base: '/MiraiTravel/',   // 设置站点根路径
     theme: defaultTheme({
         // 默认主题配置
         home: "/",
-        logo: '/MiraiTravel/image/MiraiTravelico.jpg',
+        logo: '/image/MiraiTravelico.jpg',
         repo: 'https://github.com/MR-XieXuan/MiraiTravel',
         navbar: [
             {

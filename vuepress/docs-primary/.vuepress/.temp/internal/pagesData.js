@@ -13,20 +13,20 @@ export const pagesData = {
   "v-1ae232e2": () => import(/* webpackChunkName: "v-1ae232e2" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/component/index.html.js").then(({ data }) => data),
   // path: /manual/plugin/
   "v-3125414c": () => import(/* webpackChunkName: "v-3125414c" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/plugin/index.html.js").then(({ data }) => data),
-  // path: /study/adapter/
-  "v-5d095102": () => import(/* webpackChunkName: "v-5d095102" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/adapter/index.html.js").then(({ data }) => data),
   // path: /manual/script/
   "v-7f59da98": () => import(/* webpackChunkName: "v-7f59da98" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/script/index.html.js").then(({ data }) => data),
+  // path: /study/adapter/
+  "v-5d095102": () => import(/* webpackChunkName: "v-5d095102" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/adapter/index.html.js").then(({ data }) => data),
   // path: /study/advice/
   "v-5238fd98": () => import(/* webpackChunkName: "v-5238fd98" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/advice/index.html.js").then(({ data }) => data),
   // path: /study/component/
   "v-7e06dfd1": () => import(/* webpackChunkName: "v-7e06dfd1" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/component/index.html.js").then(({ data }) => data),
   // path: /study/consoleDesk/
   "v-5cc2d6de": () => import(/* webpackChunkName: "v-5cc2d6de" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/consoleDesk/index.html.js").then(({ data }) => data),
-  // path: /study/plugin/
-  "v-794e52bd": () => import(/* webpackChunkName: "v-794e52bd" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/plugin/index.html.js").then(({ data }) => data),
   // path: /study/script/
   "v-087c2425": () => import(/* webpackChunkName: "v-087c2425" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/script/index.html.js").then(({ data }) => data),
+  // path: /study/plugin/
+  "v-794e52bd": () => import(/* webpackChunkName: "v-794e52bd" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/plugin/index.html.js").then(({ data }) => data),
   // path: /manual/adapter/QQ/
   "v-c2096582": () => import(/* webpackChunkName: "v-c2096582" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/adapter/QQ/index.html.js").then(({ data }) => data),
   // path: /study/course/mirai/
