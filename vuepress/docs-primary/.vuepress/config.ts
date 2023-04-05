@@ -2,6 +2,7 @@ import { defaultTheme } from 'vuepress'
 
 export default {
     head: [['link', { rel: 'icon', href: '/image/MiraiTravelico.jpg' }]],
+    base: '/MiraiTravel/',   // 设置站点根路径
     theme: defaultTheme({
         // 默认主题配置
         home: "/",

@@ -10,7 +10,7 @@
 如果你现在对处理逻辑并无兴趣,你也可以阅读快速上手文档。
 当你学会本框架的使用后,绝对会有不一样的开发体验。</p>
 <p>下面是相关与 Mirai 的快速上手文档。其他的快速上手文档可以在右上角找到。</p>
-<p><RouterLink to="/study/course/mirai/">使用Mirai快速上手</RouterLink></p>
+<p><a href="/study/course/mirai/" target="_blank" rel="noopener noreferrer">使用Mirai快速上手<ExternalLinkIcon/></a></p>
 <p>MiraiTravel 最基础的使用是在控制台进行机器人的控制,例如对消息进行收发。
 但是最实用的使用是撰写脚本令机器人在收到特定的消息时做出特定的反应。(如回复消息,删除好友,禁言某人,撤回某消息)</p>
 </div></template>
