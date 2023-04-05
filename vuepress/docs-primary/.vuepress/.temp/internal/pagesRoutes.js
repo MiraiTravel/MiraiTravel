@@ -1,5 +1,5 @@
 export const pagesRoutes = [
-  ["v-8daa1a0e","/",{"title":"MiraiTravel"},["/index.html","/index.md"]],
+  ["v-8daa1a0e","/",{"title":""},["/index.html","/index.md"]],
   ["v-7618c56f","/announcement/",{"title":"Future V2 : 大致规划 V2 版本开发目标与开发任务与公告"},["/announcement/index.html","/announcement/index.md"]],
   ["v-c850f7e0","/manual/",{"title":"MiraiTravel"},["/manual/index.html","/manual/index.md"]],
   ["v-d7188082","/study/",{"title":"入门"},["/study/index.html","/study/index.md"]],

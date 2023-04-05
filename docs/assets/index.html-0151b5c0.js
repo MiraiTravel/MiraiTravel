@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1dd213f4","path":"/study/course/mirai/","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680695919000,"contributors":[{"name":"XieXuan","email":"Mr_Xie_@outlook.com","commits":1}]},"filePathRelative":"study/course/mirai/index.md"}');export{e as data};
