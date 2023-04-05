@@ -15,10 +15,10 @@ export const pagesComponents = {
   "v-1ae232e2": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ae232e2" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/component/index.html.vue")),
   // path: /manual/plugin/
   "v-3125414c": defineAsyncComponent(() => import(/* webpackChunkName: "v-3125414c" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/plugin/index.html.vue")),
-  // path: /manual/script/
-  "v-7f59da98": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f59da98" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/script/index.html.vue")),
   // path: /study/adapter/
   "v-5d095102": defineAsyncComponent(() => import(/* webpackChunkName: "v-5d095102" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/adapter/index.html.vue")),
+  // path: /manual/script/
+  "v-7f59da98": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f59da98" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/manual/script/index.html.vue")),
   // path: /study/advice/
   "v-5238fd98": defineAsyncComponent(() => import(/* webpackChunkName: "v-5238fd98" */"F:/Project/工作文件夹/MiraiTravel/vuepress/docs-primary/.vuepress/.temp/pages/study/advice/index.html.vue")),
   // path: /study/component/

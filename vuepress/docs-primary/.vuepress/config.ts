@@ -6,7 +6,7 @@ export default {
     theme: defaultTheme({
         // 默认主题配置
         home: "/",
-        logo: '/image/MiraiTravelico.jpg',
+        logo: '/MiraiTravel/image/MiraiTravelico.jpg',
         repo: 'https://github.com/MR-XieXuan/MiraiTravel',
         navbar: [
             {
