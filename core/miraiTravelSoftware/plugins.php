@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\Software;
+namespace MiraiTravel\Software\Plugins;
 
 use Error;
 use MiraiTravel\CliStyles;
@@ -8,7 +8,7 @@ use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MiraiTravel;
 use MiraiTravel\MiraiTravelSoftware;
 
-class plugins extends MiraiTravelSoftware
+class Plugins extends MiraiTravelSoftware
 {
 
     const information = "插件管理系统";

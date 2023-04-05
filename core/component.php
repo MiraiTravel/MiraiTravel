@@ -13,14 +13,17 @@ namespace MiraiTravel\Components;
 class Component
 {
     const _version = "";
-    static $_qqBot;
+    public $_bot;
+
     /**
      * 构造函数
-     * @param qqBot $qqBot 传入启用这个插件的qqBot对象
+     * @param bot $bot 传入启用这个组件的qqBot对象
+     * 
+     * @return null
      */
     function __construct($qqBot)
     {
-        $this->_qqBot = $qqBot;
+        $this->_bot = $qqBot;
         $this->init();
         $this->hook();
     }
@@ -36,6 +39,7 @@ class Component
      */
     function open_component($component, $version)
     {
+        $this->_bot->open_component($component, $version);
     }
 
     function hook()
@@ -58,7 +62,7 @@ class Component
 }
 
 
-function component_requir_once( $file )
+function component_requir_once($file)
 {
     echo debug_backtrace();
 }
@@ -69,8 +73,3 @@ function component_requir_once( $file )
  */
 
 namespace MiraiTravel\ComponentSystem;
-
-
-
-
-

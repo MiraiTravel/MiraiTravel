@@ -1,12 +1,13 @@
 <?php
 
-namespace MiraiTravel\Software;
+namespace MiraiTravel\Software\Help;
 
 use MiraiTravel\CliStyles;
+use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MiraiTravel;
 use MiraiTravel\MiraiTravelSoftware;
 
-class help extends MiraiTravelSoftware
+class Help extends MiraiTravelSoftware
 {
 
     const information = "帮助系统";
@@ -26,6 +27,7 @@ class help extends MiraiTravelSoftware
 
     function print_information($command, $information)
     {
-        echo CliStyles::ColorGreen . $command . "\t" . CliStyles::ColorYellow . $information . "\r\n" . CliStyles::ColorDefault;
+        LogSystem::print( $command . "\t" , "Green");
+        LogSystem::println( $information , "Yellow");
     }
 }

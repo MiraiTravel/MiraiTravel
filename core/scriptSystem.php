@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 加载脚本
+ * 脚本系统
  */
 
 namespace MiraiTravel\ScriptSystem;

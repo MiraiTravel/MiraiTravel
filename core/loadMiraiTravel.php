@@ -15,3 +15,5 @@ foreach ($coreFiles as $key => $coreFile) {
         require_once "./core/$coreFile";
     }
 }
+
+

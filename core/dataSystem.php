@@ -16,34 +16,21 @@ class DataSystem
 
     private $_dataUser;
     private $_userType;
-    private $_qq = null;
-    const USER_TYPE_POSSIBILITY = array("Component", "QQBot", "System");
+    const USER_TYPE_POSSIBILITY = array("Adapter", "Component", "Script", "Plugin", "System");
 
     /**
      * 构造函数
-     * @param string $dataUser 数据创建者 (组件名称,QQBot的QQ号,系统级名称)
-     * @param string $userType 创建者的类型 (Component,QQBot,System)
+     * @param string $dataUser 数据创建者 (比如 "QQ/Mirai/2771717841" , "MiraiTravel")
+     * @param string $userType 创建者的类型 (Adapter,Component,Script,Plugin,System)
      */
     function __construct($dataUser, $userType)
     {
         $this->_dataUser = $dataUser;
         if (in_array($userType, self::USER_TYPE_POSSIBILITY)) {
             $this->_userType = $userType;
-            if( $userType === "QQBot" ){
-                $this->set_qq_bot($dataUser);
-            }
         } else {
             return false;
         }
-    }
-
-    /**
-     * 设置QQ 数据中的 QQ
-     */
-    function set_qq_bot($qq)
-    {
-        $this->_qq = $qq;
-        return $qq;
     }
 
     /**
@@ -53,15 +40,10 @@ class DataSystem
      * @param string    $dataValue 数据值
      * @param int       $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
      */
-    function write_data($dataName, $dataKey, $dataValue, $level = 1)
+    function write_data($dataName, $dataKey, $dataValue)
     {
-        if ($level === 1 && $this->_userType !== "System") {
-            if (empty($this->_qq)) {
-                return false;
-            }
-        }
         try {
-            $dataFile = fopen($this->get_data_path($dataName, $level), "a+");
+            $dataFile = fopen($this->get_data_path($dataName), "a+");
             fseek($dataFile, 0);
             $newDataFile = "";
         } catch (Error $e) {
@@ -83,7 +65,7 @@ class DataSystem
             $newDataFile = $newDataFile . "\r\n" . $dataKey . " " . json_encode($dataValue) . "\r\n";
         }
         fclose($dataFile);
-        $dataFile = fopen($this->get_data_path($dataName, $level), "w");
+        $dataFile = fopen($this->get_data_path($dataName), "w");
         fputs($dataFile, $newDataFile);
         fclose($dataFile);
         return $dataValue;
@@ -93,13 +75,12 @@ class DataSystem
      * 读数据
      * @param string    $dataName  数据名称
      * @param string    $dataKey   数据键
-     * @param int       $level     数据等级 0 账号不分离的数据 1 账号分离的数据 默认1
      */
-    function read_data($dataName, $dataKey, $level = 1)
+    function read_data($dataName, $dataKey)
     {
         $dataValue = null;
         try {
-            $dataFile = fopen($this->get_data_path($dataName, $level), "a+");
+            $dataFile = fopen($this->get_data_path($dataName), "a+");
         } catch (Error $e) {
             $logSystem = new LogSystem("MiraiTravel", "System");
             $logSystem->write_log("dataSystem", "Error", $e, "ERROR");
@@ -124,7 +105,7 @@ class DataSystem
         return json_decode($dataValue);
     }
 
-    function get_data_path($dataName, $level = 1)
+    function get_data_path($dataName)
     {
         $path = "./data";
         $fileName = "$dataName.data";
