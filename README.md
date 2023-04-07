@@ -78,5 +78,5 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 特别感谢 [Github](https://github.com/?from=Mr-XieXuan) 提供了一个开源的代码托管平台,让我们可以在这里分享和交流代码。 </br>
 
 [<img src="docs/img/github-mark-white.png" width="200"/>](https://github/?from=Mr-XieXuan)
-[<img src="docs/img/vscode.png" width="200"/>](https://code.visualstudio.com/?from=MiraiTravel) 
+[<img src="docs/img/vscode.png" width="200"/>](https://code.visualstudio.com/?from=MiraiTravel) </br>
 [<img src="docs/img/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/?from=MiraiTravel)
