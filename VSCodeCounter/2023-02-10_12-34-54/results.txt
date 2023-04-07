@@ -1,0 +1,92 @@
+Date : 2023-02-10 12:34:54
+Directory : f:\Project\工作文件夹\MiraiTravel
+Total : 41 files,  2910 codes, 558 comments, 466 blanks, all 3934 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         26 |      2,246 |        557 |        365 |      3,168 |
+| Log      |          7 |        465 |          0 |         26 |        491 |
+| Markdown |          8 |        199 |          1 |         75 |        275 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                         |         41 |      2,910 |        558 |        466 |      3,934 |
+| . (Files)                                                                 |          4 |        294 |         21 |         59 |        374 |
+| components                                                                |          2 |        132 |         46 |         18 |        196 |
+| components\easyMirai                                                      |          1 |         84 |         27 |         12 |        123 |
+| components\easyMirai\V0.1.1                                               |          1 |         84 |         27 |         12 |        123 |
+| components\webhook                                                        |          1 |         48 |         19 |          6 |         73 |
+| components\webhook\V0.1.1                                                 |          1 |         48 |         19 |          6 |         73 |
+| core                                                                      |         17 |      1,581 |        475 |        255 |      2,311 |
+| core (Files)                                                              |         12 |      1,235 |        460 |        212 |      1,907 |
+| core\miraiTravelSoftware                                                  |          5 |        346 |         15 |         43 |        404 |
+| docs                                                                      |          7 |        152 |          0 |         61 |        213 |
+| docs (Files)                                                              |          5 |        102 |          0 |         41 |        143 |
+| docs\QQBot                                                                |          1 |         47 |          0 |         15 |         62 |
+| docs\System                                                               |          1 |          3 |          0 |          5 |          8 |
+| logs                                                                      |          7 |        465 |          0 |         26 |        491 |
+| logs (Files)                                                              |          4 |        208 |          0 |          0 |        208 |
+| logs\Script                                                               |          3 |        257 |          0 |         26 |        283 |
+| logs\Script\2771717841                                                    |          3 |        257 |          0 |         26 |        283 |
+| plugins                                                                   |          3 |        261 |          0 |         39 |        300 |
+| plugins\bilibiliFans                                                      |          1 |         58 |          0 |         12 |         70 |
+| plugins\bilibiliFans\V0.1.0                                               |          1 |         58 |          0 |         12 |         70 |
+| plugins\groupManager                                                      |          1 |         78 |          0 |         13 |         91 |
+| plugins\groupManager\V0.1.0                                               |          1 |         78 |          0 |         13 |         91 |
+| plugins\runoobC                                                           |          1 |        125 |          0 |         14 |        139 |
+| plugins\runoobC\V0.1.0                                                    |          1 |        125 |          0 |         14 |        139 |
+| script                                                                    |          1 |         25 |         16 |          8 |         49 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                  | language | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| f:\Project\工作文件夹\MiraiTravel\MiraiTravel.php                              | PHP      |        206 |         11 |         27 |        244 |
+| f:\Project\工作文件夹\MiraiTravel\README.md                                    | Markdown |         47 |          1 |         14 |         62 |
+| f:\Project\工作文件夹\MiraiTravel\components\easyMirai\V0.1.1\easyMirai.php    | PHP      |         84 |         27 |         12 |        123 |
+| f:\Project\工作文件夹\MiraiTravel\components\webhook\V0.1.1\webhook.php        | PHP      |         48 |         19 |          6 |         73 |
+| f:\Project\工作文件夹\MiraiTravel\core\component.php                           | PHP      |         39 |         20 |         18 |         77 |
+| f:\Project\工作文件夹\MiraiTravel\core\componentSystem.php                     | PHP      |         40 |          9 |         11 |         60 |
+| f:\Project\工作文件夹\MiraiTravel\core\dataSystem.php                          | PHP      |        112 |         25 |         12 |        149 |
+| f:\Project\工作文件夹\MiraiTravel\core\httpAdapter.php                         | PHP      |         92 |         10 |         11 |        113 |
+| f:\Project\工作文件夹\MiraiTravel\core\logSystem.php                           | PHP      |        106 |         27 |          9 |        142 |
+| f:\Project\工作文件夹\MiraiTravel\core\messageChain.php                        | PHP      |        103 |         44 |         20 |        167 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiApiHttp.php                        | PHP      |        241 |        147 |         41 |        429 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\config.php          | PHP      |        121 |          3 |         11 |        135 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\help.php            | PHP      |         22 |          3 |          7 |         32 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\plugins.php         | PHP      |         55 |          3 |          8 |         66 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\qqBot.php           | PHP      |         95 |          3 |          9 |        107 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\stay.php            | PHP      |         53 |          3 |          8 |         64 |
+| f:\Project\工作文件夹\MiraiTravel\core\plugin.php                              | PHP      |         17 |          9 |         12 |         38 |
+| f:\Project\工作文件夹\MiraiTravel\core\pluginSystem.php                        | PHP      |         40 |          9 |         11 |         60 |
+| f:\Project\工作文件夹\MiraiTravel\core\qqObj.php                               | PHP      |        369 |        130 |         49 |        548 |
+| f:\Project\工作文件夹\MiraiTravel\core\scriptSystem.php                        | PHP      |         44 |         13 |          9 |         66 |
+| f:\Project\工作文件夹\MiraiTravel\core\webhookAdapter.php                      | PHP      |         32 |         17 |          9 |         58 |
+| f:\Project\工作文件夹\MiraiTravel\docs\Component.md                            | Markdown |          6 |          0 |          8 |         14 |
+| f:\Project\工作文件夹\MiraiTravel\docs\MiraiTravel.md                          | Markdown |         29 |          0 |         10 |         39 |
+| f:\Project\工作文件夹\MiraiTravel\docs\Plugin.md                               | Markdown |          4 |          0 |          4 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\docs\QQBot.md                                | Markdown |         55 |          0 |         15 |         70 |
+| f:\Project\工作文件夹\MiraiTravel\docs\QQBot\QQBot手册.md                        | Markdown |         47 |          0 |         15 |         62 |
+| f:\Project\工作文件夹\MiraiTravel\docs\System.md                               | Markdown |          8 |          0 |          4 |         12 |
+| f:\Project\工作文件夹\MiraiTravel\docs\System\开放对象.md                          | Markdown |          3 |          0 |          5 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\loadMiraiTravel.php                          | PHP      |         11 |          3 |          4 |         18 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\script.log            | Log      |        102 |          0 |          0 |        102 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\sendMessage.log       | Log      |         31 |          0 |         26 |         57 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\2771717841\webhook.log           | Log      |        124 |          0 |          0 |        124 |
+| f:\Project\工作文件夹\MiraiTravel\logs\httpAdapter.log                         | Log      |         90 |          0 |          0 |         90 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiApiHttp.log                        | Log      |         60 |          0 |          0 |         60 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiTravel.log                         | Log      |          2 |          0 |          0 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\logs\webhook.log                             | Log      |         56 |          0 |          0 |         56 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\bilibiliFans\V0.1.0\bilibiliFans.php | PHP      |         58 |          0 |         12 |         70 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\groupManager.php | PHP      |         78 |          0 |         13 |         91 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\runoobC.php           | PHP      |        125 |          0 |         14 |        139 |
+| f:\Project\工作文件夹\MiraiTravel\script\Q2771717841.php                       | PHP      |         25 |         16 |          8 |         49 |
+| f:\Project\工作文件夹\MiraiTravel\webhook.php                                  | PHP      |         30 |          6 |         14 |         50 |
+| Total                                                                     |          |      2,910 |        558 |        466 |      3,934 |
++---------------------------------------------------------------------------+----------+------------+------------+------------+------------+

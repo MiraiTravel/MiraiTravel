@@ -1,0 +1,5 @@
+qqBot ["2771717841"]
+LOG_LEVEL "DEBUG"
+verifyKey "123123123"
+HTTP_API "http://localhost:60"
+VERSION "V0.1.0"

@@ -1,0 +1,10 @@
+{
+    "inofrmation": "一个在可以运行代码插件",
+    "pluginType": "messageDispose",
+    "config": true,
+    "message": [
+        ">python",
+        ">c",
+        ">js"
+    ]
+}

@@ -1,0 +1,57 @@
+2023-01-18 04:13:23 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 04:14:21 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 04:15:25 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 07:52:12 [DEBUG] [send_group_message] 712201056 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 07:57:20 [DEBUG] [send_group_message] 712201056 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:27:19 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:27:24 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:43:21 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:43:26 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:44:11 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:44:11 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:44:29 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:48:05 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:48:09 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 10:49:44 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 11:25:15 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 11:29:23 [DEBUG] [send_group_message] 604568448 send"\n\/box\/script.js:1\n a\n ^\n\nReferenceError: a is not defined\n    at Object.<anonymous> (\/box\/script.js:1:2)\n    at Module._compile (internal\/modules\/cjs\/loader.js:959:30)\n    at Object.Module._extensions..js (internal\/modules\/cjs\/loader.js:995:10)\n    at Module.load (internal\/modules\/cjs\/loader.js:815:32)\n    at Function.Module._load (internal\/modules\/cjs\/loader.js:727:14)\n    at Function.Module.runMain (internal\/modules\/cjs\/loader.js:1047:10)\n    at internal\/main\/run_main_module.js:17:11\n\nExited with error status 1" for 6urCRD06
+
+2023-01-18 11:30:45 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+2023-01-18 11:31:39 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for 6urCRD06
+
+2023-01-18 11:31:40 [DEBUG] [send_group_message] 604568448 send{} for 6urCRD06
+
+2023-01-18 11:32:03 [DEBUG] [send_group_message] 604568448 send{} for 6urCRD06
+
+2023-01-18 11:33:48 [DEBUG] [send_group_message] 604568448 send{} for 6urCRD06
+
+2023-01-18 11:35:48 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"\n\/box\/script.js:1\n a\n ^\n\nReferenceError: a is not defined\n    at Object.<anonymous> (\/box\/script.js:1:2)\n    at Module._compile (internal\/modules\/cjs\/loader.js:959:30)\n    at Object.Module._extensions..js (internal\/modules\/cjs\/loader.js:995:10)\n    at Module.load (internal\/modules\/cjs\/loader.js:815:32)\n    at Function.Module._load (internal\/modules\/cjs\/loader.js:727:14)\n    at Function.Module.runMain (internal\/modules\/cjs\/loader.js:1047:10)\n    at internal\/main\/run_main_module.js:17:11\n\nExited with error status 1"}] for 6urCRD06
+
+2023-01-18 11:36:07 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n"}] for 6urCRD06
+
+2023-01-18 11:36:16 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n"}] for 6urCRD06
+
+2023-01-18 11:42:59 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n"}] for 6urCRD06
+
+2023-01-18 11:44:36 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 585312byte \u5185\u5b58"}] for 6urCRD06
+
+2023-01-20 06:14:26 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 652240byte \u5185\u5b58"}] for qx4WGaPF
+2023-01-20 06:14:35 [DEBUG] [send_group_message] 604568448 send[{"type":"Plain","text":"a\n\u5f53\u524dMiraiTravel\u5df2\u4f7f\u7528 652232byte \u5185\u5b58"}] for qx4WGaPF
+2023-01-20 06:15:12 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"Hello MiraiTravel!"}] for qx4WGaPF
+2023-01-20 06:15:12 [DEBUG] [send_friend_message] 3325629928 send[{"type":"Plain","text":"You have 377 fans!"}] for qx4WGaPF

@@ -1,0 +1,31 @@
+# # Apache
+# # LoadModule rewrite_module modules/mod_rewrite.so
+# # AllowOverride All
+#RewriteEngine On
+# RewriteCond $1 !^(.well-known)
+#RewriteRule ^(.*) webhook.php?/$1 [L]
+
+###-----------------------------------
+### nginx
+rewrite ^/(?!.well-known)(.*)$ /webhook.php?/$1 last;
+#
+### nginx Subdirectory 在子目录中使用
+#location /MiraiTravel/ {
+# rewrite ^/(.*)$ /MiraiTravel/webhook.php?/$1 last;
+#}
+#
+### caddy
+# rewrite {
+#     to webhook.php?/$1
+# }
+#
+### caddy2 Caddyfile
+# @try_files {
+#     not path /.well-known/*
+#     file {
+#         try_files webhook.php
+#     }
+# }
+# rewrite @try_files {http.matchers.file.relative}
+#
+###-----------------------------------

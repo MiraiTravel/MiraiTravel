@@ -1,0 +1,8 @@
+{
+    "inofrmation": "一个获取 Bilibili 粉丝的插件",
+    "pluginType": "messageDispose",
+    "config": true,
+    "message": [
+        "/bilibilifans"
+    ]
+}

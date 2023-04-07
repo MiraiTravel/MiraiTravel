@@ -1,0 +1,117 @@
+Date : 2023-03-27 13:12:04
+Directory : f:\Project\工作文件夹\MiraiTravel
+Total : 48 files,  472 codes, 442 comments, 144 blanks, all 1058 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         35 |        453 |        443 |        144 |      1,040 |
+| Markdown |          5 |         16 |         -1 |         -2 |         13 |
+| JSON     |          8 |          3 |          0 |          2 |          5 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                        | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                           |         48 |        472 |        442 |        144 |      1,058 |
+| . (Files)                                                                                   |          4 |        -84 |        -10 |        -23 |       -117 |
+| components                                                                                  |         15 |      1,403 |        794 |        279 |      2,476 |
+| components\QQ                                                                               |         13 |      1,605 |        846 |        298 |      2,749 |
+| components\QQ\miraiApter                                                                    |          8 |      1,224 |        470 |        174 |      1,868 |
+| components\QQ\miraiApter (Files)                                                            |          6 |      1,022 |        418 |        155 |      1,595 |
+| components\QQ\miraiApter\easyMirai                                                          |          1 |        154 |         33 |         13 |        200 |
+| components\QQ\miraiApter\easyMirai\V0.1.1                                                   |          1 |        154 |         33 |         13 |        200 |
+| components\QQ\miraiApter\webhook                                                            |          1 |         48 |         19 |          6 |         73 |
+| components\QQ\miraiApter\webhook\V0.1.1                                                     |          1 |         48 |         19 |          6 |         73 |
+| components\QQ\standardComponents                                                            |          5 |        381 |        376 |        124 |        881 |
+| components\QQ\standardComponents\basic                                                      |          4 |        343 |        365 |        116 |        824 |
+| components\QQ\standardComponents\basic\V0.1.1                                               |          4 |        343 |        365 |        116 |        824 |
+| components\QQ\standardComponents\easyQQ                                                     |          1 |         38 |         11 |          8 |         57 |
+| components\QQ\standardComponents\easyQQ\V0.1.1                                              |          1 |         38 |         11 |          8 |         57 |
+| components\easyMirai                                                                        |          1 |       -154 |        -33 |        -13 |       -200 |
+| components\easyMirai\V0.1.1                                                                 |          1 |       -154 |        -33 |        -13 |       -200 |
+| components\webhook                                                                          |          1 |        -48 |        -19 |         -6 |        -73 |
+| components\webhook\V0.1.1                                                                   |          1 |        -48 |        -19 |         -6 |        -73 |
+| core                                                                                        |          7 |       -995 |       -406 |       -147 |     -1,548 |
+| docs                                                                                        |          1 |         24 |          0 |          3 |         27 |
+| plugins                                                                                     |         14 |          0 |          0 |          0 |          0 |
+| plugins\QQ                                                                                  |          7 |        316 |          3 |         45 |        364 |
+| plugins\QQ\bilibiliFans                                                                     |          2 |         66 |          0 |         12 |         78 |
+| plugins\QQ\bilibiliFans\V0.1.0                                                              |          2 |         66 |          0 |         12 |         78 |
+| plugins\QQ\groupManager                                                                     |          2 |        110 |          3 |         15 |        128 |
+| plugins\QQ\groupManager\V0.1.0                                                              |          2 |        110 |          3 |         15 |        128 |
+| plugins\QQ\runoobC                                                                          |          3 |        140 |          0 |         18 |        158 |
+| plugins\QQ\runoobC\V0.1.0                                                                   |          3 |        140 |          0 |         18 |        158 |
+| plugins\bilibiliFans                                                                        |          2 |        -66 |          0 |        -12 |        -78 |
+| plugins\bilibiliFans\V0.1.0                                                                 |          2 |        -66 |          0 |        -12 |        -78 |
+| plugins\groupManager                                                                        |          2 |       -110 |         -3 |        -15 |       -128 |
+| plugins\groupManager\V0.1.0                                                                 |          2 |       -110 |         -3 |        -15 |       -128 |
+| plugins\runoobC                                                                             |          3 |       -140 |          0 |        -18 |       -158 |
+| plugins\runoobC\V0.1.0                                                                      |          3 |       -140 |          0 |        -18 |       -158 |
+| public                                                                                      |          1 |         65 |          6 |         14 |         85 |
+| script                                                                                      |          6 |         59 |         58 |         18 |        135 |
+| script (Files)                                                                              |          1 |        -25 |        -16 |         -7 |        -48 |
+| script\Administrator                                                                        |          1 |          0 |          0 |          1 |          1 |
+| script\President                                                                            |          1 |         42 |         37 |         11 |         90 |
+| script\QQ                                                                                   |          1 |         42 |         37 |         11 |         90 |
+| script\email                                                                                |          2 |          0 |          0 |          2 |          2 |
+| script\email (Files)                                                                        |          1 |          0 |          0 |          1 |          1 |
+| script\email\eMail01                                                                        |          1 |          0 |          0 |          1 |          1 |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                    | language | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| f:\Project\工作文件夹\MiraiTravel\CONTRIBUTING.md                                                | Markdown |          3 |          0 |          3 |          6 |
+| f:\Project\工作文件夹\MiraiTravel\README.md                                                      | Markdown |        -11 |         -1 |         -8 |        -20 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\config.json                           | JSON     |          3 |          0 |          1 |          4 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\easyMirai\V0.1.1\easyMirai.php        | PHP      |        154 |         33 |         13 |        200 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\httpAdapter.php                       | PHP      |         94 |         10 |         12 |        116 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\messageChain.php                      | PHP      |        135 |         56 |         23 |        214 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\miraiApiHttp.php                      | PHP      |        286 |        172 |         52 |        510 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\qqObj.php                             | PHP      |        472 |        163 |         58 |        693 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\webhookAdapter.php                    | PHP      |         32 |         17 |          9 |         58 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\miraiApter\webhook\V0.1.1\webhook.php            | PHP      |         48 |         19 |          6 |         73 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\standardComponents\basic\V0.1.1\QQObj.php        | PHP      |        125 |        150 |         46 |        321 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\standardComponents\basic\V0.1.1\QQObjManager.php | PHP      |         54 |          9 |          8 |         71 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\standardComponents\basic\V0.1.1\messageChain.php | PHP      |         46 |         56 |         17 |        119 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\standardComponents\basic\V0.1.1\president.php    | PHP      |        118 |        150 |         45 |        313 |
+| f:\Project\工作文件夹\MiraiTravel\components\QQ\standardComponents\easyQQ\V0.1.1\easyMirai.php   | PHP      |         38 |         11 |          8 |         57 |
+| f:\Project\工作文件夹\MiraiTravel\components\easyMirai\V0.1.1\easyMirai.php                      | PHP      |       -154 |        -33 |        -13 |       -200 |
+| f:\Project\工作文件夹\MiraiTravel\components\webhook\V0.1.1\webhook.php                          | PHP      |        -48 |        -19 |         -6 |        -73 |
+| f:\Project\工作文件夹\MiraiTravel\core\httpAdapter.php                                           | PHP      |        -92 |        -10 |        -11 |       -113 |
+| f:\Project\工作文件夹\MiraiTravel\core\loadMiraiTravel.php                                       | PHP      |         11 |          3 |          4 |         18 |
+| f:\Project\工作文件夹\MiraiTravel\core\messageChain.php                                          | PHP      |       -122 |        -50 |        -22 |       -194 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiApiHttp.php                                          | PHP      |       -285 |       -172 |        -50 |       -507 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravel.php                                           | PHP      |         -7 |          3 |         -1 |         -5 |
+| f:\Project\工作文件夹\MiraiTravel\core\qqObj.php                                                 | PHP      |       -468 |       -163 |        -58 |       -689 |
+| f:\Project\工作文件夹\MiraiTravel\core\webhookAdapter.php                                        | PHP      |        -32 |        -17 |         -9 |        -58 |
+| f:\Project\工作文件夹\MiraiTravel\docs\Plugin.md                                                 | Markdown |         24 |          0 |          3 |         27 |
+| f:\Project\工作文件夹\MiraiTravel\loadMiraiTravel.php                                            | PHP      |        -11 |         -3 |         -4 |        -18 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\bilibiliFans\V0.1.0\bilibiliFans.php                | PHP      |         58 |          0 |         12 |         70 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\bilibiliFans\V0.1.0\config.json                     | JSON     |          8 |          0 |          0 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\groupManager\V0.1.0\config.json                     | JSON     |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\groupManager\V0.1.0\groupManager.php                | PHP      |        100 |          3 |         15 |        118 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\README.md                            | Markdown |          5 |          0 |          4 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\config.json                          | JSON     |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\runoobC.php                          | PHP      |        125 |          0 |         14 |        139 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\bilibiliFans\V0.1.0\bilibiliFans.php                   | PHP      |        -58 |          0 |        -12 |        -70 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\bilibiliFans\V0.1.0\config.json                        | JSON     |         -8 |          0 |          0 |         -8 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\config.json                        | JSON     |        -10 |          0 |          0 |        -10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\groupManager.php                   | PHP      |       -100 |         -3 |        -15 |       -118 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\README.md                               | Markdown |         -5 |          0 |         -4 |         -9 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\config.json                             | JSON     |        -10 |          0 |          0 |        -10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\runoobC\V0.1.0\runoobC.php                             | PHP      |       -125 |          0 |        -14 |       -139 |
+| f:\Project\工作文件夹\MiraiTravel\public\webhook.php                                             | PHP      |         65 |          6 |         14 |         85 |
+| f:\Project\工作文件夹\MiraiTravel\script\Administrator\QQ.php                                    | PHP      |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\script\President\QQ.php                                        | PHP      |         42 |         37 |         11 |         90 |
+| f:\Project\工作文件夹\MiraiTravel\script\Q2771717841.php                                         | PHP      |        -25 |        -16 |         -7 |        -48 |
+| f:\Project\工作文件夹\MiraiTravel\script\QQ\2771717841.php                                       | PHP      |         42 |         37 |         11 |         90 |
+| f:\Project\工作文件夹\MiraiTravel\script\email\eMail01.php                                       | PHP      |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\script\email\eMail01\config.json                               | JSON     |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\webhook.php                                                    | PHP      |        -65 |         -6 |        -14 |        -85 |
+| Total                                                                                       |          |        472 |        442 |        144 |      1,058 |
++---------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

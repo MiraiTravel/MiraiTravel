@@ -1,0 +1,12 @@
+"filename", "language", "PHP", "Markdown", "comment", "blank", "total"
+"f:\Project\工作文件夹\MiraiTravel\README.md", "Markdown", 0, 3, 0, 2, 5
+"f:\Project\工作文件夹\MiraiTravel\components\easyMirai\V0.1.1\easyMirai.php", "PHP", 11, 0, 5, 2, 18
+"f:\Project\工作文件夹\MiraiTravel\core\messageChain.php", "PHP", 15, 0, 4, 2, 21
+"f:\Project\工作文件夹\MiraiTravel\core\miraiApiHttp.php", "PHP", 24, 0, 12, 1, 37
+"f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\config.php", "PHP", 2, 0, 0, 1, 3
+"f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\plugins.php", "PHP", 55, 0, 3, 8, 66
+"f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\stay.php", "PHP", 53, 0, 3, 8, 64
+"f:\Project\工作文件夹\MiraiTravel\core\qqObj.php", "PHP", 102, 0, 57, 9, 168
+"f:\Project\工作文件夹\MiraiTravel\plugins\groupManager\V0.1.0\groupManager.php", "PHP", 78, 0, 0, 13, 91
+"f:\Project\工作文件夹\MiraiTravel\webhook.php", "PHP", 0, 0, 0, -1, -1
+"Total", "-", 340, 3, 84, 45, 472

@@ -1,0 +1,10 @@
+{
+    "entryFile": "mirai",
+    "name": "mirai",
+    "type": "QQ",
+    "MTversion": "V2.0.1",
+    "Components": [
+        "easyQQ",
+        "webhook"
+    ]
+}
