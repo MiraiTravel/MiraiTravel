@@ -1,6 +1,6 @@
 <?php
 
-$path = "core/miraiTravelSoftware/stay/Events";
+$path = "core/miraiTravelSoftware/Stay/Events";
 $coreFiles = scandir($path);
 foreach ($coreFiles as $key => $coreFile) {
     if (!preg_match('/\.(php|disabled)$/', $coreFile)) {
@@ -11,7 +11,7 @@ foreach ($coreFiles as $key => $coreFile) {
     }
 }
 
-$path = "core/miraiTravelSoftware/stay/Protocols";
+$path = "core/miraiTravelSoftware/Stay/Protocols";
 $coreFiles = scandir($path);
 foreach ($coreFiles as $key => $coreFile) {
     if (!preg_match('/\.(php|disabled)$/', $coreFile)) {
@@ -22,7 +22,7 @@ foreach ($coreFiles as $key => $coreFile) {
     }
 }
 
-$path = "core/miraiTravelSoftware/stay/Protocols/Http";
+$path = "core/miraiTravelSoftware/Stay/Protocols/Http";
 $coreFiles = scandir($path);
 foreach ($coreFiles as $key => $coreFile) {
     if (!preg_match('/\.(php|disabled)$/', $coreFile)) {
@@ -33,7 +33,7 @@ foreach ($coreFiles as $key => $coreFile) {
     }
 }
 
-$path = "core/miraiTravelSoftware/stay/Protocols/Http/Session";
+$path = "core/miraiTravelSoftware/Stay/Protocols/Http/Session";
 $coreFiles = scandir($path);
 foreach ($coreFiles as $key => $coreFile) {
     if (!preg_match('/\.(php|disabled)$/', $coreFile)) {
@@ -45,7 +45,7 @@ foreach ($coreFiles as $key => $coreFile) {
 }
 
 
-$path = "./core/miraiTravelSoftware/stay/Connection";
+$path = "./core/miraiTravelSoftware/Stay/Connection";
 $coreFiles = scandir($path);
 foreach ($coreFiles as $key => $coreFile) {
     if (!preg_match('/\.(php|disabled)$/', $coreFile)) {

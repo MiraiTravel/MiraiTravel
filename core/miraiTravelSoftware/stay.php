@@ -7,10 +7,10 @@
  * 
  */
 
-namespace MiraiTravel\Software;
+namespace MiraiTravel\Software\Stay;
 
 // 载入依赖文件
-require_once "stay/loder.php";
+require_once "Stay/loder.php";
 
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MiraiTravel;
@@ -83,7 +83,7 @@ class Stay extends MiraiTravelSoftware
         if (\DIRECTORY_SEPARATOR !== '/') {
             return false;
         }
-        $lock_file = MiraiTravel::getInstance()->get_path() . '/core/miraiTravelSoftware/stay/stay.lock';
+        $lock_file = MiraiTravel::getInstance()->get_path() . '/core/miraiTravelSoftware/Stay/Stay.lock';
         if (self::$fd) {
             return false;
         } else {

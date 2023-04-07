@@ -16,6 +16,7 @@ final class MiraiTravel
     static private $instance = null;
     static private $softwareFiles = array();
     static private $path = "";
+    static  $console = false;
 
     // 句柄
     static private $logSystem = null;
@@ -25,6 +26,10 @@ final class MiraiTravel
      */
     function __construct()
     {
+        if (self::$instance !== null) {
+            // 如果已经实例化，则返回实例化对象
+            return self::$instance;
+        }
         // 实例化句柄
         self::$logSystem = new LogSystem("MiraiTravel", "System");
         self::$path = dirname(dirname(__FILE__));
@@ -93,7 +98,7 @@ final class MiraiTravel
                 unset($argv[0]);
                 $argv = array_values($argv);
                 $argc = count($argv);
-                $software = "MiraiTravel\Software\\" . $miraiTravelInter[0];
+                $software = "MiraiTravel\\Software\\" . $miraiTravelInter[0] . "\\" . $miraiTravelInter[0];
                 new $software($argc, $argv);
             } else {
                 self::$logSystem->println("您输入的命令有误 请重试 ！" . "\r\n" . "\t", "Red");
@@ -130,19 +135,6 @@ final class MiraiTravel
         } else {
             return false;
         }
-    }
-
-    /**
-     * miraiTravel 帮助
-     */
-    public static function mirai_travel_help()
-    {
-        function puthelp($command, $information)
-        {
-            self::$logSystem->print($command . "\t", "Green");
-            self::$logSystem->println($information . "\r\n", "Yellow");
-        }
-        puthelp("help", "帮助");
     }
 
     public static function get_var($var)
@@ -259,3 +251,6 @@ final class MiraiTravel
     {
     }
 }
+
+// 实例化 MiraiTravel
+MiraiTravel::getInstance();

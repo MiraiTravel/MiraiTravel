@@ -1,0 +1,602 @@
+Date : 2023-04-06 15:54:39
+Directory : f:\Project\工作文件夹\MiraiTravel
+Total : 345 files,  14060 codes, 462 comments, 349 blanks, all 14871 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |        121 |     12,946 |        405 |        184 |     13,535 |
+| HTML       |         20 |        667 |          0 |         20 |        687 |
+| Markdown   |         43 |        384 |          0 |        101 |        485 |
+| TypeScript |          1 |         85 |          2 |          3 |         90 |
+| PHP        |        123 |         47 |         55 |         29 |        131 |
+| Log        |         15 |         19 |          0 |          9 |         28 |
+| CSS        |          2 |          2 |          0 |          2 |          4 |
+| XML        |          1 |          1 |          0 |          0 |          1 |
+| SCSS       |          2 |          0 |          0 |          2 |          2 |
+| JSON       |         17 |        -91 |          0 |         -1 |        -92 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                |        345 |     14,060 |        462 |        349 |     14,871 |
+| . (Files)                                                                                                                        |          4 |        156 |          4 |         58 |        218 |
+| ..                                                                                                                               |         87 |     -6,073 |     -2,954 |     -1,124 |    -10,151 |
+| ..\MiraiTravel-Worker                                                                                                            |         87 |     -6,073 |     -2,954 |     -1,124 |    -10,151 |
+| ..\MiraiTravel-Worker (Files)                                                                                                    |          6 |       -298 |         -4 |        -60 |       -362 |
+| ..\MiraiTravel-Worker\Adapter                                                                                                    |         21 |     -1,352 |       -920 |       -298 |     -2,570 |
+| ..\MiraiTravel-Worker\Adapter\QQ                                                                                                 |         21 |     -1,352 |       -920 |       -298 |     -2,570 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter                                                                                    |         11 |     -1,055 |       -442 |       -162 |     -1,659 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter (Files)                                                                            |          2 |         -7 |          0 |         -5 |        -12 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic                                                                              |          7 |       -966 |       -412 |       -146 |     -1,524 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\easyMirai                                                                          |          1 |        -34 |        -11 |         -5 |        -50 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\easyMirai\V0.1.1                                                                   |          1 |        -34 |        -11 |         -5 |        -50 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\webhook                                                                            |          1 |        -48 |        -19 |         -6 |        -73 |
+| ..\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\webhook\V0.1.1                                                                     |          1 |        -48 |        -19 |         -6 |        -73 |
+| ..\MiraiTravel-Worker\Adapter\QQ\onebotAapter                                                                                    |          2 |          0 |          0 |         -2 |         -2 |
+| ..\MiraiTravel-Worker\Adapter\QQ\standard                                                                                        |          8 |       -297 |       -478 |       -134 |       -909 |
+| ..\MiraiTravel-Worker\Adapter\QQ\standard\basic                                                                                  |          6 |       -220 |       -456 |       -118 |       -794 |
+| ..\MiraiTravel-Worker\Adapter\QQ\standard\easyQQ                                                                                 |          1 |        -42 |        -11 |         -8 |        -61 |
+| ..\MiraiTravel-Worker\Adapter\QQ\standard\webhook.php                                                                            |          1 |        -35 |        -11 |         -8 |        -54 |
+| ..\MiraiTravel-Worker\core                                                                                                       |         32 |     -3,315 |     -1,958 |       -588 |     -5,861 |
+| ..\MiraiTravel-Worker\core (Files)                                                                                               |         11 |       -758 |       -243 |       -146 |     -1,147 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware                                                                                   |         21 |     -2,557 |     -1,715 |       -442 |     -4,714 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware (Files)                                                                           |          5 |       -438 |        -24 |        -63 |       -525 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay                                                                              |         16 |     -2,119 |     -1,691 |       -379 |     -4,189 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay (Files)                                                                      |          2 |       -117 |          0 |        -19 |       -136 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Connection                                                                   |          2 |       -474 |       -497 |        -99 |     -1,070 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Events                                                                       |          2 |       -233 |       -186 |        -46 |       -465 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols                                                                    |         10 |     -1,295 |     -1,008 |       -215 |     -2,518 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols (Files)                                                            |          1 |       -210 |        -89 |        -25 |       -324 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http                                                               |          9 |     -1,085 |       -919 |       -190 |     -2,194 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http (Files)                                                       |          5 |       -875 |       -680 |       -138 |     -1,693 |
+| ..\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session                                                       |          4 |       -210 |       -239 |        -52 |       -501 |
+| ..\MiraiTravel-Worker\docs                                                                                                       |          7 |       -176 |          0 |        -64 |       -240 |
+| ..\MiraiTravel-Worker\docs (Files)                                                                                               |          5 |       -126 |          0 |        -44 |       -170 |
+| ..\MiraiTravel-Worker\docs\QQBot                                                                                                 |          1 |        -47 |          0 |        -15 |        -62 |
+| ..\MiraiTravel-Worker\docs\System                                                                                                |          1 |         -3 |          0 |         -5 |         -8 |
+| ..\MiraiTravel-Worker\logs                                                                                                       |          7 |       -465 |          0 |        -27 |       -492 |
+| ..\MiraiTravel-Worker\logs (Files)                                                                                               |          4 |       -208 |          0 |         -1 |       -209 |
+| ..\MiraiTravel-Worker\logs\Script                                                                                                |          3 |       -257 |          0 |        -26 |       -283 |
+| ..\MiraiTravel-Worker\logs\Script\QQ                                                                                             |          3 |       -257 |          0 |        -26 |       -283 |
+| ..\MiraiTravel-Worker\logs\Script\QQ\2771717841                                                                                  |          3 |       -257 |          0 |        -26 |       -283 |
+| ..\MiraiTravel-Worker\plugins                                                                                                    |          7 |       -316 |         -3 |        -45 |       -364 |
+| ..\MiraiTravel-Worker\plugins\QQ                                                                                                 |          7 |       -316 |         -3 |        -45 |       -364 |
+| ..\MiraiTravel-Worker\plugins\QQ\bilibiliFans                                                                                    |          2 |        -66 |          0 |        -12 |        -78 |
+| ..\MiraiTravel-Worker\plugins\QQ\bilibiliFans\V0.1.0                                                                             |          2 |        -66 |          0 |        -12 |        -78 |
+| ..\MiraiTravel-Worker\plugins\QQ\groupManager                                                                                    |          2 |       -110 |         -3 |        -15 |       -128 |
+| ..\MiraiTravel-Worker\plugins\QQ\groupManager\V0.1.0                                                                             |          2 |       -110 |         -3 |        -15 |       -128 |
+| ..\MiraiTravel-Worker\plugins\QQ\runoobC                                                                                         |          3 |       -140 |          0 |        -18 |       -158 |
+| ..\MiraiTravel-Worker\plugins\QQ\runoobC\V0.1.0                                                                                  |          3 |       -140 |          0 |        -18 |       -158 |
+| ..\MiraiTravel-Worker\public                                                                                                     |          2 |       -100 |        -10 |        -20 |       -130 |
+| ..\MiraiTravel-Worker\script                                                                                                     |          5 |        -51 |        -59 |        -22 |       -132 |
+| ..\MiraiTravel-Worker\script\Administrator                                                                                       |          1 |          0 |          0 |         -1 |         -1 |
+| ..\MiraiTravel-Worker\script\President                                                                                           |          1 |        -13 |        -10 |         -6 |        -29 |
+| ..\MiraiTravel-Worker\script\QQ                                                                                                  |          1 |        -38 |        -49 |        -13 |       -100 |
+| ..\MiraiTravel-Worker\script\email                                                                                               |          2 |          0 |          0 |         -2 |         -2 |
+| ..\MiraiTravel-Worker\script\email (Files)                                                                                       |          1 |          0 |          0 |         -1 |         -1 |
+| ..\MiraiTravel-Worker\script\email\eMail01                                                                                       |          1 |          0 |          0 |         -1 |         -1 |
+| .github                                                                                                                          |          2 |         45 |          0 |         15 |         60 |
+| .github\ISSUE_TEMPLATE                                                                                                           |          2 |         45 |          0 |         15 |         60 |
+| Adapter                                                                                                                          |         21 |      1,348 |        922 |        294 |      2,564 |
+| Adapter\QQ                                                                                                                       |         21 |      1,348 |        922 |        294 |      2,564 |
+| Adapter\QQ\miraiAdapter                                                                                                          |         11 |      1,052 |        444 |        159 |      1,655 |
+| Adapter\QQ\miraiAdapter (Files)                                                                                                  |          2 |         19 |          4 |          2 |         25 |
+| Adapter\QQ\miraiAdapter\basic                                                                                                    |          7 |        951 |        410 |        146 |      1,507 |
+| Adapter\QQ\miraiAdapter\easyQQ                                                                                                   |          1 |         34 |         11 |          5 |         50 |
+| Adapter\QQ\miraiAdapter\webhook                                                                                                  |          1 |         48 |         19 |          6 |         73 |
+| Adapter\QQ\onebotAapter                                                                                                          |          2 |          0 |          0 |          2 |          2 |
+| Adapter\QQ\standard                                                                                                              |          8 |        296 |        478 |        133 |        907 |
+| Adapter\QQ\standard\basic                                                                                                        |          6 |        220 |        456 |        118 |        794 |
+| Adapter\QQ\standard\easyQQ                                                                                                       |          1 |         42 |         11 |          8 |         61 |
+| Adapter\QQ\standard\webhook.php                                                                                                  |          1 |         34 |         11 |          7 |         52 |
+| core                                                                                                                             |         33 |      3,371 |      2,010 |        619 |      6,000 |
+| core (Files)                                                                                                                     |         12 |        812 |        290 |        172 |      1,274 |
+| core\miraiTravelSoftware                                                                                                         |         21 |      2,559 |      1,720 |        447 |      4,726 |
+| core\miraiTravelSoftware (Files)                                                                                                 |          5 |        440 |         29 |         68 |        537 |
+| core\miraiTravelSoftware\Stay                                                                                                    |         16 |      2,119 |      1,691 |        379 |      4,189 |
+| core\miraiTravelSoftware\Stay (Files)                                                                                            |          2 |        117 |          0 |         19 |        136 |
+| core\miraiTravelSoftware\Stay\Connection                                                                                         |          2 |        474 |        497 |         99 |      1,070 |
+| core\miraiTravelSoftware\Stay\Events                                                                                             |          2 |        233 |        186 |         46 |        465 |
+| core\miraiTravelSoftware\Stay\Protocols                                                                                          |         10 |      1,295 |      1,008 |        215 |      2,518 |
+| core\miraiTravelSoftware\Stay\Protocols (Files)                                                                                  |          1 |        210 |         89 |         25 |        324 |
+| core\miraiTravelSoftware\Stay\Protocols\Http                                                                                     |          9 |      1,085 |        919 |        190 |      2,194 |
+| core\miraiTravelSoftware\Stay\Protocols\Http (Files)                                                                             |          5 |        875 |        680 |        138 |      1,693 |
+| core\miraiTravelSoftware\Stay\Protocols\Http\Session                                                                             |          4 |        210 |        239 |         52 |        501 |
+| docs                                                                                                                             |         96 |        946 |         15 |        152 |      1,113 |
+| docs (Files)                                                                                                                     |          2 |         66 |          0 |          2 |         68 |
+| docs\announcement                                                                                                                |          1 |         33 |          0 |          1 |         34 |
+| docs\assets                                                                                                                      |         70 |        116 |         15 |         69 |        200 |
+| docs\manual                                                                                                                      |          8 |        291 |          0 |          8 |        299 |
+| docs\manual (Files)                                                                                                              |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\adapter                                                                                                              |          4 |        159 |          0 |          4 |        163 |
+| docs\manual\adapter (Files)                                                                                                      |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\adapter\QQ                                                                                                           |          3 |        126 |          0 |          3 |        129 |
+| docs\manual\adapter\QQ (Files)                                                                                                   |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\adapter\QQ\standard                                                                                                  |          2 |         93 |          0 |          2 |         95 |
+| docs\manual\adapter\QQ\standard (Files)                                                                                          |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\adapter\QQ\standard\basic                                                                                            |          1 |         60 |          0 |          1 |         61 |
+| docs\manual\component                                                                                                            |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\plugin                                                                                                               |          1 |         33 |          0 |          1 |         34 |
+| docs\manual\script                                                                                                               |          1 |         33 |          0 |          1 |         34 |
+| docs\markdown                                                                                                                    |          7 |        176 |          0 |         64 |        240 |
+| docs\markdown (Files)                                                                                                            |          5 |        126 |          0 |         44 |        170 |
+| docs\markdown\QQBot                                                                                                              |          1 |         47 |          0 |         15 |         62 |
+| docs\markdown\System                                                                                                             |          1 |          3 |          0 |          5 |          8 |
+| docs\study                                                                                                                       |          8 |        264 |          0 |          8 |        272 |
+| docs\study (Files)                                                                                                               |          1 |         33 |          0 |          1 |         34 |
+| docs\study\adapter                                                                                                               |          1 |         33 |          0 |          1 |         34 |
+| docs\study\advice                                                                                                                |          1 |         33 |          0 |          1 |         34 |
+| docs\study\component                                                                                                             |          1 |         33 |          0 |          1 |         34 |
+| docs\study\consoleDesk                                                                                                           |          1 |         33 |          0 |          1 |         34 |
+| docs\study\course                                                                                                                |          1 |         33 |          0 |          1 |         34 |
+| docs\study\course\mirai                                                                                                          |          1 |         33 |          0 |          1 |         34 |
+| docs\study\plugin                                                                                                                |          1 |         33 |          0 |          1 |         34 |
+| docs\study\script                                                                                                                |          1 |         33 |          0 |          1 |         34 |
+| logs                                                                                                                             |          7 |        465 |          0 |         27 |        492 |
+| logs (Files)                                                                                                                     |          4 |        208 |          0 |          1 |        209 |
+| logs\Script                                                                                                                      |          3 |        257 |          0 |         26 |        283 |
+| logs\Script\QQ                                                                                                                   |          3 |        257 |          0 |         26 |        283 |
+| logs\Script\QQ\2771717841                                                                                                        |          3 |        257 |          0 |         26 |        283 |
+| plugins                                                                                                                          |          7 |        316 |          3 |         45 |        364 |
+| plugins\QQ                                                                                                                       |          7 |        316 |          3 |         45 |        364 |
+| plugins\QQ\bilibiliFans                                                                                                          |          2 |         66 |          0 |         12 |         78 |
+| plugins\QQ\bilibiliFans\V0.1.0                                                                                                   |          2 |         66 |          0 |         12 |         78 |
+| plugins\QQ\groupManager                                                                                                          |          2 |        110 |          3 |         15 |        128 |
+| plugins\QQ\groupManager\V0.1.0                                                                                                   |          2 |        110 |          3 |         15 |        128 |
+| plugins\QQ\runoobC                                                                                                               |          3 |        140 |          0 |         18 |        158 |
+| plugins\QQ\runoobC\V0.1.0                                                                                                        |          3 |        140 |          0 |         18 |        158 |
+| public                                                                                                                           |          2 |         99 |         11 |         20 |        130 |
+| script                                                                                                                           |          5 |         51 |         59 |         24 |        134 |
+| script\Administrator                                                                                                             |          1 |          0 |          0 |          1 |          1 |
+| script\President                                                                                                                 |          1 |         13 |         10 |          6 |         29 |
+| script\QQ                                                                                                                        |          1 |         38 |         49 |         15 |        102 |
+| script\email                                                                                                                     |          2 |          0 |          0 |          2 |          2 |
+| script\email (Files)                                                                                                             |          1 |          0 |          0 |          1 |          1 |
+| script\email\eMail01                                                                                                             |          1 |          0 |          0 |          1 |          1 |
+| vuepress                                                                                                                         |         81 |     13,336 |        392 |        219 |     13,947 |
+| vuepress (Files)                                                                                                                 |          3 |         33 |          0 |         13 |         46 |
+| vuepress\docs-primary                                                                                                            |         78 |     13,303 |        392 |        206 |     13,901 |
+| vuepress\docs-primary (Files)                                                                                                    |          1 |         30 |          0 |          2 |         32 |
+| vuepress\docs-primary\.vuepress                                                                                                  |         60 |     12,973 |        392 |        123 |     13,488 |
+| vuepress\docs-primary\.vuepress (Files)                                                                                          |          1 |         85 |          2 |          3 |         90 |
+| vuepress\docs-primary\.vuepress\.cache                                                                                           |          9 |     12,510 |        352 |         24 |     12,886 |
+| vuepress\docs-primary\.vuepress\.cache\deps                                                                                      |          9 |     12,510 |        352 |         24 |     12,886 |
+| vuepress\docs-primary\.vuepress\.temp                                                                                            |         50 |        378 |         38 |         96 |        512 |
+| vuepress\docs-primary\.vuepress\.temp\internal                                                                                   |          6 |         82 |         38 |          8 |        128 |
+| vuepress\docs-primary\.vuepress\.temp\pages                                                                                      |         41 |        283 |          0 |         85 |        368 |
+| vuepress\docs-primary\.vuepress\.temp\pages (Files)                                                                              |          2 |          2 |          0 |          2 |          4 |
+| vuepress\docs-primary\.vuepress\.temp\pages\announcement                                                                         |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs                                                                                 |         16 |        192 |          0 |         48 |        240 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs (Files)                                                                         |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual                                                                          |          6 |         72 |          0 |         18 |         90 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual (Files)                                                                  |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter                                                                   |          2 |         24 |          0 |          6 |         30 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter (Files)                                                           |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter\QQ                                                                |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter\QQ\standardApter                                                  |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\component                                                                |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\plugin                                                                   |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\script                                                                   |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\plugin                                                                          |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study                                                                           |          8 |         96 |          0 |         24 |        120 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study (Files)                                                                   |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\adpter                                                                    |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\advice                                                                    |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\component                                                                 |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\consoleDesk                                                               |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\course                                                                    |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\course\mirai                                                              |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\plugin                                                                    |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\docs\study\script                                                                    |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\foo                                                                                  |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual                                                                               |         11 |         44 |          0 |         17 |         61 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual (Files)                                                                       |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter                                                                       |          5 |         16 |          0 |          7 |         23 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter (Files)                                                               |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ                                                                    |          4 |         15 |          0 |          6 |         21 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ (Files)                                                            |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standard                                                           |          2 |          2 |          0 |          2 |          4 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standard (Files)                                                   |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standardApter                                                      |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standard\basic                                                     |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter                                                                        |          2 |         24 |          0 |          6 |         30 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter (Files)                                                                |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter\QQ                                                                     |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter\QQ\standardApter                                                       |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\component                                                                     |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\plugin                                                                        |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\manual\script                                                                        |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\plugin                                                                               |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study                                                                                |          9 |         20 |          0 |         11 |         31 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study (Files)                                                                        |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\adapter                                                                        |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\adpter                                                                         |          1 |         12 |          0 |          3 |         15 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\advice                                                                         |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\component                                                                      |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\consoleDesk                                                                    |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\course                                                                         |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\course\mirai                                                                   |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\plugin                                                                         |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\pages\study\script                                                                         |          1 |          1 |          0 |          1 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\styles                                                                                     |          2 |          0 |          0 |          2 |          2 |
+| vuepress\docs-primary\.vuepress\.temp\vite-root                                                                                  |          1 |         13 |          0 |          1 |         14 |
+| vuepress\docs-primary\announcement                                                                                               |          1 |         43 |          0 |         15 |         58 |
+| vuepress\docs-primary\manual                                                                                                     |          8 |        222 |          0 |         43 |        265 |
+| vuepress\docs-primary\manual (Files)                                                                                             |          1 |         43 |          0 |          1 |         44 |
+| vuepress\docs-primary\manual\adapter                                                                                             |          4 |        179 |          0 |         39 |        218 |
+| vuepress\docs-primary\manual\adapter (Files)                                                                                     |          1 |         22 |          0 |          1 |         23 |
+| vuepress\docs-primary\manual\adapter\QQ                                                                                          |          3 |        157 |          0 |         38 |        195 |
+| vuepress\docs-primary\manual\adapter\QQ (Files)                                                                                  |          1 |         22 |          0 |          1 |         23 |
+| vuepress\docs-primary\manual\adapter\QQ\standard                                                                                 |          2 |        135 |          0 |         37 |        172 |
+| vuepress\docs-primary\manual\adapter\QQ\standard (Files)                                                                         |          1 |          5 |          0 |          4 |          9 |
+| vuepress\docs-primary\manual\adapter\QQ\standard\basic                                                                           |          1 |        130 |          0 |         33 |        163 |
+| vuepress\docs-primary\manual\component                                                                                           |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\manual\plugin                                                                                              |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\manual\script                                                                                              |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study                                                                                                      |          8 |         35 |          0 |         23 |         58 |
+| vuepress\docs-primary\study (Files)                                                                                              |          1 |         15 |          0 |          7 |         22 |
+| vuepress\docs-primary\study\adapter                                                                                              |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\advice                                                                                               |          1 |         20 |          0 |         10 |         30 |
+| vuepress\docs-primary\study\component                                                                                            |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\consoleDesk                                                                                          |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\course                                                                                               |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\course\mirai                                                                                         |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\plugin                                                                                               |          1 |          0 |          0 |          1 |          1 |
+| vuepress\docs-primary\study\script                                                                                               |          1 |          0 |          0 |          1 |          1 |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                         | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\QQObjTrait.php                                                 | PHP        |       -392 |       -146 |        -41 |       -579 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\httpAdapter.php                                                | PHP        |        -94 |        -10 |        -12 |       -116 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\messageChain.php                                               | PHP        |       -135 |        -56 |        -23 |       -214 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\miraiApiHttp.php                                               | PHP        |       -286 |       -172 |        -52 |       -510 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\president.php                                                  | PHP        |        -19 |         -8 |         -6 |        -33 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\qqObj.php                                                      | PHP        |         -8 |         -3 |         -3 |        -14 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\basic\webhookAdapter.php                                             | PHP        |        -32 |        -17 |         -9 |        -58 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\config.json                                                          | JSON       |         -6 |          0 |          0 |         -6 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\easyMirai\V0.1.1\easyMirai.php                                       | PHP        |        -34 |        -11 |         -5 |        -50 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\mirai.php                                                            | PHP        |         -1 |          0 |         -5 |         -6 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\miraiAdapter\webhook\V0.1.1\webhook.php                                           | PHP        |        -48 |        -19 |         -6 |        -73 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\onebotAapter\config.json                                                          | JSON       |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\onebotAapter\onebot.php                                                           | PHP        |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\President.php                                                      | PHP        |        -22 |        -19 |        -10 |        -51 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\QQObj.php                                                          | PHP        |         -6 |          0 |         -3 |         -9 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\QQObjInterface.php                                                 | PHP        |        -47 |       -193 |        -39 |       -279 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\QQObjManager.php                                                   | PHP        |        -54 |        -14 |         -9 |        -77 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\QQObjTrait.php                                                     | PHP        |        -70 |       -174 |        -41 |       -285 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\basic\messageChain.php                                                   | PHP        |        -21 |        -56 |        -16 |        -93 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\easyQQ\easyQQ.php                                                        | PHP        |        -42 |        -11 |         -8 |        -61 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\Adapter\QQ\standard\webhook.php\webhook.php                                                  | PHP        |        -35 |        -11 |         -8 |        -54 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\CODE_OF_CONDUCT.md                                                                           | Markdown   |        -93 |          0 |        -36 |       -129 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\CONTRIBUTING.md                                                                              | Markdown   |         -3 |          0 |         -3 |         -6 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\MiraiTravel.php                                                                              | PHP        |         -5 |         -4 |         -6 |        -15 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\README.md                                                                                    | Markdown   |        -55 |          0 |        -13 |        -68 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\composer.json                                                                                | JSON       |         -6 |          0 |         -1 |         -7 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\composer.lock                                                                                | JSON       |       -136 |          0 |         -1 |       -137 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\apter.php                                                                               | PHP        |         -1 |         -3 |         -5 |         -9 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\component.php                                                                           | PHP        |        -40 |        -22 |        -14 |        -76 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\componentSystem.php                                                                     | PHP        |        -40 |         -9 |        -11 |        -60 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\dataSystem.php                                                                          | PHP        |       -112 |        -25 |        -12 |       -149 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\loadMiraiTravel.php                                                                     | PHP        |        -11 |         -3 |         -4 |        -18 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\logSystem.php                                                                           | PHP        |       -195 |        -72 |        -32 |       -299 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiSoftware.php                                                                       | PHP        |         -9 |         -6 |         -2 |        -17 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravel.php                                                                         | PHP        |       -196 |        -43 |        -22 |       -261 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\config.php                                                          | PHP        |       -123 |         -3 |        -11 |       -137 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\help.php                                                            | PHP        |        -24 |         -3 |         -7 |        -34 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\plugins.php                                                         | PHP        |        -55 |         -3 |         -8 |        -66 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\qqBot.php                                                           | PHP        |        -97 |         -3 |         -9 |       -109 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay.php                                                            | PHP        |       -139 |        -12 |        -28 |       -179 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Connection\ConnectionInterface.php                             | PHP        |        -25 |        -87 |        -15 |       -127 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Connection\TcpConnection.php                                   | PHP        |       -449 |       -410 |        -84 |       -943 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Events\EventInterface.php                                      | PHP        |        -17 |        -78 |        -13 |       -108 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Events\Select.php                                              | PHP        |       -216 |       -108 |        -33 |       -357 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http.php                                             | PHP        |       -210 |        -89 |        -25 |       -324 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Chunk.php                                       | PHP        |        -14 |        -30 |         -4 |        -48 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Request.php                                     | PHP        |       -406 |       -228 |        -46 |       -680 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Response.php                                    | PHP        |       -244 |       -176 |        -39 |       -459 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\ServerSentEvents.php                            | PHP        |        -31 |        -30 |         -3 |        -64 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session.php                                     | PHP        |       -180 |       -216 |        -46 |       -442 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session\FileSessionHandler.php                  | PHP        |        -92 |        -76 |        -15 |       -183 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session\RedisClusterSessionHandler.php          | PHP        |        -26 |        -15 |         -6 |        -47 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session\RedisSessionHandler.php                 | PHP        |        -80 |        -55 |        -20 |       -155 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\Protocols\Http\Session\SessionHandlerInterface.php             | PHP        |        -12 |        -93 |        -11 |       -116 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\loder.php                                                      | PHP        |        -51 |          0 |         -7 |        -58 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\miraiTravelSoftware\stay\test.php                                                       | PHP        |        -66 |          0 |        -12 |        -78 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\plugin.php                                                                              | PHP        |        -23 |        -12 |        -10 |        -45 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\pluginSystem.php                                                                        | PHP        |        -87 |        -35 |        -25 |       -147 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\core\scriptSystem.php                                                                        | PHP        |        -44 |        -13 |         -9 |        -66 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\Component.md                                                                            | Markdown   |         -6 |          0 |         -8 |        -14 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\MiraiTravel.md                                                                          | Markdown   |        -29 |          0 |        -10 |        -39 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\Plugin.md                                                                               | Markdown   |        -28 |          0 |         -7 |        -35 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\QQBot.md                                                                                | Markdown   |        -55 |          0 |        -15 |        -70 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\QQBot\QQBot手册.md                                                                        | Markdown   |        -47 |          0 |        -15 |        -62 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\System.md                                                                               | Markdown   |         -8 |          0 |         -4 |        -12 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\docs\System\开放对象.md                                                                          | Markdown   |         -3 |          0 |         -5 |         -8 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\Script\QQ\2771717841\script.log                                                         | Log        |       -102 |          0 |          0 |       -102 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\Script\QQ\2771717841\sendMessage.log                                                    | Log        |        -31 |          0 |        -26 |        -57 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\Script\QQ\2771717841\webhook.log                                                        | Log        |       -124 |          0 |          0 |       -124 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\httpAdapter.log                                                                         | Log        |        -90 |          0 |          0 |        -90 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\miraiApiHttp.log                                                                        | Log        |        -60 |          0 |          0 |        -60 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\miraiTravel.log                                                                         | Log        |         -2 |          0 |          0 |         -2 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\logs\webhook.log                                                                             | Log        |        -56 |          0 |         -1 |        -57 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\bilibiliFans\V0.1.0\bilibiliFans.php                                              | PHP        |        -58 |          0 |        -12 |        -70 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\bilibiliFans\V0.1.0\config.json                                                   | JSON       |         -8 |          0 |          0 |         -8 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\groupManager\V0.1.0\config.json                                                   | JSON       |        -10 |          0 |          0 |        -10 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\groupManager\V0.1.0\groupManager.php                                              | PHP        |       -100 |         -3 |        -15 |       -118 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\runoobC\V0.1.0\README.md                                                          | Markdown   |         -5 |          0 |         -4 |         -9 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\runoobC\V0.1.0\config.json                                                        | JSON       |        -10 |          0 |          0 |        -10 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\plugins\QQ\runoobC\V0.1.0\runoobC.php                                                        | PHP        |       -125 |          0 |        -14 |       -139 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\public\index.php                                                                             | PHP        |        -35 |         -4 |         -6 |        -45 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\public\webhook.php                                                                           | PHP        |        -65 |         -6 |        -14 |        -85 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\script\Administrator\QQ.php                                                                  | PHP        |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\script\President\QQ.php                                                                      | PHP        |        -13 |        -10 |         -6 |        -29 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\script\QQ\2771717841.php                                                                     | PHP        |        -38 |        -49 |        -13 |       -100 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\script\email\eMail01.php                                                                     | PHP        |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel-Worker\script\email\eMail01\config.json                                                             | JSON       |          0 |          0 |         -1 |         -1 |
+| f:\Project\工作文件夹\MiraiTravel\.github\ISSUE_TEMPLATE\bug_report.md                                                                | Markdown   |         30 |          0 |          9 |         39 |
+| f:\Project\工作文件夹\MiraiTravel\.github\ISSUE_TEMPLATE\feature_request.md                                                           | Markdown   |         15 |          0 |          6 |         21 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\QQObjTrait.php                                                        | PHP        |        377 |        144 |         40 |        561 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\httpAdapter.php                                                       | PHP        |         94 |         10 |         12 |        116 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\messageChain.php                                                      | PHP        |        135 |         56 |         23 |        214 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\miraiApiHttp.php                                                      | PHP        |        286 |        172 |         52 |        510 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\president.php                                                         | PHP        |         19 |          8 |          6 |         33 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\qqObj.php                                                             | PHP        |          8 |          3 |          4 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\basic\webhookAdapter.php                                                    | PHP        |         32 |         17 |          9 |         58 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\config.json                                                                 | JSON       |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\easyQQ\easyQQ.php                                                           | PHP        |         34 |         11 |          5 |         50 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\mirai.php                                                                   | PHP        |          9 |          4 |          2 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\miraiAdapter\webhook\webhook.php                                                         | PHP        |         48 |         19 |          6 |         73 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\onebotAapter\config.json                                                                 | JSON       |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\onebotAapter\onebot.php                                                                  | PHP        |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\President.php                                                             | PHP        |         22 |         19 |         10 |         51 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\QQObj.php                                                                 | PHP        |          6 |          0 |          3 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\QQObjInterface.php                                                        | PHP        |         47 |        193 |         39 |        279 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\QQObjManager.php                                                          | PHP        |         54 |         14 |          9 |         77 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\QQObjTrait.php                                                            | PHP        |         70 |        174 |         41 |        285 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\basic\messageChain.php                                                          | PHP        |         21 |         56 |         16 |         93 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\easyQQ\easyQQ.php                                                               | PHP        |         42 |         11 |          8 |         61 |
+| f:\Project\工作文件夹\MiraiTravel\Adapter\QQ\standard\webhook.php\webhook.php                                                         | PHP        |         34 |         11 |          7 |         52 |
+| f:\Project\工作文件夹\MiraiTravel\CODE_OF_CONDUCT.md                                                                                  | Markdown   |         93 |          0 |         36 |        129 |
+| f:\Project\工作文件夹\MiraiTravel\CONTRIBUTING.md                                                                                     | Markdown   |          3 |          0 |          3 |          6 |
+| f:\Project\工作文件夹\MiraiTravel\MiraiTravel.php                                                                                     | PHP        |          5 |          4 |          6 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\README.md                                                                                           | Markdown   |         55 |          0 |         13 |         68 |
+| f:\Project\工作文件夹\MiraiTravel\core\AdapterSystem.php                                                                              | PHP        |         46 |         28 |         13 |         87 |
+| f:\Project\工作文件夹\MiraiTravel\core\Component.php                                                                                  | PHP        |         40 |         22 |         14 |         76 |
+| f:\Project\工作文件夹\MiraiTravel\core\DataSystem.php                                                                                 | PHP        |         98 |         21 |         11 |        130 |
+| f:\Project\工作文件夹\MiraiTravel\core\apter.php                                                                                      | PHP        |          1 |          3 |          5 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\core\componentSystem.php                                                                            | PHP        |         28 |          9 |         10 |         47 |
+| f:\Project\工作文件夹\MiraiTravel\core\loadMiraiTravel.php                                                                            | PHP        |         43 |         25 |         19 |         87 |
+| f:\Project\工作文件夹\MiraiTravel\core\logSystem.php                                                                                  | PHP        |        197 |         72 |         32 |        301 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiSoftware.php                                                                              | PHP        |          9 |          6 |          2 |         17 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravel.php                                                                                | PHP        |        196 |         44 |         22 |        262 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Config.php                                                                 | PHP        |        125 |          4 |         15 |        144 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Help.php                                                                   | PHP        |         24 |          3 |          7 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Plugins.php                                                                | PHP        |         55 |          3 |          8 |         66 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\QqBot.php                                                                  | PHP        |         96 |          4 |         10 |        110 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay.php                                                                   | PHP        |        140 |         15 |         28 |        183 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Connection\ConnectionInterface.php                                    | PHP        |         25 |         87 |         15 |        127 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Connection\TcpConnection.php                                          | PHP        |        449 |        410 |         84 |        943 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Events\EventInterface.php                                             | PHP        |         17 |         78 |         13 |        108 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Events\Select.php                                                     | PHP        |        216 |        108 |         33 |        357 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http.php                                                    | PHP        |        210 |         89 |         25 |        324 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Chunk.php                                              | PHP        |         14 |         30 |          4 |         48 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Request.php                                            | PHP        |        406 |        228 |         46 |        680 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Response.php                                           | PHP        |        244 |        176 |         39 |        459 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\ServerSentEvents.php                                   | PHP        |         31 |         30 |          3 |         64 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Session.php                                            | PHP        |        180 |        216 |         46 |        442 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Session\FileSessionHandler.php                         | PHP        |         92 |         76 |         15 |        183 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Session\RedisClusterSessionHandler.php                 | PHP        |         26 |         15 |          6 |         47 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Session\RedisSessionHandler.php                        | PHP        |         80 |         55 |         20 |        155 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\Protocols\Http\Session\SessionHandlerInterface.php                    | PHP        |         12 |         93 |         11 |        116 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\loder.php                                                             | PHP        |         51 |          0 |          7 |         58 |
+| f:\Project\工作文件夹\MiraiTravel\core\miraiTravelSoftware\Stay\test.php                                                              | PHP        |         66 |          0 |         12 |         78 |
+| f:\Project\工作文件夹\MiraiTravel\core\plugin.php                                                                                     | PHP        |         23 |         12 |         10 |         45 |
+| f:\Project\工作文件夹\MiraiTravel\core\pluginSystem.php                                                                               | PHP        |         87 |         35 |         25 |        147 |
+| f:\Project\工作文件夹\MiraiTravel\core\scriptSystem.php                                                                               | PHP        |         44 |         13 |          9 |         66 |
+| f:\Project\工作文件夹\MiraiTravel\docs\404.html                                                                                       | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\announcement\index.html                                                                        | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\404.html-60b35caa.js                                                                    | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\404.html-87d54bd8.js                                                                    | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\QQObjInterface.html-34d0b8cf.js                                                         | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\QQObjInterface.html-3946d2b3.js                                                         | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\QQObjInterface.html-4742ce54.js                                                         | JavaScript |         28 |          0 |          1 |         29 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-2d1dd446.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-503d356b.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-b3a2f296.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-c20e32d6.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-ceca3015.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\app-e1fdcaeb.js                                                                         | JavaScript |          4 |          2 |          1 |          7 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\back-to-top-8efcbe56.svg                                                                | XML        |          1 |          0 |          0 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\framework-5866ffd3.js                                                                   | JavaScript |          2 |          3 |          1 |          6 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-006ed654.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-0151b5c0.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-05fa7959.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-063dc5be.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-08d55b2c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-1030526b.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-12c7ae2c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-14b1ec43.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-180218c6.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-1900d3f1.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-1b43e113.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-1b7dba97.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-1c0b3fa4.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-2752a82c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-28833974.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-2ca9e96a.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-32fd6796.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-38d2e2dc.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-3943e543.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-39784d5d.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-3a922c68.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-46110cad.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-499dad9a.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-4ac644ba.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-4e5ff101.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-4f4f12e8.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-5d7f593c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-5f4d207d.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-63664060.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-64982bb3.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-69437ba5.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-6aebef01.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-707acc1c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-720d7cdd.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-82c1f886.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-8f72c246.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-9e0de146.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-a1c71b1c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-a2839e7b.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-a30997b0.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-a5208492.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-a6bdbb0e.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-b3c84dea.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-b809455c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-c38d540f.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-c6962f09.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-c8d7656f.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-cc52428b.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-dad55b11.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-df55094c.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-ead36379.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-f270e0cc.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-f54ac595.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-f9b68233.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\index.html-f9d0e80a.js                                                                  | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\style-a2d843df.css                                                                      | CSS        |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\assets\style-d2355f92.css                                                                      | CSS        |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\docs\index.html                                                                                     | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\adapter\QQ\index.html                                                                   | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\adapter\QQ\standard\basic\QQObjInterface.html                                           | HTML       |         60 |          0 |          1 |         61 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\adapter\QQ\standard\index.html                                                          | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\adapter\index.html                                                                      | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\component\index.html                                                                    | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\index.html                                                                              | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\plugin\index.html                                                                       | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\manual\script\index.html                                                                       | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\Component.md                                                                          | Markdown   |          6 |          0 |          8 |         14 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\MiraiTravel.md                                                                        | Markdown   |         29 |          0 |         10 |         39 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\Plugin.md                                                                             | Markdown   |         28 |          0 |          7 |         35 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\QQBot.md                                                                              | Markdown   |         55 |          0 |         15 |         70 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\QQBot\QQBot手册.md                                                                      | Markdown   |         47 |          0 |         15 |         62 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\System.md                                                                             | Markdown   |          8 |          0 |          4 |         12 |
+| f:\Project\工作文件夹\MiraiTravel\docs\markdown\System\开放对象.md                                                                        | Markdown   |          3 |          0 |          5 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\adapter\index.html                                                                       | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\advice\index.html                                                                        | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\component\index.html                                                                     | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\consoleDesk\index.html                                                                   | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\course\mirai\index.html                                                                  | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\index.html                                                                               | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\plugin\index.html                                                                        | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\docs\study\script\index.html                                                                        | HTML       |         33 |          0 |          1 |         34 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\QQ\2771717841\script.log                                                                | Log        |        102 |          0 |          0 |        102 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\QQ\2771717841\sendMessage.log                                                           | Log        |         31 |          0 |         26 |         57 |
+| f:\Project\工作文件夹\MiraiTravel\logs\Script\QQ\2771717841\webhook.log                                                               | Log        |        124 |          0 |          0 |        124 |
+| f:\Project\工作文件夹\MiraiTravel\logs\httpAdapter.log                                                                                | Log        |         90 |          0 |          0 |         90 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiApiHttp.log                                                                               | Log        |         60 |          0 |          0 |         60 |
+| f:\Project\工作文件夹\MiraiTravel\logs\miraiTravel.log                                                                                | Log        |          2 |          0 |          0 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\logs\webhook.log                                                                                    | Log        |         56 |          0 |          1 |         57 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\bilibiliFans\V0.1.0\bilibiliFans.php                                                     | PHP        |         58 |          0 |         12 |         70 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\bilibiliFans\V0.1.0\config.json                                                          | JSON       |          8 |          0 |          0 |          8 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\groupManager\V0.1.0\config.json                                                          | JSON       |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\groupManager\V0.1.0\groupManager.php                                                     | PHP        |        100 |          3 |         15 |        118 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\README.md                                                                 | Markdown   |          5 |          0 |          4 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\config.json                                                               | JSON       |         10 |          0 |          0 |         10 |
+| f:\Project\工作文件夹\MiraiTravel\plugins\QQ\runoobC\V0.1.0\runoobC.php                                                               | PHP        |        125 |          0 |         14 |        139 |
+| f:\Project\工作文件夹\MiraiTravel\public\index.php                                                                                    | PHP        |         35 |          4 |          6 |         45 |
+| f:\Project\工作文件夹\MiraiTravel\public\miraiWebhook.php                                                                             | PHP        |         64 |          7 |         14 |         85 |
+| f:\Project\工作文件夹\MiraiTravel\script\Administrator\QQ.php                                                                         | PHP        |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\script\President\QQ.php                                                                             | PHP        |         13 |         10 |          6 |         29 |
+| f:\Project\工作文件夹\MiraiTravel\script\QQ\2771717841.php                                                                            | PHP        |         38 |         49 |         15 |        102 |
+| f:\Project\工作文件夹\MiraiTravel\script\email\eMail01.php                                                                            | PHP        |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\script\email\eMail01\config.json                                                                    | JSON       |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\README.md                                                                                  | Markdown   |          9 |          0 |          3 |         12 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\@vue_devtools-api.js                                    | JavaScript |         10 |          1 |          1 |         12 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\@vuepress_shared.js                                     | JavaScript |        104 |          2 |          2 |        108 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\_metadata.json                                          | JSON       |         41 |          0 |          0 |         41 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\chunk-AWA6B2ZS.js                                       | JavaScript |      9,065 |        241 |          7 |      9,313 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\chunk-JXWQMH7G.js                                       | JavaScript |        288 |          3 |          2 |        293 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\chunk-RFQTXRIF.js                                       | JavaScript |        152 |          6 |          6 |        164 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\package.json                                            | JSON       |          1 |          0 |          0 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\vue-router.js                                           | JavaScript |      2,551 |         98 |          5 |      2,654 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.cache\deps\vue.js                                                  | JavaScript |        298 |          1 |          1 |        300 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\clientConfigs.js                                     | JavaScript |         16 |          0 |          2 |         18 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\pagesComponents.js                                   | JavaScript |         22 |         19 |          2 |         43 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\pagesData.js                                         | JavaScript |         21 |         19 |          1 |         41 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\pagesRoutes.js                                       | JavaScript |         21 |          0 |          1 |         22 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\siteData.js                                          | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\internal\themeData.js                                         | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\404.html.js                                             | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\announcement\index.html.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\index.html.js                                      | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter\QQ\standardApter\index.html.js       | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\adpter\index.html.js                        | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\component\index.html.js                     | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\index.html.js                               | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\plugin\index.html.js                        | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\manual\script\index.html.js                        | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\plugin\index.html.js                               | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\adpter\index.html.js                         | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\advice\index.html.js                         | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\component\index.html.js                      | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\consoleDesk\index.html.js                    | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\course\mirai\index.html.js                   | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\index.html.js                                | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\plugin\index.html.js                         | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\docs\study\script\index.html.js                         | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\foo\index.html.js                                       | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\index.html.js                                           | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\index.html.js                         | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standardApter\index.html.js           | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standard\basic\QQObjInterface.html.js | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\QQ\standard\index.html.js                | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adapter\index.html.js                            | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter\QQ\standardApter\index.html.js            | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\adpter\index.html.js                             | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\component\index.html.js                          | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\index.html.js                                    | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\plugin\index.html.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\manual\script\index.html.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\plugin\index.html.js                                    | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\adapter\index.html.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\adpter\index.html.js                              | JavaScript |         12 |          0 |          3 |         15 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\advice\index.html.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\component\index.html.js                           | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\consoleDesk\index.html.js                         | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\course\mirai\index.html.js                        | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\index.html.js                                     | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\plugin\index.html.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\pages\study\script\index.html.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\styles\index.scss                                             | SCSS       |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\styles\palette.scss                                           | SCSS       |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\.temp\vite-root\index.html                                          | HTML       |         13 |          0 |          1 |         14 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\.vuepress\config.ts                                                           | TypeScript |         85 |          2 |          3 |         90 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\announcement\index.md                                                         | Markdown   |         43 |          0 |         15 |         58 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\index.md                                                                      | Markdown   |         30 |          0 |          2 |         32 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\adapter\QQ\index.md                                                    | Markdown   |         22 |          0 |          1 |         23 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\adapter\QQ\standard\basic\QQObjInterface.md                            | Markdown   |        130 |          0 |         33 |        163 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\adapter\QQ\standard\index.md                                           | Markdown   |          5 |          0 |          4 |          9 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\adapter\index.md                                                       | Markdown   |         22 |          0 |          1 |         23 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\component\index.md                                                     | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\index.md                                                               | Markdown   |         43 |          0 |          1 |         44 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\plugin\index.md                                                        | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\manual\script\index.md                                                        | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\adapter\index.md                                                        | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\advice\index.md                                                         | Markdown   |         20 |          0 |         10 |         30 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\component\index.md                                                      | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\consoleDesk\index.md                                                    | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\course\mirai\index.md                                                   | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\index.md                                                                | Markdown   |         15 |          0 |          7 |         22 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\plugin\index.md                                                         | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\docs-primary\study\script\index.md                                                         | Markdown   |          0 |          0 |          1 |          1 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\package.json                                                                               | JSON       |          5 |          0 |          1 |          6 |
+| f:\Project\工作文件夹\MiraiTravel\vuepress\yarn-error.log                                                                             | Log        |         19 |          0 |          9 |         28 |
+| Total                                                                                                                            |            |     14,060 |        462 |        349 |     14,871 |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

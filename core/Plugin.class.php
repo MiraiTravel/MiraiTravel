@@ -4,7 +4,7 @@
  * 插件系统
  */
 
-namespace MiraiTravel\Plugins;
+namespace MiraiTravel\Plugin;
 
 
 class Plugin

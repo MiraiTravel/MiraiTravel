@@ -26,11 +26,11 @@ class Plugins extends MiraiTravelSoftware
     {
         $this->logSystem = new LogSystem("MiraiTravel", "System");
         $this->logSystem->write_log("software", "plugins", "plugins be open.");
-        CliStyles::println("该功能正在计划开发阶段。","Red");
+        $this->logSystem->println("该功能正在计划开发阶段。","Red");
         return 0;
         if (!in_array($argv[0], array_keys(self::commandsInformation))) {
-            echo CliStyles::ColorRed . "qqBot : 你输入的参数有误 , 使用 qqBot help 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
-            return 0;
+            $this->logSystem->println("qqBot : 你输入的参数有误 , 使用 qqBot help 以获得帮助 。", "Red");
+            return false;
         }
         try {
             $funcName = $this->uncamelize($argv[0]);
@@ -40,25 +40,26 @@ class Plugins extends MiraiTravelSoftware
             $this->$funcName($argc, $argv);
         } catch (Error $e) {
             $this->logSystem->write_log("software", "plugins", "User want open " . $funcName . "but be error :{ $e }");
-            echo CliStyles::ColorGreen . "这个功能还在开发中。。。" . "\r\n" . CliStyles::ColorDefault;
+            $this->logSystem->println("这个功能还在开发中。。。", "Green");
+            return false;
         }
         $this->logSystem->write_log("software", "qqBot", "qqBot be closed.");
     }
 
     function download($argc, $argv)
     {
-        CliStyles::println("该功能正在计划开发阶段。","Red");
+        $this->logSystem->println("该功能正在计划开发阶段。","Red");
     }
 
     function help($argc, $argv, $commandList = array())
     {
         if ($argc === 0) {
-            echo CliStyles::ColorGreen . "qqBot <command> [value]"  . "\r\n" . CliStyles::ColorDefault;
+            $this->logSystem->println("qqBot <command> [value]", "Green");
             foreach (self::commandsInformation as $key => $value) {
-                echo CliStyles::ColorGreen . "\t$key\t" . CliStyles::ColorYellow . $value . "\r\n" . CliStyles::ColorDefault;
+                $this->logSystem->println("\t$key\t" . $value, "Green");
             }
         } else {
-            echo CliStyles::ColorRed . "qqBot help: 你输入的参数有误 , 使用 qqBot help 以获得帮助 。" . "\r\n" . CliStyles::ColorDefault;
+            $this->logSystem->println("qqBot help: 你输入的参数有误 , 使用 qqBot help 以获得帮助 。", "Red");
             return 0;
         }
     }

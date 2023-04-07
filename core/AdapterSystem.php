@@ -24,10 +24,10 @@ $logSystem = new LogSystem("AdapterSystem", "System");
 $adapterList = array();
 
 // 适配器目录
-$adapterDir = scandir("Adapter");
+$adapterDir = scandir("./Adapter");
 
 // 适配器类型目录 
-foreach ($adaptertDir as $key => $adapterType) {
+foreach ($adapterDir as $key => $adapterType) {
     // 跳过 . 和 ..
     if ($key < 2) {
         continue;

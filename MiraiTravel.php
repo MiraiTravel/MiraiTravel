@@ -7,8 +7,9 @@
 
 namespace MiraiTravel;
 
-require_once "loadMiraiTravel.php";
+require_once "./core/loadMiraiTravel.php";
 
 $miraiTravel = new MiraiTravel;
+$miraiTravel::$console = true;
 
 $miraiTravel::mirai_home_page();

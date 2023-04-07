@@ -56,6 +56,7 @@ class Config extends MiraiTravelSoftware
             if (in_array($argv[0], $debugModes)) {
                 $dataSystem = new DataSystem("MiraiTravel", "System");
                 $dataSystem->write_data("miraiTravel", "LOG_LEVEL", $argv[0]);
+                $this->logSystem::$logLevel = false;
                 $this->logSystem->println("日志模式已调整为" . $argv[0], "Green");
             } else {
                 $this->logSystem->println("config debug: 你输入的参数有误 , 使用 config debug -h 以获得帮助 。", "Red");
