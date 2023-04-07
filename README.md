@@ -76,7 +76,9 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 特别感谢 [JetBrains](https://www.jetbrains.com/?from=MiraiTravel) 为本项目提供免费的 [PhpStorm IDE](https://www.jetbrains.com/idea/?from=MiraiTravel) 等 IDE 的授权 。</br>
 特别感谢 [vscode](https://www.vscode.com/?from=MiraiTravel) 提供了一款开源好用的 IDE , 本项目大部分代码都是在 vscode 中编写的。VScode 拥有丰富的插件,给开发带来了很大的便利。 </br>
 特别感谢 [Github](https://github.com/?from=Mr-XieXuan) 提供了一个开源的代码托管平台,让我们可以在这里分享和交流代码。 </br>
+特别感谢 [GitKraken](https://www.gitkraken.com/invite/3AkH6ePp) GitKraken 是一个免费的跨平台GUI Git客户端，可用于版本控制系统（包括GitHub,Bitbucket,GitLab等）。它旨在通过为你提供直观的UI,任务跟踪,内置代码编辑器,合并冲突编辑器以及对与其他平台集成的支持,使你成为富有生产力的Git用户。</br>
 
 [<img src="docs/img/github-mark-white.png" width="200"/>](https://github/?from=Mr-XieXuan)
 [<img src="docs/img/vscode.png" width="200"/>](https://code.visualstudio.com/?from=MiraiTravel) </br>
 [<img src="docs/img/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/?from=MiraiTravel)
+[<img src="docs/img/gitkraken-keif-mono-teal-sq.svg" width="200"/>](https://www.gitkraken.com/invite/3AkH6ePp)
