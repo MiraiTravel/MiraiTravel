@@ -27,11 +27,12 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 
 ### 开始 Start
 运行 php MiraiTravel.php 即可启动 MiraiTravel。</br>
-启动后使用命令 help 可以获取帮助。</br>
+启动后使用命令 Help 可以获取帮助。</br>
 
 #### 开启伪静态
 伪静态配置文件为 .htaccess 请按需获取你HttpServer的配置。</br>
-如果你MiraiTravel暴露在公网中,不开启伪静态可能会导致你的QQ被恶意利用等。所以我强烈建议你开启伪静态。
+有关伪静态的配置请参考 [伪静态配置](.htaccess)。</br>
+由于部分功能需要使用到伪静态,所以请务必开启伪静态,否则可能会出现一些问题。</br>
 
 ### 项目文件结构
 * core  MiraiTravel核心文件 
@@ -41,9 +42,6 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 * plugins   插件安装路径
 * script    用户脚本文件
 * docs  文档
-
-教程会在 :
-https://blog.csdn.net/apple_53792700/category_12176569.html
 
 ![](https://komarev.com/ghpvc/?username=Mr-XieXuan)  
 
@@ -62,6 +60,22 @@ https://blog.csdn.net/apple_53792700/category_12176569.html
 ![GitHub all releases](https://img.shields.io/github/downloads/Mr-XieXuan/MiraiTravel/total?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Mr-XieXuan/MiraiTravel?style=social)
 
+## 开源生态
+本项目是一个开源项目,我们欢迎任何人参与到本项目的开发中来。</br>
+如果你有任何问题或者建议,欢迎在 [Issues](https://github.com/MR-XieXuan/MiraiTravel/issues) 中提出。</br>
+如果你想参与到本项目的开发中来,欢迎在 [Pull requests](https://github.com/MR-XieXuan/MiraiTravel/pulls) 中提交你的代码。</br>
+如果你在使用本项目的过程中遇到了任何问题,欢迎在 [Discussions](https://github.com/MR-XieXuan/MiraiTravel/discussions) 中提出。</br>
+
+如果你对本项目感兴趣,欢迎加入我们的交流群,我们会在群中进行一些讨论。</br>
+
 # 致谢
-致谢 Vscode 为本项目提供高效的代码编辑器。</br>
 致谢 Aber 为本项目绘制了一个可爱的LOGO。 </br>
+
+> [PhpStorm IDE](https://www.jetbrains.com/phpstorm/) 是一个在各个方面都最大程度地提高开发人员的生产力的 IDE, WebStorm 的所有特性都包含在 PhpStorm 中，并在此基础上增加了对PHP和数据库/SQL的全面支持。
+特别感谢 [JetBrains](https://www.jetbrains.com/?from=MiraiTravel) 为本项目提供免费的 [PhpStorm IDE](https://www.jetbrains.com/idea/?from=MiraiTravel) 等 IDE 的授权
+特别感谢 [vscode](https://www.vscode.com/?from=MiraiTravel) 提供了一款开源好用的 IDE , 本项目大部分代码都是在 vscode 中编写的。VScode 拥有丰富的插件,给开发带来了很大的便利。
+特别感谢 [Github](https://github.com/?from=Mr-XieXuan) 提供了一个开源的代码托管平台,让我们可以在这里分享和交流代码。
+
+[<img src="docs/img/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/?from=MiraiTravel)
+[<img src="docs/img/vscode.png" width="200"/>](https://code.visualstudio.com/?from=MiraiTravel)
+[<img src="docs/img/github-mark-white.png" width="200"/>](https://github/?from=Mr-XieXuan)
