@@ -1,1 +1,0 @@
-export const siteData = JSON.parse("{\"base\":\"/MiraiTravel/\",\"lang\":\"en-US\",\"title\":\"\",\"description\":\"\",\"head\":[[\"link\",{\"rel\":\"icon\",\"href\":\"/MiraiTravel/image/MiraiTravelico.jpg\"}]],\"locales\":{}}")
