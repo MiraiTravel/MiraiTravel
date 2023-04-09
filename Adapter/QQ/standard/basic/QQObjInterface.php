@@ -1,30 +1,11 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\Adapter\QQ\standard\basic;
 
 use Closure;
 
 interface QQObjInterface
 {
-    // 组件列表
-    private $componentList = array();
-    // 插件列表
-    private $pluginList = array();
-
-    // 动态方法
-    private $dynamicMethods = array();
-
-    // 控制机器人对象
-    public $bot = $this;
-
-    // 适配器命名空间
-    public $adapterNameSpace = "\MiraiTravel\adapter\QQ\standard\basic";
-
-    // 适配器核心
-    public $adapterCore = array(
-        "messageChain" => "$adapterNameSpace\MessageChain",
-    );
-
     /**
      * __constuct 构造函数
      * 
@@ -36,7 +17,7 @@ interface QQObjInterface
      * 安全验证
      * 当进行操控时,在必要情况会触发安全验证。比如 webhook 入口时会触发
      */
-    function safety_verification(string $how, mixed $certificate): bool;
+    function safety_verification(string $how,  $certificate): bool;
 
     /**
      * get_qq
@@ -135,7 +116,7 @@ interface QQObjInterface
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_friend_massage(int $qq, MessageChain $messageChain, bool|int $quote = false, array $other = array()): array;
+    function send_friend_massage(int $qq,  $messageChain, $quote = false, array $other = array()): array;
 
     /**
      * send_group_massage 
@@ -145,7 +126,7 @@ interface QQObjInterface
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_group_massage(int $group, MessageChain  $messageChain, bool|int $quote = false, array $other = array()): array;
+    function send_group_massage(int $group,   $messageChain,  $quote = false, array $other = array()): array;
 
     /**
      * mute_all 

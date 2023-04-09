@@ -5,11 +5,12 @@
  * 
  */
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\Adapter\QQ\standard\basic;
 
 use Error;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
+use MiraiTravel\ScriptSystem\ScriptSystem;
 
 use function MiraiTravel\ScriptSystem\load_qqbot;
 
@@ -18,6 +19,7 @@ final class QQObjManager
 {
     static $qqObjArray = array();
     static private $qqObjManager = false;
+
     function __construct()
     {
         if (self::$qqObjManager !== false) {
@@ -36,8 +38,9 @@ final class QQObjManager
                 return true;
             }
         }
-        if (load_qqbot($qq)) {
-            $objName = "MiraiTravel\QQObj\Script\Q" . $qq;
+        $scriptSystem = new ScriptSystem();
+        if ($scriptSystem->load("QQ", $qq)) {
+            $objName = "MiraiTravel\Script\QQ\Q" . $qq . "\Q" . $qq;
             try {
                 self::$qqObjArray[] = new $objName();
             } catch (Error $e) {
@@ -59,7 +62,7 @@ final class QQObjManager
     function get_qqobj($qq)
     {
         foreach (self::$qqObjArray as $qqBot) {
-            if ($qqBot->get_qq() === $qq) {
+            if ($qqBot->get_qq() === (int)$qq) {
                 return $qqBot;
             }
         }

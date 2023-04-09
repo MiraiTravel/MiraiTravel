@@ -7,7 +7,7 @@ use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MiraiTravelSoftware;
 
-use function MiraiTravel\Components\QQ\miraiApter\HttpAdapter\curl_get as HttpAdapterCurl_get;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\HttpAdapter\curl_get as HttpAdapterCurl_get;
 
 class Config extends MiraiTravelSoftware
 {

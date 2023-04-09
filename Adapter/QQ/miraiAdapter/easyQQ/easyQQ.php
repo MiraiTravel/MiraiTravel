@@ -1,8 +1,8 @@
 <?php
 
-namespace MiraiTravel\Components\QQ\miraiApter\Component\easyQQ;
+namespace MiraiTravel\Components\QQ\miraiAdapter\Component\easyQQ;
 
-class easyQQ extends \MiraiTravel\adapter\QQ\standard\easyQQ\easyQQ
+class easyQQ extends \MiraiTravel\Adapter\QQ\standard\easyQQ\easyQQ
 {
     static $focus = false;
 

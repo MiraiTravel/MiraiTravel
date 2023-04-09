@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\easyQQ;
+namespace MiraiTravel\Adapter\QQ\standard\easyQQ;
 
 
 use MiraiTravel\Components\Component;

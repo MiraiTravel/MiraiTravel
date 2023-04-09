@@ -1,11 +1,14 @@
 <?php
 
-namespace MiraiTravel\Components\QQ\miraiApter\MiraiApi;
+namespace MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi;
+
+require_once(__DIR__ . "/httpAdapter.php");
+require_once(__DIR__ . "/webhookAdapter.php");
 
 use MiraiTravel\LogSystem\LogSystem;
 
-use function MiraiTravel\Components\QQ\miraiApter\HttpAdapter\http_adapter;
-use function MiraiTravel\Components\QQ\miraiApter\WebhookAdapter\webhook_adapter;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\HttpAdapter\http_adapter;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\WebhookAdapter\webhook_adapter;
 
 /**
  * adapter_manager 适配器函数

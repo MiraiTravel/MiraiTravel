@@ -1,46 +1,44 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\miraiApter\basic;
+namespace MiraiTravel\Adapter\QQ\miraiAdapter\basic;
 
 use Closure;
 use Error;
-use MiraiTravel\adapter\QQ\standard\basic\QQObjTrait as BasicQQObjTrait;
+use MiraiTravel\Adapter\QQ\standard\basic\QQObjTrait as BasicQQObjTrait;
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
-use MiraiTravel\Components\QQ\miraiApter\MessageChain\MessageChain;
-use MiraiTravel\Components\QQ\standardComponents\Basic\QQObj as BasicQQObj;
-use MiraiTravel\MiraiTravel;
+use MiraiTravel\Adapter\QQ\miraiAdapter\MessageChain\MessageChain;
 use function MiraiTravel\PluginSystem\get_plugin_path;
 use function MiraiTravel\PluginSystem\load_plugin;
 
-use function MiraiTravel\ComponentSystem\load_component;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\bind;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\delete_friend;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\member_info;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\member_profile;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\mute;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\mute_all;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\recall;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\resp__member_join_request_event;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\resp__new_friend_request_event;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_friend_message;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_group_message;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_nudge;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\send_temp_message;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\unmute;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\unmute_all;
-use function MiraiTravel\Components\QQ\miraiApter\MiraiApi\verify;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\bind;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\delete_friend;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\member_info;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\member_profile;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\mute;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\mute_all;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\recall;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\resp__member_join_request_event;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\resp__new_friend_request_event;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\send_friend_message;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\send_group_message;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\send_nudge;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\send_temp_message;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\unmute;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\unmute_all;
+use function MiraiTravel\Adapter\QQ\miraiAdapter\basic\MiraiApi\verify;
+
+require_once(__DIR__ . "/MiraiApi.php");
 
 trait QQObjTrait
 {
 
     use BasicQQObjTrait;
 
-    const HTTP_API = false; //http api
-    const VERIFY_KEY = false; //http api verifyKey
-    const AUTHORIZATION = ""; //webhook Authorization
-
     static $sessionKey = true;
+    static $VERIFY_KEY = false;
+    static $AUTHORIZATION = false;
+    static $HTTP_API = false;
 
     private $componentList = array();
     private $pluginList = array();
@@ -52,12 +50,6 @@ trait QQObjTrait
      */
     function __construct()
     {
-        // 判断命名空间是否正确
-        $qq = str_replace("MiraiTravel\QQObj\Script\Q", "", get_class($this));
-        $namespace = str_replace("\Q$qq", "", get_class($this));
-        if ($namespace !== "MiraiTravel\QQObj\Script") {
-            throw new Error("The QQBot's namespace is " . __NAMESPACE__ . " but not 'MiraiTravel\QQObj\Script' Please amend Your Script!");
-        }
         $this->_qqBot = $this;
         // 初始化
         $this->init();
@@ -81,12 +73,12 @@ trait QQObjTrait
     {
     }
 
-    function safety_verification(string $how, mixed $certificate): bool
+    function safety_verification(string $how, $certificate): bool
     {
         return true;
     }
 
-    function let_normal()
+    function let_normal(): bool
     {
         return true;
     }
@@ -148,7 +140,7 @@ trait QQObjTrait
      * 删除好友
      * @param   int     $target     删除好友的QQ号码
      */
-    function delete_friend($target, $other = array())
+    function delete_friend(int $target, array $other = array()): bool
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "delete_friend", "$target" . " for " . $this->get_session_key());
@@ -168,7 +160,7 @@ trait QQObjTrait
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_friend_massage($qq, $messageChain, $quote = false, $other = array())
+    function send_friend_massage(int $qq,  $messageChain, $quote = false, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_friend_message", "$qq send" . json_encode($messageChain) . " for " . $this->get_session_key());
@@ -190,7 +182,7 @@ trait QQObjTrait
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_group_massage($group, $messageChain, $quote = false, $other = array())
+    function send_group_massage(int $group, $messageChain,  $quote = false, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key());
@@ -209,7 +201,7 @@ trait QQObjTrait
      * 令某群全部禁言
      * @param $target 群号
      */
-    function mute_all($target, $other = array())
+    function mute_all($target, $other = array()) :array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("GroupManagement", "mute_all", "$target mute_all" . " for " . $this->get_session_key());
@@ -221,11 +213,11 @@ trait QQObjTrait
     }
 
     /**
-     * mute_all 
+     * unmute_all 
      * 令某群全部禁言
      * @param $target 群号
      */
-    function unmute_all($target, $other = array())
+    function unmute_all($target, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("GroupManagement", "unmute_all", "$target unmute_all" . " for " . $this->get_session_key());
@@ -243,7 +235,7 @@ trait QQObjTrait
      * @param   int     $memberId   指定群员QQ号
      * @param   int     $time       禁言时长，单位为秒，最多30天，默认为0
      */
-    function mute($target, $memberId, $time = 1800, $other = array())
+    function mute($target, $memberId, $time = 1800, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("GroupManagement", "mute", "$target mute $memberId $time s" . " for " . $this->get_session_key());
@@ -263,7 +255,7 @@ trait QQObjTrait
      * @param   int     $target     指定群的群号
      * @param   int     $memberId   指定群员QQ号
      */
-    function unmute($target, $memberId, $other = array())
+    function unmute($target, $memberId, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("GroupManagement", "unmute", "$target unmute $memberId " . " for " . $this->get_session_key());
@@ -285,7 +277,7 @@ trait QQObjTrait
      * @param $quote        引用消息id
      * @param $other        其他可能会用到的参数
      */
-    function send_temp_massage($qq, $group, $messageChain, $quote = false, $other = array())
+    function send_temp_massage($qq, $group, $messageChain, $quote = false, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_group_message", "$group send" . json_encode($messageChain) . " for " . $this->get_session_key());
@@ -306,7 +298,7 @@ trait QQObjTrait
      * @param int $subject  戳一戳的主体 , 群号或者QQ号
      * @param string $kind  上下文类型, 可选值 Friend, Group, Stranger
      */
-    function send_nudge($target, $subject, $kind, $other = array())
+    function send_nudge($target, $subject, $kind, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "send_nudge", "$subject send" . $target . " for " . $this->get_session_key());
@@ -343,7 +335,7 @@ trait QQObjTrait
      * @param   int     $target         指定群的群号
      * @param   int     $memberId       群成员QQ号码
      */
-    function member_profile($target, $memberId, $other = array())
+    function member_profile($target, $memberId, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "member_profile", " get $target $memberId" . " for " . $this->get_session_key());
@@ -361,7 +353,7 @@ trait QQObjTrait
      * @param   int     $target         指定群的群号
      * @param   int     $memberId       群成员QQ号码
      */
-    function member_info($target, $memberId, $other = array())
+    function member_info($target, $memberId, $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "member_profile", " get $target $memberId" . " for " . $this->get_session_key());
@@ -373,6 +365,32 @@ trait QQObjTrait
         );
     }
 
+    // 'friend_list', 'group_list', 'member_list', 'bot_profile', 'friend_profile'
+
+    function friend_list(): array
+    {
+        return array();
+    }
+
+    function group_list(): array
+    {
+        return array();
+    }
+
+    function member_list(int $target): array
+    {
+        return array();
+    }
+
+    function bot_profile(): array
+    {
+        return array();
+    }
+
+    function friend_profile(int $target): array
+    {
+        return array();
+    }
 
     /**
      * recall
@@ -380,7 +398,7 @@ trait QQObjTrait
      * @param   string  $messageId  需要撤回消息的messageId
      * @param   int     $target     好友或群id
      */
-    function recall($messageId, $target, $other = array())
+    function recall(string $messageId, int $target, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "recall", "$target recall" . $messageId . " for " . $this->get_session_key());
@@ -401,7 +419,7 @@ trait QQObjTrait
      * @param int	    $operate	    响应的操作类型 0 同意 1 拒绝 2 拒绝添加好友并添加黑名单，不再接收该用户的好友申请
      * @param string    $message	    回复的信息
      */
-    function resp__new_friend_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    function resp__new_friend_request_event(int $eventId, int $fromId, int $groupId, int $operate, string $message, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "resp__new_friend_request_event", "$fromId resp__new_friend_request_event" . "$operate | $message" . " for " . $this->get_session_key());
@@ -426,7 +444,7 @@ trait QQObjTrait
      * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 2 忽略请求 3 拒绝入群并添加黑名单，不再接收该用户的入群申请 4 忽略入群并添加黑名单，不再接收该用户的入群申请
      * @param string    $message	    回复的信息
      */
-    function resp__member_join_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    function resp__member_join_request_event(int $eventId, int  $fromId, int $groupId, int  $operate, string $message, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "resp__member_join_request_event", "$fromId resp__member_join_request_event" . "$operate | $message" . " for " . $this->get_session_key());
@@ -451,7 +469,7 @@ trait QQObjTrait
      * @param int	    $operate	    响应的操作类型 0 同意入群 1 拒绝入群 
      * @param string    $message	    回复的信息
      */
-    function resp__bot_invited_join_group_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array())
+    function resp__bot_invited_join_group_request_event(int $eventId, int $fromId, int $groupId, int $operate, string $message, array $other = array()): array
     {
         $logSystem = new LogSystem($this->get_qq(), "QQBot");
         $logSystem->write_log("sendMessage", "resp__bot_invited_join_group_request_event", "$fromId resp__bot_invited_join_group_request_event" . "$operate | $message" . " for " . $this->get_session_key());
@@ -509,15 +527,15 @@ trait QQObjTrait
      */
     function get_verify_key()
     {
-        if ($this::VERIFY_KEY === false) {
+        if ($this::$VERIFY_KEY === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $verifyKey = $dataSystem->read_data("miraiTravel", "verifyKey");
             return $verifyKey;
-        } elseif ($this::VERIFY_KEY === true) {
+        } elseif ($this::$VERIFY_KEY === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $verifyKey = $dataSystem->read_data("config", "verifyKey");
-        } elseif ($this::VERIFY_KEY) {
-            return $this::VERIFY_KEY;
+        } elseif ($this::$VERIFY_KEY) {
+            return $this::$VERIFY_KEY;
         } else {
             throw new Error($this->get_qq() . "verifyKey出现严重错误!");
             return false;
@@ -526,15 +544,15 @@ trait QQObjTrait
 
     function get_http_api()
     {
-        if ($this::HTTP_API === false) {
+        if ($this::$HTTP_API === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $verifyKey = $dataSystem->read_data("miraiTravel", "HTTP_API");
             return $verifyKey;
-        } elseif ($this::HTTP_API === true) {
+        } elseif ($this::$HTTP_API === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $verifyKey = $dataSystem->read_data("config", "HTTP_API");
-        } elseif ($this::HTTP_API) {
-            return $this::HTTP_API;
+        } elseif ($this::$HTTP_API) {
+            return $this::$HTTP_API;
         } else {
             throw new Error($this->get_qq() . "HTTP_API出现严重错误!");
             return false;
@@ -543,15 +561,15 @@ trait QQObjTrait
 
     function get_http_authorization()
     {
-        if ($this::AUTHORIZATION === false) {
+        if ($this::$AUTHORIZATION === false) {
             $dataSystem = new DataSystem("MiraiTravel", "System");
             $verifyKey = $dataSystem->read_data("miraiTravel", "AUTHORIZATION");
             return $verifyKey;
-        } elseif ($this::AUTHORIZATION === true) {
+        } elseif ($this::$AUTHORIZATION === true) {
             $dataSystem = new DataSystem($this->get_qq(), "QQBot");
             $verifyKey = $dataSystem->read_data("config", "AUTHORIZATION");
-        } elseif ($this::AUTHORIZATION) {
-            return $this::AUTHORIZATION;
+        } elseif ($this::$AUTHORIZATION) {
+            return $this::$AUTHORIZATION;
         } else {
             throw new Error($this->get_qq() . "AUTHORIZATION出现严重错误!");
             return false;
