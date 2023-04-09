@@ -13,7 +13,7 @@ namespace MiraiTravel\Script\QQ\Q2771717841;
 // 引入对应适配器的消息链构造对象 , 用于消息的构造与解析。只不过为了脚本的高复用性我不推荐你直接这样子引入。
 
 use MiraiTravel\Adapter\QQ\miraiAdapter\basic\QQObj\QQObj;
-use MiraiTravel\Adapter\QQ\miraiAdapter\MessageChain\MessageChain;
+use MiraiTravel\Adapter\QQ\miraiAdapter\basic\MessageChain\MessageChain;
 
 /**
  * 继承于 适配器对象 
