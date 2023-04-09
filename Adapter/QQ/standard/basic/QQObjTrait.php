@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\Adapter\QQ\standard\basic;
 
 use Closure;
 
@@ -15,15 +15,7 @@ trait QQObjTrait
     private $dynamicMethods = array();
 
     // 控制机器人对象
-    public $bot = $this;
-
-    // 适配器命名空间
-    public $adapterNameSpace = "\MiraiTravel\adapter\QQ\standard\basic";
-
-    // 适配器核心
-    public $adapterCore = array(
-        "messageChain" => "$adapterNameSpace\MessageChain",
-    );
+    public $bot = null;
 
     /**
      * __constuct 构造函数
@@ -37,7 +29,7 @@ trait QQObjTrait
      * 安全验证
      * 当进行操控时,在必要情况会触发安全验证。比如 webhook 入口时会触发
      */
-    abstract function safety_verification(string $how, mixed $certificate): bool;
+    abstract function safety_verification(string $how, $certificate): bool;
 
     /**
      * get_qq
@@ -48,8 +40,16 @@ trait QQObjTrait
 
     function get_qq(): int
     {
-        $qq = str_replace("MiraiTravel\QQObj\Script\Q", "", get_class($this));
-        return $qq;
+        $className = get_class($this);
+        // 以 “\” 分割
+        $className = explode("\\", $className);
+        // 获取最后一个
+        $className = end($className);
+        // 去掉前缀
+        $className = str_replace("Q", "", $className);
+        // 转换为数字
+        $className = (int)$className;
+        return $className;
     }
 
     /**
@@ -58,7 +58,7 @@ trait QQObjTrait
      * 
      * @return bool 是否正常
      */
-    abstract function let_normal();
+    abstract function let_normal(): bool;
 
     /**
      * init 初始化函数用来配置组件
@@ -78,7 +78,7 @@ trait QQObjTrait
      * $componentName 组件名称
      * $componentVersion 组件版本号
      */
-    abstract function open_component(string $componentName, string  $componentVersion): bool;
+    abstract function open_component(string $componentName): bool;
 
     /**
      * 启动组件 
@@ -104,7 +104,7 @@ trait QQObjTrait
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    abstract function send_friend_massage(int $qq, MessageChain $messageChain, bool|int $quote = false, array $other = array()): array;
+    abstract function send_friend_massage(int $qq,  $messageChain,  $quote = false, array $other = array()): array;
 
     /**
      * send_group_massage 
@@ -114,7 +114,7 @@ trait QQObjTrait
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    abstract function send_group_massage(int $group, MessageChain  $messageChain, bool|int $quote = false, array $other = array()): array;
+    abstract function send_group_massage(int $group,   $messageChain,  $quote = false, array $other = array()): array;
 
     /**
      * mute_all 
@@ -165,15 +165,7 @@ trait QQObjTrait
      * @param int $subject  戳一戳的主体 , 群号或者QQ号
      * @param string $kind  上下文类型, 可选值 Friend, Group, Stranger
      */
-    abstract function send_nudge($target, $subject, $kind, $other = array()): array;
-
-    /**
-     * upload_voice
-     * 语音文件上传
-     * @param string $type 当前仅支持 "group"
-     * @param string $voice 语音文件
-     */
-    abstract function upload_voice($type, $voice, $other = array()): array;
+    abstract function send_nudge(int $target, int $subject, string $kind, array $other = array()): array;
 
     /**
      * mute_all
@@ -183,7 +175,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function member_profile($target, $memberId, $other = array()): array;
+    abstract function member_profile(int $target, int $memberId, array $other = array()): array;
 
     /**
      * mute_all
@@ -193,7 +185,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function member_info($target, $memberId, $other = array()): array;
+    abstract function member_info(int $target, int $memberId, array $other = array()): array;
 
 
     /**
@@ -204,7 +196,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function recall($messageId, $target, $other = array()): array;
+    abstract function recall(string $messageId, int $target, array $other = array()): array;
 
     /**
      * resp__new_friend_request_event
@@ -217,7 +209,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function resp__new_friend_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array()): array;
+    abstract function resp__new_friend_request_event(int $eventId, int  $fromId, int $groupId, int $operate, string $message, array $other = array()): array;
 
     /**
      * resp__member_join_request_event
@@ -231,7 +223,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function resp__member_join_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array()): array;
+    abstract function resp__member_join_request_event(int $eventId, int $fromId, int $groupId, int $operate, string $message, array $other = array()): array;
 
     /**
      * resp__bot_invited_join_group_request_event
@@ -245,7 +237,7 @@ trait QQObjTrait
      * 
      * @return array 消息返回报文
      */
-    abstract function resp__bot_invited_join_group_request_event($eventId, $fromId, $groupId, $operate, $message, $other = array()): array;
+    abstract function resp__bot_invited_join_group_request_event(int $eventId, int  $fromId, int  $groupId, int  $operate, string $message, array $other = array()): array;
 
     public function __get($name)
     {
@@ -263,7 +255,7 @@ trait QQObjTrait
         }
     }
 
-    private function isClosure($value)
+    public function isClosure($value)
     {
 
         return is_callable($value) && get_class((object)$value) === \Closure::class;

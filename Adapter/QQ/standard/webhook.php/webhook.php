@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\webhook;
+namespace MiraiTravel\Adapter\QQ\standard\webhook;
 
 use MiraiTravel\Components\Component;
 

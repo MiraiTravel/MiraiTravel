@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\Adapter\QQ\standard\basic;
 
 use Closure;
 

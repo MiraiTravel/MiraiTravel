@@ -3,13 +3,12 @@
 namespace MiraiTravel\Software\QqBot;
 
 use Error;
-use MiraiTravel\adapter\QQ\standard\basic\QQObjManager as BasicQQObjManager;
+use MiraiTravel\Adapter\QQ\standard\basic\QQObjManager as BasicQQObjManager;
 use MiraiTravel\CliStyles;
 use MiraiTravel\LogSystem\LogSystem;
 use MiraiTravel\MessageChain\MessageChain;
 use MiraiTravel\MiraiTravel;
 use MiraiTravel\MiraiTravelSoftware;
-use MiraiTravel\QQObj\Script\QQObjManager;
 
 class QqBot extends MiraiTravelSoftware
 {

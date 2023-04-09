@@ -1,10 +1,9 @@
 <?php
 
-namespace MiraiTravel\Components\QQ\miraiApter\HttpAdapter;
+namespace MiraiTravel\Adapter\QQ\miraiAdapter\basic\HttpAdapter;
 
 use MiraiTravel\DataSystem\DataSystem;
 use MiraiTravel\LogSystem\LogSystem;
-use MiraiTravel\QQObj\Script\QQObjManager;
 
 /**
  * http 适配器

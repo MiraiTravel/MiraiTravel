@@ -15,7 +15,7 @@ class Autoloader
 
     // 如果 $className = MiraiTravel\LoadMiraiTravel\Autoloader 那么 $classPath = ./core/LoadMiraiTravel/Autoloader.php
     // 如果 $className = MiraiTravel\LoadMiraiTravel\Autoloader 那么 $classPath = ./core/LoadMiraiTravel/Autoloader.php
-    // 如果 $className = MiraiTravel\adapter\QQ\miraiApter\basic\QQObj\QQObj 那么 $classPath = ./Adapter/QQ/miraiApter/basic/QQObj.php
+    // 如果 $className = MiraiTravel\adapter\QQ\miraiAdapter\basic\QQObj\QQObj 那么 $classPath = ./Adapter/QQ/miraiAdapter/basic/QQObj.php
     // 如果 $className = namespace MiraiTravel\Software\Stay\Stay 那么 $classPath = ./core/miraiTravelSoftware/Stay.php
     // 如果 $className = namespace MiraiTravel\Software\Stay\Protocols\Http 那么 $classPath = ./core/miraiTravelSoftware/Stay/Protocols/Http.php
     public static function loadByNamespace($className)
