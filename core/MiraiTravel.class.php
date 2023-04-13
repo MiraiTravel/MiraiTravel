@@ -82,8 +82,8 @@ final class MiraiTravel
        ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚══════╝    
         ", "Yellow");
         self::$logSystem->println("欢迎使用 MiraiTravel 。", "Yellow");
-        self::$logSystem->print("MiraiTravel 交流群 : ", "Yellow");
-        self::$logSystem->print("604568448 。", "Green");
+        self::$logSystem->print("MiraiTravel 交流群 :", "Yellow");
+        self::$logSystem->print(" 604568448 ", "Green");
         self::$logSystem->println("。", "Yellow");
         self::$logSystem->println("使用命令 help 以获取使用帮助。", "Yellow");
         self::$logSystem->write_log("miraiTravel", "mirai_home_page", "I'm Start!");
@@ -101,7 +101,7 @@ final class MiraiTravel
                 $software = "MiraiTravel\\Software\\" . $miraiTravelInter[0] . "\\" . $miraiTravelInter[0];
                 new $software($argc, $argv);
             } else {
-                self::$logSystem->println("您输入的命令有误 请重试 ！" . "\r\n" . "\t", "Red");
+                self::$logSystem->println("您输入的命令有误 请重试 ！" . "\t", "Red");
             }
         }
     }

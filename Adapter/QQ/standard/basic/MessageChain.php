@@ -1,14 +1,22 @@
 <?php
 
-namespace MiraiTravel\adapter\QQ\standard\basic;
+namespace MiraiTravel\Adapter\QQ\standard\basic;
 
 abstract class MessageChain
 {
-    private $messageChain;
+    private $messageChain = array();
+    
+    // 句柄 
+    public $logSystem = null;
 
     function __construct()
     {
     }
+
+    /**
+     * 设置logSystem
+     */
+    abstract function set_logSystem( $logSystem );
 
     /**
      * 获取构建好的messageChain
@@ -20,6 +28,28 @@ abstract class MessageChain
      * 设置messageChain
      */
     abstract function set_message_chain($messageChain);
+
+    /**
+     * 转换到标准的 messageChain
+     * 标准的 messageChain 为 MiraiAdapter\MessageChain 
+     * @return array messageChain
+     */
+    abstract function to_standard_message_chain();
+
+    /**
+     * 由标准的 messageChain 转换到当前的 messageChain
+     */
+    abstract function from_standard_message_chain($messageChain);
+
+    /**
+     * 直接由当前 messageChain 转换到目标的 messageChain
+     */
+    abstract function to_target_message_chain($target);
+
+    /**
+     * 检查 messageChain 是否有误
+     */
+    abstract function check_message_chain();
 
     /**
      * 清除messageChain

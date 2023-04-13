@@ -2,15 +2,24 @@
 
 namespace MiraiTravel\Adapter\QQ\miraiAdapter\basic\MessageChain;
 
+use MiraiTravel\Adapter\QQ\standard\basic\MessageChain as BasicMessageChain;
 use MiraiTravel\MiraiTravel;
 
-class MessageChain
+class MessageChain extends BasicMessageChain
 {
     private $messageChain;
 
     function __construct()
     {
         $this->messageChain = array();
+    }
+
+    /**
+     * 设置logSystem
+     */
+    function set_logSystem($logSystem)
+    {
+        $this->logSystem = $logSystem;
     }
 
     /**
@@ -32,12 +41,62 @@ class MessageChain
     }
 
     /**
+     * 检查 messageChain 是否有误
+     */
+    function check_message_chain()
+    {
+        return true;
+    }
+
+    /**
      * 清除messageChain
      */
     function clean()
     {
         $this->messageChain = [];
         return [];
+    }
+
+
+    /**
+     * 转换到标准的 messageChain
+     */
+    function to_standard_message_chain()
+    {
+        return $this;
+    }
+
+    /**
+     * 由标准的 messageChain 转换到当前的 messageChain
+     */
+    function from_standard_message_chain($messageChain)
+    {
+        $this->set_message_chain($messageChain->get_message_chain());
+        return $this->messageChain;
+    }
+
+    /**
+     * 直接由当前 messageChain 转换到目标的 messageChain
+     */
+    function to_target_message_chain($target)
+    {
+        foreach ($this->messageChain as $key => $value) {
+            if ($value['type'] === "At") {
+                $target->push_at($value['target']);
+            } else if ($value['type'] === "Plain") {
+                $target->push_plain($value['text']);
+            } else if ($value['type'] === "Image") {
+                $target->push_img($value['url']);
+            } else if ($value['type'] === "Face") {
+                $target->push_face($value['faceId']);
+            } else if ($value['type'] === "AtAll") {
+                $target->push_at_all();
+            } else {
+                if ($this->logSystem !== null) {
+                    $this->logSystem->log("未知的消息类型: " . $value['type']);
+                }
+            }
+        }
     }
 
     /**
