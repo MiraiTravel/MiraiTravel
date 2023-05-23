@@ -22,3 +22,12 @@ class Q2771717841 extends MiraiAdapterPresident
     public $bot;
     
 }
+
+/**
+ * 你也可以在这里通过一些特定的方法创建其他的 QQObj
+ * 如果在这里创建了 QQObj 后, 请不要再使用单独的脚本的形式创建 QQObj
+ * 否则可能会导致 QQObj 重复创建
+ */
+
+
+ 

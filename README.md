@@ -11,7 +11,12 @@ MiraiTravel
 ### 简介 Information
 MiraiTravel 是一个运行于 PHP 环境的 功能强大的多平台机器人框架</br>
 纪念第一个兼容的平台 : Mirai 特命名 MiraiTravel </br>
-MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机器人框架。
+MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机器人框架。 </br>
+
+
+GithubPage : [https://mr-xiexuan.github.io/MiraiTravel/](https://mr-xiexuan.github.io/MiraiTravel/) </br>
+公告发布页 : [https://mr-xiexuan.github.io/MiraiTravel/announcement/](https://mr-xiexuan.github.io/MiraiTravel/announcement/) </br>
+
 
 #### 为何开发 MiraiTravel (开发目标)
 1. 安装配置简单 可以通过控制台使用命令行进行 MiraiTravel 的配置。
@@ -67,6 +72,23 @@ MiraiTravel 致力于开发一个高效方便的PHP多平台高兼容性的机�
 如果你在使用本项目的过程中遇到了任何问题,欢迎在 [Discussions](https://github.com/MR-XieXuan/MiraiTravel/discussions) 中提出。</br>
 
 如果你对本项目感兴趣,欢迎加入我们的交流群,我们会在群中进行一些讨论。</br>
+
+---
+该项目与 [MiraiEz](https://github.com/nkxingxh/MiraiEz) 为兄弟项目。
+
+本项目与MiraiEz的区别如下。
+| 功能与特性 | MiraiTravel |	MiraiEz |
+| --- | --- | --- |
+| 开发机制 | 开发每个QQ独立的脚本 | 开发通用的插件 |
+| API函数实现 | 类方法 | 全局函数 |
+| 是否有命名空间 | 是 | 否 
+|命令注册 | 插件可注册,脚本不必要注册 | 可注册 |
+|插件 | 由脚本进行变种 | 原生开发方向 |
+|调试反馈机制 | 日志 | QQ消息反馈与日志 |
+|插件致命错误错误方式 | 取消插件载入 | 程序终止运行 |
+|基本配置方式 | 控制台命令配置 | 修改PHP文件配置 |
+|多QQ的处理 | 通过不同的脚本处理不同的QQ | 由插件判断 |
+---
 
 # 致谢
 致谢 Aber 为本项目绘制了一个可爱的LOGO。 </br>
