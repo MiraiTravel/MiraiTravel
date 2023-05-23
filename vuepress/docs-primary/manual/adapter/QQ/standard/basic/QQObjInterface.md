@@ -46,17 +46,17 @@ function open_plugin(string $pluginName, string $pluginVersion, array $configs =
 ## 消息发送与撤回
 ### 发送好友消息
 ```php
-function send_friend_massage(int $qq, MessageChain $messageChain, bool|int $quote = false, array $other = array()): array;
+function send_friend_message(int $qq, MessageChain $messageChain, bool|int $quote = false, array $other = array()): array;
 ```
 
 ### 发送群消息
 ```php
-function send_group_massage(int $group, MessageChain  $messageChain, bool|int $quote = false, array $other = array()): array;
+function send_group_message(int $group, MessageChain  $messageChain, bool|int $quote = false, array $other = array()): array;
 ```
 
 ### 发送临时消息
 ```php
-function send_temp_massage($qq, $group, $messageChain, $quote = false, $other = array()): array;
+function send_temp_message($qq, $group, $messageChain, $quote = false, $other = array()): array;
 ```
 
 ### 发送头像戳一戳消息

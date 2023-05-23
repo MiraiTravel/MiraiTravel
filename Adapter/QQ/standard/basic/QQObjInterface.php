@@ -109,24 +109,24 @@ interface QQObjInterface
     function delete_friend(int $target, array $other = array()): bool;
 
     /**
-     * send_friend_massage 
+     * send_friend_message 
      * 发送消息给某人
      * @param $qq QQ号 
      * @param $messageChin 消息链
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_friend_massage(int $qq,  $messageChain, $quote = false, array $other = array()): array;
+    function send_friend_message(int $qq,  $messageChain, $quote = false, array $other = array()): array;
 
     /**
-     * send_group_massage 
+     * send_group_message 
      * 发送消息给某群
      * @param $group 群号 
      * @param $messageChin 消息链
      * @param $quote 引用消息id
      * @param $other 其他可能会用到的参数
      */
-    function send_group_massage(int $group,   $messageChain,  $quote = false, array $other = array()): array;
+    function send_group_message(int $group,   $messageChain,  $quote = false, array $other = array()): array;
 
     /**
      * mute_all 
@@ -160,7 +160,7 @@ interface QQObjInterface
     function unmute($target, $memberId, $other = array()): array;
 
     /**
-     * send_group_massage 
+     * send_group_message 
      * 发送消息给某群
      * @param $qq           qq号 
      * @param $group        群号 
@@ -168,7 +168,7 @@ interface QQObjInterface
      * @param $quote        引用消息id
      * @param $other        其他可能会用到的参数
      */
-    function send_temp_massage($qq, $group, $messageChain, $quote = false, $other = array()): array;
+    function send_temp_message($qq, $group, $messageChain, $quote = false, $other = array()): array;
 
     /**
      * send_nudge

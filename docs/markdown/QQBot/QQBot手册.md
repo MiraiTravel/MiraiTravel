@@ -36,8 +36,8 @@
 
 
 ### 从 Mirai-http-api 中引出的小原生方法
-#### send_friend_massage 
-原型: function send_friend_massage($qq, $messageChain, $quote = false, $other = array()) </br>
+#### send_friend_message 
+原型: function send_friend_message($qq, $messageChain, $quote = false, $other = array()) </br>
 简介: 发送消息给某人 </br>
  
 参数 : </br>
@@ -46,8 +46,8 @@
 @param quote 引用消息id </br>
 @param other 其他可能会用到的参数 </br>
 
-#### send_group_massage 
-原型: function send_group_massage($group, $messageChain, $quote = false, $other = array()) </br>
+#### send_group_message 
+原型: function send_group_message($group, $messageChain, $quote = false, $other = array()) </br>
 简介: 发送消息给某群 </br>
 
 参数 : </br>

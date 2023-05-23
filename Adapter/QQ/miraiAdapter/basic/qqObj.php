@@ -13,6 +13,6 @@ class QQObj extends BasicQQObj
     use QQObjTrait;
 
     public $adapterCore = array(
-        "messageChain" => "\MiraiTravel\Adapter\QQ\miraiAdapter\basic\MessageChain\MessageChain",
+        "messageChain" => "MiraiTravel\Adapter\QQ\miraiAdapter\basic\MessageChain\MessageChain",
     );
 }

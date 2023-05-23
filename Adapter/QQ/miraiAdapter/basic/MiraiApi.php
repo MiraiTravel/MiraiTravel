@@ -22,11 +22,14 @@ function adapter_manager($type, $command, $content, $other = array())
     switch ($type) {
         case "auto":
         case "webhook":
-            $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now webhook]");
-            $flag = webhook_adapter($command, $content);
-            if ($flag !== false) {
-                return $flag;
-            }
+            /**
+             * 临时关闭 webhook 适配器
+             */
+            // $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now webhook]");
+            // $flag = webhook_adapter($command, $content);
+            // if ($flag !== false) {
+            //     return $flag;
+            // }
         case "http":
             $logSystem->write_log("miraiApiHttp", "adaptar_manager", "[ " . json_encode($type) . " | " . json_encode($command) . " | " . json_encode($content) . " | " . json_encode($other) . " ][now http]");
             $flag = http_adapter($other['httpApi'] ?? $other['qqbot']->get_http_api(), $command, $content, $other);
