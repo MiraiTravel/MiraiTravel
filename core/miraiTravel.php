@@ -150,7 +150,7 @@ class MiraiTravel
         if (class_exists('IntlChar')) {
             $is_space = '\IntlChar::isspace';
         } else {
-            $is_space = '\MiraiTravel::isspace';
+            $is_space = '\MiraiTravel\MiraiTravel::isspace';
         }
 
         for ($i = 0; $i < strlen($cmd); $i++) {
